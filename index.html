@@ -11,146 +11,205 @@ content="Official website and membership portal of Wababe Youths Mobilization Fo
 
 <style>
 *{
+    box-sizing:border-box;
     margin:0;
     padding:0;
-    box-sizing:border-box;
 }
 
-html{
-    scroll-behavior:smooth;
+:root{
+    --primary:#075b3b;
+    --primary-dark:#043d29;
+    --secondary:#d9a928;
+    --light:#f5f8f6;
+    --white:#ffffff;
+    --dark:#17221d;
+    --gray:#66736c;
+    --danger:#c62828;
+    --success:#16834c;
+    --shadow:0 8px 30px rgba(0,0,0,.09);
+    --radius:18px;
 }
 
 body{
     font-family:Arial,Helvetica,sans-serif;
-    background:#f5f7fa;
-    color:#1f2937;
+    background:#f5f8f6;
+    color:var(--dark);
     line-height:1.6;
 }
 
-a{
-    text-decoration:none;
-    color:inherit;
+button,
+input,
+select,
+textarea{
+    font-family:inherit;
 }
 
-button,input,select,textarea{
-    font:inherit;
+button{
+    cursor:pointer;
 }
+
+/* ================= HEADER ================= */
 
 header{
-    background:#0b5d3b;
-    color:white;
     position:sticky;
     top:0;
     z-index:1000;
-    box-shadow:0 2px 10px rgba(0,0,0,.15);
+    background:rgba(255,255,255,.97);
+    box-shadow:0 2px 15px rgba(0,0,0,.08);
 }
 
 .navbar{
-    max-width:1150px;
+    max-width:1200px;
     margin:auto;
-    padding:12px 18px;
+    min-height:75px;
+    padding:10px 20px;
     display:flex;
     align-items:center;
     justify-content:space-between;
+    gap:20px;
 }
 
 .brand{
     display:flex;
     align-items:center;
     gap:10px;
+    cursor:pointer;
 }
 
-.logo{
-    width:48px;
-    height:48px;
+.brand img{
+    width:52px;
+    height:52px;
     border-radius:50%;
+    object-fit:contain;
     background:white;
-    color:#0b5d3b;
+}
+
+.brand-text{
+    font-weight:bold;
+    color:var(--primary);
+    line-height:1.15;
+}
+
+.brand-text small{
+    display:block;
+    color:#777;
+    font-size:10px;
+    margin-top:3px;
+}
+
+.nav-links{
     display:flex;
     align-items:center;
-    justify-content:center;
-    font-weight:bold;
-    font-size:13px;
+    gap:6px;
 }
 
-.brand-text h1{
-    font-size:16px;
-    line-height:1.2;
+.nav-links button{
+    border:0;
+    background:transparent;
+    color:#26352e;
+    padding:10px 12px;
+    border-radius:10px;
+    font-weight:600;
 }
 
-.brand-text span{
-    font-size:11px;
-    opacity:.85;
-}
-
-nav{
-    display:flex;
-    gap:18px;
-    align-items:center;
-}
-
-nav a{
-    font-size:14px;
-    font-weight:bold;
-}
-
-nav a:hover{
-    opacity:.75;
+.nav-links button:hover{
+    background:#e9f3ee;
+    color:var(--primary);
 }
 
 .menu-btn{
     display:none;
-    background:none;
     border:0;
+    background:var(--primary);
     color:white;
-    font-size:28px;
-    cursor:pointer;
+    width:42px;
+    height:42px;
+    border-radius:10px;
+    font-size:21px;
 }
+
+/* ================= VIEWS ================= */
+
+.view{
+    display:none;
+    min-height:calc(100vh - 75px);
+}
+
+.view.active{
+    display:block;
+}
+
+.container{
+    max-width:1150px;
+    margin:auto;
+    padding:35px 20px;
+}
+
+/* ================= HOME ================= */
 
 .hero{
-    min-height:570px;
-    background:
-    linear-gradient(rgba(0,0,0,.58),rgba(0,0,0,.58)),
-    linear-gradient(135deg,#0b5d3b,#128451);
+    min-height:520px;
     display:flex;
     align-items:center;
-    justify-content:center;
-    text-align:center;
+    background:
+    linear-gradient(135deg,rgba(4,61,41,.97),rgba(7,91,59,.92));
     color:white;
-    padding:70px 20px;
 }
 
-.hero-content{
-    max-width:850px;
+.hero-inner{
+    max-width:1150px;
+    width:100%;
+    margin:auto;
+    padding:65px 20px;
+    display:grid;
+    grid-template-columns:1.25fr .75fr;
+    gap:40px;
+    align-items:center;
 }
 
-.hero h2{
-    font-size:46px;
-    margin-bottom:20px;
-    line-height:1.15;
+.hero h1{
+    font-size:clamp(35px,5vw,62px);
+    line-height:1.05;
+    margin-bottom:18px;
 }
 
 .hero p{
-    max-width:700px;
-    margin:auto;
+    max-width:650px;
+    color:#e4f1eb;
     font-size:18px;
+    margin-bottom:28px;
 }
 
-.hero-buttons{
-    margin-top:30px;
+.hero-logo{
     display:flex;
     justify-content:center;
-    gap:15px;
+}
+
+.hero-logo img{
+    width:min(300px,75vw);
+    height:min(300px,75vw);
+    object-fit:contain;
+    background:white;
+    border-radius:50%;
+    padding:10px;
+    box-shadow:0 15px 45px rgba(0,0,0,.25);
+}
+
+.gold{
+    color:var(--secondary);
+}
+
+.btn-row{
+    display:flex;
     flex-wrap:wrap;
+    gap:12px;
 }
 
 .btn{
-    padding:13px 25px;
-    border-radius:7px;
-    font-weight:bold;
-    display:inline-block;
     border:0;
-    cursor:pointer;
+    border-radius:12px;
+    padding:13px 20px;
+    font-weight:bold;
     transition:.2s;
 }
 
@@ -159,206 +218,211 @@ nav a:hover{
 }
 
 .btn-primary{
-    background:white;
-    color:#0b5d3b;
+    background:var(--primary);
+    color:white;
 }
 
-.btn-green{
-    background:#0b5d3b;
-    color:white;
+.btn-gold{
+    background:var(--secondary);
+    color:#17221d;
+}
+
+.btn-white{
+    background:white;
+    color:var(--primary);
 }
 
 .btn-outline{
     background:transparent;
-    border:2px solid white;
-    color:white;
+    border:1px solid #d5ddd8;
+    color:var(--dark);
 }
 
 .btn-danger{
-    background:#b91c1c;
+    background:var(--danger);
     color:white;
 }
 
-section{
-    padding:70px 20px;
+.btn-success{
+    background:var(--success);
+    color:white;
 }
 
-.container{
-    max-width:1150px;
-    margin:auto;
+/* ================= HOME CARDS ================= */
+
+.home-section{
+    padding:40px 20px;
 }
 
 .section-title{
     text-align:center;
-    margin-bottom:45px;
+    margin-bottom:28px;
 }
 
 .section-title h2{
-    font-size:32px;
-    color:#0b5d3b;
-    margin-bottom:10px;
+    color:var(--primary);
+    font-size:30px;
 }
 
 .section-title p{
-    color:#6b7280;
-    max-width:700px;
+    color:var(--gray);
+}
+
+.page-cards{
+    max-width:1100px;
     margin:auto;
-}
-
-/* ABOUT */
-
-.about-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:30px;
-}
-
-.about-box{
-    background:white;
-    padding:30px;
-    border-radius:12px;
-    box-shadow:0 4px 20px rgba(0,0,0,.07);
-}
-
-.about-box h3{
-    color:#0b5d3b;
-    margin-bottom:15px;
-}
-
-/* ACTIVITIES */
-
-.features{
-    background:white;
-}
-
-.feature-grid{
     display:grid;
     grid-template-columns:repeat(3,1fr);
-    gap:25px;
+    gap:18px;
 }
 
-.feature-card{
-    background:#f5f7fa;
-    padding:30px 22px;
-    border-radius:12px;
+.page-card{
+    background:white;
+    padding:25px;
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
+    border:1px solid #edf1ee;
     text-align:center;
-    border:1px solid #e5e7eb;
+    transition:.25s;
 }
 
-.feature-icon{
-    font-size:40px;
-    margin-bottom:15px;
+.page-card:hover{
+    transform:translateY(-5px);
 }
 
-.feature-card h3{
-    color:#0b5d3b;
-    margin-bottom:10px;
-}
-
-/* DIGITAL AD */
-
-.digital-ad{
-    background:linear-gradient(135deg,#062e20,#0b5d3b);
-    color:white;
-}
-
-.digital-ad .section-title h2{
-    color:white;
-}
-
-.digital-ad .section-title p{
-    color:#d8eee4;
-}
-
-.service-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:15px;
-}
-
-.service{
-    background:rgba(255,255,255,.1);
-    border:1px solid rgba(255,255,255,.2);
-    border-radius:10px;
-    padding:18px;
-    text-align:center;
-}
-
-.service-icon{
-    font-size:30px;
-    margin-bottom:7px;
-}
-
-.digital-contact{
-    margin-top:35px;
-    text-align:center;
-}
-
-.digital-contact h3{
-    font-size:25px;
-    margin-bottom:10px;
-}
-
-.contact-buttons{
-    display:flex;
-    justify-content:center;
-    gap:12px;
-    flex-wrap:wrap;
-    margin-top:20px;
-}
-
-.whatsapp{
-    background:#25D366;
-    color:white;
-}
-
-.gmail{
-    background:#ea4335;
-    color:white;
-}
-
-/* CTA */
-
-.cta{
-    background:#0b5d3b;
-    color:white;
-    text-align:center;
-}
-
-.cta h2{
-    font-size:32px;
+.page-card .icon{
+    font-size:36px;
     margin-bottom:12px;
 }
 
-.cta p{
-    max-width:650px;
-    margin:0 auto 25px;
+.page-card h3{
+    color:var(--primary);
+    margin-bottom:8px;
 }
 
-/* FORMS */
-
-.form-section{
-    background:#eef5f1;
+.page-card p{
+    color:var(--gray);
+    font-size:14px;
+    margin-bottom:15px;
 }
+
+/* ================= DIGITAL SERVICES ================= */
+
+.services-ad{
+    max-width:1100px;
+    margin:10px auto 40px;
+    padding:30px;
+    border-radius:22px;
+    background:linear-gradient(135deg,#062f23,#0b6a45);
+    color:white;
+    box-shadow:var(--shadow);
+}
+
+.services-ad h2{
+    color:var(--secondary);
+    margin-bottom:8px;
+}
+
+.services-ad p{
+    color:#e5eee9;
+}
+
+.services-list{
+    display:flex;
+    flex-wrap:wrap;
+    gap:9px;
+    margin:20px 0;
+}
+
+.service-tag{
+    background:rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.18);
+    padding:8px 12px;
+    border-radius:20px;
+    font-size:13px;
+}
+
+/* ================= PAGE ================= */
+
+.page-header{
+    background:linear-gradient(135deg,var(--primary-dark),var(--primary));
+    color:white;
+    padding:45px 20px;
+    text-align:center;
+}
+
+.page-header h1{
+    font-size:36px;
+}
+
+.page-header p{
+    color:#dcece5;
+}
+
+/* ================= CARDS ================= */
+
+.card{
+    background:white;
+    border-radius:var(--radius);
+    padding:25px;
+    box-shadow:var(--shadow);
+    margin-bottom:20px;
+}
+
+.card h2,
+.card h3{
+    color:var(--primary);
+    margin-bottom:12px;
+}
+
+.grid-3{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.grid-2{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+
+/* ================= FORMS ================= */
 
 .form-card{
-    max-width:900px;
-    margin:auto;
+    max-width:850px;
+    margin:35px auto;
     background:white;
-    padding:30px;
-    border-radius:14px;
-    box-shadow:0 4px 25px rgba(0,0,0,.08);
+    padding:28px;
+    border-radius:20px;
+    box-shadow:var(--shadow);
+}
+
+.form-title{
+    text-align:center;
+    margin-bottom:25px;
+}
+
+.form-title img{
+    width:75px;
+    height:75px;
+    object-fit:contain;
+    border-radius:50%;
+}
+
+.form-title h2{
+    color:var(--primary);
+    margin-top:8px;
 }
 
 .form-grid{
     display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:18px;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
 }
 
 .form-group{
-    display:flex;
-    flex-direction:column;
+    margin-bottom:15px;
 }
 
 .form-group.full{
@@ -366,18 +430,19 @@ section{
 }
 
 .form-group label{
+    display:block;
     font-weight:bold;
+    font-size:14px;
     margin-bottom:6px;
-    color:#374151;
 }
 
 .form-group input,
 .form-group select,
 .form-group textarea{
     width:100%;
-    padding:12px;
-    border:1px solid #d1d5db;
-    border-radius:7px;
+    padding:12px 13px;
+    border:1px solid #d8e0db;
+    border-radius:10px;
     outline:none;
     background:white;
 }
@@ -385,308 +450,309 @@ section{
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus{
-    border-color:#0b5d3b;
+    border-color:var(--primary);
+    box-shadow:0 0 0 3px rgba(7,91,59,.08);
 }
 
-.form-note{
-    background:#fff7ed;
-    border-left:4px solid #f97316;
-    padding:12px;
-    margin-bottom:20px;
-    border-radius:5px;
+.password-box{
+    position:relative;
+}
+
+.password-box input{
+    padding-right:48px;
+}
+
+.eye-btn{
+    position:absolute;
+    right:6px;
+    top:5px;
+    width:38px;
+    height:38px;
+    border:0;
+    background:transparent;
+    font-size:19px;
+}
+
+/* ================= ALERT ================= */
+
+.alert{
+    padding:12px 15px;
+    border-radius:10px;
+    margin-bottom:18px;
+    display:none;
     font-size:14px;
 }
 
-.password-note{
-    font-size:12px;
-    color:#6b7280;
-    margin-top:4px;
+.alert.show{
+    display:block;
 }
 
-.form-actions{
-    margin-top:25px;
-    display:flex;
-    gap:12px;
-    flex-wrap:wrap;
+.alert.error{
+    background:#fdecec;
+    color:#a51f1f;
 }
 
-/* AUTH */
-
-.auth-tabs{
-    display:flex;
-    margin-bottom:25px;
-    border-bottom:1px solid #ddd;
+.alert.success{
+    background:#eaf7ef;
+    color:#126b3e;
 }
 
-.auth-tab{
-    padding:12px 20px;
+.alert.info{
+    background:#eaf2fb;
+    color:#175b91;
+}
+
+/* ================= LOGIN ================= */
+
+.login-card{
+    max-width:480px;
+}
+
+.auth-switch{
+    text-align:center;
+    margin-top:18px;
+    color:var(--gray);
+}
+
+.link-btn{
     border:0;
     background:none;
-    cursor:pointer;
+    color:var(--primary);
     font-weight:bold;
 }
 
-.auth-tab.active{
-    color:#0b5d3b;
-    border-bottom:3px solid #0b5d3b;
+/* ================= DASHBOARD ================= */
+
+.profile-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+    flex-wrap:wrap;
 }
 
-.auth-panel{
-    display:none;
-}
-
-.auth-panel.active{
-    display:block;
-}
-
-.otp-box{
-    margin-top:15px;
-    display:none;
-}
-
-.recaptcha-container{
-    margin:15px 0;
-}
-
-/* DASHBOARD */
-
-.dashboard{
-    background:#f3f7f5;
-}
-
-.dashboard-card{
-    max-width:1000px;
-    margin:auto;
-    background:white;
-    border-radius:15px;
-    padding:30px;
-    box-shadow:0 4px 25px rgba(0,0,0,.08);
-}
-
-.profile-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:15px;
-    margin-top:25px;
-}
-
-.profile-item{
-    background:#f5f7fa;
-    padding:15px;
-    border-radius:8px;
-}
-
-.profile-item small{
-    display:block;
-    color:#6b7280;
-    margin-bottom:3px;
-}
-
-.profile-item strong{
-    color:#111827;
-    word-break:break-word;
+.profile-id{
+    display:inline-block;
+    background:#eaf5ef;
+    color:var(--primary);
+    padding:8px 13px;
+    border-radius:20px;
+    font-weight:bold;
 }
 
 .status{
     display:inline-block;
-    padding:5px 12px;
+    padding:6px 12px;
     border-radius:20px;
-    font-size:13px;
+    font-size:12px;
     font-weight:bold;
-}
-
-.status.pending{
-    background:#fff7ed;
-    color:#c2410c;
+    background:#fff4d6;
+    color:#805e00;
 }
 
 .status.approved{
-    background:#dcfce7;
-    color:#166534;
+    background:#e8f7ed;
+    color:#13713e;
 }
 
 .status.rejected{
-    background:#fee2e2;
-    color:#991b1b;
+    background:#fdeaea;
+    color:#a51e1e;
 }
 
-.member-id{
-    background:#0b5d3b;
-    color:white;
-    padding:18px;
+.profile-grid{
+    display:grid;
+    grid-template-columns:180px 1fr;
+    gap:25px;
+}
+
+.profile-photo{
+    width:150px;
+    height:150px;
+    border-radius:20px;
+    object-fit:cover;
+    background:#e9efeb;
+}
+
+.info-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+}
+
+.info-item{
+    background:#f7faf8;
+    padding:12px;
     border-radius:10px;
-    margin-top:20px;
-    text-align:center;
 }
 
-.member-id span{
+.info-item small{
     display:block;
-    font-size:12px;
-    opacity:.8;
+    color:#768179;
+    margin-bottom:3px;
 }
 
-.member-id strong{
-    font-size:25px;
-    letter-spacing:1px;
-}
-
-/* EVENTS */
-
-.event-box{
-    background:white;
-    text-align:center;
-    padding:35px;
-    border-radius:12px;
-    box-shadow:0 4px 20px rgba(0,0,0,.07);
-}
-
-/* FOOTER */
+/* ================= FOOTER ================= */
 
 footer{
-    background:#10251c;
+    background:#062f23;
     color:white;
-    padding:45px 20px 20px;
+    padding:35px 20px;
+    margin-top:30px;
 }
 
-.footer-grid{
-    max-width:1150px;
+.footer-inner{
+    max-width:1100px;
     margin:auto;
     display:grid;
-    grid-template-columns:2fr 1fr 1fr;
-    gap:40px;
+    grid-template-columns:1.2fr 1fr 1fr;
+    gap:30px;
 }
 
-.footer-col h3{
-    margin-bottom:15px;
+footer h3{
+    color:var(--secondary);
+    margin-bottom:10px;
 }
 
-.footer-col p,
-.footer-col a{
-    color:#cbd5d1;
+footer p,
+footer li{
+    color:#d2dfd8;
     font-size:14px;
-    display:block;
-    margin-bottom:8px;
 }
 
-.copyright{
-    max-width:1150px;
-    margin:30px auto 0;
-    padding-top:20px;
-    border-top:1px solid rgba(255,255,255,.15);
+footer ul{
+    list-style:none;
+}
+
+footer li{
+    margin:6px 0;
+}
+
+.footer-bottom{
     text-align:center;
-    color:#9ca3af;
+    border-top:1px solid rgba(255,255,255,.12);
+    margin-top:25px;
+    padding-top:20px;
+    color:#aebdb5;
     font-size:13px;
 }
 
-/* HIDDEN */
-
-.hidden{
-    display:none !important;
-}
-
-.message{
-    padding:12px;
-    border-radius:7px;
-    margin:15px 0;
-    display:none;
-}
-
-.message.success{
-    display:block;
-    background:#dcfce7;
-    color:#166534;
-}
-
-.message.error{
-    display:block;
-    background:#fee2e2;
-    color:#991b1b;
-}
+/* ================= LOADING ================= */
 
 .loading{
-    opacity:.6;
-    pointer-events:none;
+    text-align:center;
+    padding:25px;
+    color:var(--gray);
 }
 
-/* MOBILE */
+/* ================= MOBILE ================= */
 
-@media(max-width:768px){
+@media(max-width:850px){
 
-    .navbar{
-        padding:12px 15px;
-    }
-
-    nav{
+    .nav-links{
         display:none;
         position:absolute;
-        top:72px;
+        top:75px;
         left:0;
-        width:100%;
-        background:#0b5d3b;
+        right:0;
+        background:white;
+        padding:12px;
         flex-direction:column;
-        padding:20px;
-        gap:18px;
+        box-shadow:0 8px 20px rgba(0,0,0,.1);
     }
 
-    nav.active{
+    .nav-links.open{
         display:flex;
+    }
+
+    .nav-links button{
+        width:100%;
+        text-align:left;
     }
 
     .menu-btn{
         display:block;
     }
 
-    .hero{
-        min-height:520px;
-    }
-
-    .hero h2{
-        font-size:34px;
+    .hero-inner{
+        grid-template-columns:1fr;
+        text-align:center;
     }
 
     .hero p{
-        font-size:16px;
+        margin-left:auto;
+        margin-right:auto;
     }
 
-    .about-grid,
+    .btn-row{
+        justify-content:center;
+    }
+
+    .hero-logo{
+        order:-1;
+    }
+
+    .hero-logo img{
+        width:190px;
+        height:190px;
+    }
+
+    .page-cards,
+    .grid-3{
+        grid-template-columns:1fr;
+    }
+
+    .grid-2,
     .form-grid{
         grid-template-columns:1fr;
     }
 
-    .feature-grid{
-        grid-template-columns:1fr;
-    }
-
-    .service-grid{
-        grid-template-columns:1fr 1fr;
+    .form-group.full{
+        grid-column:auto;
     }
 
     .profile-grid{
         grid-template-columns:1fr;
     }
 
-    .footer-grid{
+    .info-grid{
         grid-template-columns:1fr;
     }
 
-    section{
-        padding:55px 18px;
+    .footer-inner{
+        grid-template-columns:1fr;
     }
 }
 
-@media(max-width:420px){
+@media(max-width:480px){
 
-    .service-grid{
-        grid-template-columns:1fr;
+    .navbar{
+        padding:8px 12px;
     }
 
-    .form-card,
-    .dashboard-card{
-        padding:20px;
+    .brand-text{
+        font-size:13px;
     }
 
-    .hero h2{
-        font-size:30px;
+    .brand img{
+        width:45px;
+        height:45px;
+    }
+
+    .container{
+        padding:25px 14px;
+    }
+
+    .form-card{
+        padding:20px 15px;
+    }
+
+    .hero{
+        min-height:560px;
+    }
+
+    .hero h1{
+        font-size:36px;
     }
 }
 </style>
@@ -697,845 +763,1016 @@ footer{
 <!-- ================= HEADER ================= -->
 
 <header>
+<nav class="navbar">
 
-<div class="navbar">
+    <div class="brand" onclick="showView('home')">
+        <img src="logo.png" alt="WYMF Logo"
+             onerror="this.style.display='none'">
+        <div class="brand-text">
+            WABABE YOUTHS
+            <small>MOBILIZATION FORUM</small>
+        </div>
+    </div>
 
-<div class="brand">
+    <div class="nav-links" id="navLinks">
+        <button onclick="showView('home')">Home</button>
+        <button onclick="showView('about')">About Us</button>
+        <button onclick="showView('activities')">Activities</button>
+        <button onclick="showView('events')">Events</button>
+        <button onclick="showView('contact')">Contact</button>
+        <button onclick="showView('login')">Sign In</button>
+    </div>
 
-<div class="logo">
-WYMF
-</div>
-
-<div class="brand-text">
-<h1>Wababe Youths</h1>
-<span>Mobilization Forum</span>
-</div>
-
-</div>
-
-<button class="menu-btn" onclick="toggleMenu()">☰</button>
-
-<nav id="navMenu">
-
-<a href="#home" onclick="closeMenu()">Home</a>
-<a href="#about" onclick="closeMenu()">About</a>
-<a href="#activities" onclick="closeMenu()">Activities</a>
-<a href="#digital" onclick="closeMenu()">Digital Services</a>
-<a href="#events" onclick="closeMenu()">Events</a>
-<a href="#membership" onclick="closeMenu()">Membership</a>
-<a href="#login" onclick="closeMenu()">Login</a>
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
 
 </nav>
-
-</div>
-
 </header>
 
 
-<!-- ================= HERO ================= -->
+<!-- ================= HOME ================= -->
 
-<section class="hero" id="home">
+<section id="home" class="view active">
 
-<div class="hero-content">
+    <div class="hero">
 
-<h2>Wababe Youths Mobilization Forum</h2>
+        <div class="hero-inner">
 
-<p>
-Building a united, responsible and development-oriented
-youth community through participation, empowerment and
-collective action.
-</p>
+            <div>
+                <div class="gold">
+                    WABABE YOUTHS MOBILIZATION FORUM
+                </div>
 
-<div class="hero-buttons">
+                <h1>
+                    Ƙarfi a Haɗin Kai,
+                    <span class="gold">Ci Gaba a Tare.</span>
+                </h1>
 
-<a href="#membership" class="btn btn-primary">
-Join Us
-</a>
+                <p>
+                    Barka da zuwa shafin hukuma na Wababe Youths
+                    Mobilization Forum. Muna haɗa kan matasa domin
+                    ƙarfafa zumunci, haɗin kai da ci gaban al'umma.
+                </p>
 
-<a href="#about" class="btn btn-outline">
-Learn More
-</a>
+                <div class="btn-row">
 
-</div>
+                    <button class="btn btn-gold"
+                            onclick="showView('register')">
+                        📝 Register as Member
+                    </button>
 
-</div>
+                    <button class="btn btn-white"
+                            onclick="showView('login')">
+                        🔐 Sign In
+                    </button>
+
+                </div>
+            </div>
+
+            <div class="hero-logo">
+                <img src="logo.png"
+                     alt="Wababe Youths Mobilization Forum Logo">
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- HOME NAVIGATION CARDS -->
+
+    <div class="home-section">
+
+        <div class="section-title">
+            <h2>Explore Our Forum</h2>
+            <p>Zaɓi abin da kake son dubawa</p>
+        </div>
+
+        <div class="page-cards">
+
+            <div class="page-card">
+                <div class="icon">👥</div>
+                <h3>About Us</h3>
+                <p>
+                    Koyi game da kungiyar, vision da manufofinmu.
+                </p>
+                <button class="btn btn-primary"
+                        onclick="showView('about')">
+                    View
+                </button>
+            </div>
+
+            <div class="page-card">
+                <div class="icon">🚀</div>
+                <h3>Activities</h3>
+                <p>
+                    Duba ayyukan da kungiyar ke gudanarwa.
+                </p>
+                <button class="btn btn-primary"
+                        onclick="showView('activities')">
+                    View
+                </button>
+            </div>
+
+            <div class="page-card">
+                <div class="icon">📅</div>
+                <h3>Events</h3>
+                <p>
+                    Duba events da announcements na kungiyar.
+                </p>
+                <button class="btn btn-primary"
+                        onclick="showView('events')">
+                    View
+                </button>
+            </div>
+
+            <div class="page-card">
+                <div class="icon">📝</div>
+                <h3>Membership</h3>
+                <p>
+                    Yi registration domin zama memba.
+                </p>
+                <button class="btn btn-primary"
+                        onclick="showView('register')">
+                    Register
+                </button>
+            </div>
+
+            <div class="page-card">
+                <div class="icon">🔐</div>
+                <h3>Member Login</h3>
+                <p>
+                    Shiga dashboard ɗinka ka duba profile.
+                </p>
+                <button class="btn btn-primary"
+                        onclick="showView('login')">
+                    Sign In
+                </button>
+            </div>
+
+            <div class="page-card">
+                <div class="icon">📞</div>
+                <h3>Contact Support</h3>
+                <p>
+                    Tuntuɓi kungiyar domin taimako ko bayani.
+                </p>
+                <button class="btn btn-primary"
+                        onclick="showView('contact')">
+                    Contact
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- DIGITAL SERVICES AD -->
+
+    <div class="container">
+
+        <div class="services-ad">
+
+            <h2>💻 Wababe Digital Centre</h2>
+
+            <p>
+                Muna samar da Digital Services masu inganci
+                ga mutane, businesses, schools da associations.
+            </p>
+
+            <div class="services-list">
+
+                <span class="service-tag">📱 Apps</span>
+                <span class="service-tag">🌐 Websites</span>
+                <span class="service-tag">💍 Wedding Invitation Videos</span>
+                <span class="service-tag">🖼️ Photo Invitation Cards</span>
+                <span class="service-tag">🏷️ Stickers</span>
+                <span class="service-tag">🏫 School Portals</span>
+                <span class="service-tag">👥 Association Portals</span>
+                <span class="service-tag">📸 Photo Album Apps</span>
+                <span class="service-tag">💻 Other Digital Services</span>
+
+            </div>
+
+            <div class="btn-row">
+
+                <a
+                href="https://wa.me/2348106414154?text=Assalamu%20alaikum%2C%20ina%20bu%C6%99atar%20bayanin%20ku%20game%20da%20Digital%20Services."
+                target="_blank"
+                class="btn btn-gold"
+                style="text-decoration:none">
+                    💬 WhatsApp
+                </a>
+
+                <a
+                href="mailto:wababedigitalcentre@gmail.com?subject=Digital%20Service%20Inquiry&body=Assalamu%20alaikum%2C%20ina%20bu%C6%99atar%20bayanin%20ku%20game%20da%20Digital%20Services."
+                class="btn btn-white"
+                style="text-decoration:none">
+                    ✉️ Gmail
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </section>
 
 
 <!-- ================= ABOUT ================= -->
 
-<section id="about">
+<section id="about" class="view">
 
-<div class="container">
+    <div class="page-header">
+        <h1>About Us</h1>
+        <p>Game da Wababe Youths Mobilization Forum</p>
+    </div>
 
-<div class="section-title">
+    <div class="container">
 
-<h2>About Us</h2>
+        <div class="grid-2">
 
-<p>
-Learn more about Wababe Youths Mobilization Forum
-and our commitment to youth development.
-</p>
+            <div class="card">
+                <h2>Who We Are</h2>
+                <p>
+                    Wababe Youths Mobilization Forum kungiya ce
+                    da aka kafa domin haɗa kan matasa, ƙarfafa
+                    zumunci, haɗin kai da samar da ayyukan da
+                    za su taimaka wajen ci gaban matasa da al'umma.
+                </p>
+            </div>
 
-</div>
+            <div class="card">
+                <h2>Our Vision</h2>
+                <p>
+                    Gina matasa masu haɗin kai, ilimi, ƙwarewa,
+                    kishin al'umma da kuma shirye-shiryen taimakawa
+                    wajen ci gaban yankinmu.
+                </p>
+            </div>
 
-<div class="about-grid">
+        </div>
 
-<div class="about-box">
+        <div class="card">
+            <h2>Our Mission</h2>
+            <p>
+                Muna aiki tare da matasa domin samar da dama,
+                ƙarfafa ilimi da sana'o'i, community development,
+                empowerment da kuma haɗin kai tsakanin matasa.
+            </p>
+        </div>
 
-<h3>Who We Are</h3>
+        <button class="btn btn-primary"
+                onclick="showView('home')">
+            ← Back Home
+        </button>
 
-<p>
-Wababe Youths Mobilization Forum is a youth-focused
-association created to bring young people together,
-encourage participation and support initiatives
-that contribute to the development of our community.
-</p>
-
-</div>
-
-<div class="about-box">
-
-<h3>Our Vision</h3>
-
-<p>
-To build a united and empowered generation of youths
-who actively contribute to the social and economic
-development of their community.
-</p>
-
-</div>
-
-</div>
-
-</div>
+    </div>
 
 </section>
 
 
 <!-- ================= ACTIVITIES ================= -->
 
-<section class="features" id="activities">
+<section id="activities" class="view">
 
-<div class="container">
+    <div class="page-header">
+        <h1>Our Activities</h1>
+        <p>Ayyukan Wababe Youths Mobilization Forum</p>
+    </div>
 
-<div class="section-title">
+    <div class="container">
 
-<h2>What We Do</h2>
+        <div class="grid-3">
 
-<p>
-Our major areas of activities and community engagement.
-</p>
+            <div class="card">
+                <h3>🤝 Youth Mobilization</h3>
+                <p>
+                    Haɗa kan matasa da ƙarfafa zumunci da haɗin kai.
+                </p>
+            </div>
 
-</div>
+            <div class="card">
+                <h3>💼 Empowerment</h3>
+                <p>
+                    Tallafawa matasa wajen samun ƙwarewa da damar
+                    dogaro da kai.
+                </p>
+            </div>
 
-<div class="feature-grid">
+            <div class="card">
+                <h3>🏘️ Community Development</h3>
+                <p>
+                    Shirya ayyukan da za su kawo ci gaba ga al'umma.
+                </p>
+            </div>
 
-<div class="feature-card">
+            <div class="card">
+                <h3>📚 Education</h3>
+                <p>
+                    Ƙarfafa ilimi da wayar da kan matasa.
+                </p>
+            </div>
 
-<div class="feature-icon">🤝</div>
+            <div class="card">
+                <h3>🌱 Social Development</h3>
+                <p>
+                    Samar da kyakkyawan tasiri a tsakanin al'umma.
+                </p>
+            </div>
 
-<h3>Youth Mobilization</h3>
+            <div class="card">
+                <h3>🎯 Youth Forums</h3>
+                <p>
+                    Tattaunawa da matasa kan matsaloli da hanyoyin
+                    samun mafita.
+                </p>
+            </div>
 
-<p>
-Bringing youths together for positive participation
-and community development.
-</p>
+        </div>
 
-</div>
+        <button class="btn btn-primary"
+                onclick="showView('home')">
+            ← Back Home
+        </button>
 
-<div class="feature-card">
-
-<div class="feature-icon">🎓</div>
-
-<h3>Empowerment</h3>
-
-<p>
-Supporting education, skills development and
-opportunities for young people.
-</p>
-
-</div>
-
-<div class="feature-card">
-
-<div class="feature-icon">🌍</div>
-
-<h3>Community Development</h3>
-
-<p>
-Supporting initiatives that promote progress,
-unity and development.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- ================= DIGITAL SERVICES AD ================= -->
-
-<section class="digital-ad" id="digital">
-
-<div class="container">
-
-<div class="section-title">
-
-<h2>Need Digital Services?</h2>
-
-<p>
-WababeDigitalCentre na samar muku da ingantattun
-Digital Solutions na Online da Offline.
-</p>
-
-</div>
-
-<div class="service-grid">
-
-<div class="service">
-<div class="service-icon">📱</div>
-<strong>Mobile Apps</strong>
-<p>Online & Offline Apps</p>
-</div>
-
-<div class="service">
-<div class="service-icon">🌐</div>
-<strong>Websites</strong>
-<p>Modern Websites</p>
-</div>
-
-<div class="service">
-<div class="service-icon">💍</div>
-<strong>Wedding Videos</strong>
-<p>Beautiful Invitations</p>
-</div>
-
-<div class="service">
-<div class="service-icon">💌</div>
-<strong>Invitation Cards</strong>
-<p>Modern Photo Cards</p>
-</div>
-
-<div class="service">
-<div class="service-icon">🏷️</div>
-<strong>Stickers</strong>
-<p>Custom Designs</p>
-</div>
-
-<div class="service">
-<div class="service-icon">🏫</div>
-<strong>School Portals</strong>
-<p>School Management</p>
-</div>
-
-<div class="service">
-<div class="service-icon">👥</div>
-<strong>Association Portals</strong>
-<p>Membership Systems</p>
-</div>
-
-<div class="service">
-<div class="service-icon">📸</div>
-<strong>Photo Album Apps</strong>
-<p>Digital Albums</p>
-</div>
-
-</div>
-
-<div class="digital-contact">
-
-<h3>Da sauran kayan Digital!</h3>
-
-<p>
-Idan kana buƙatar ƙirƙirar App, Website, Portal,
-Invitation, Sticker ko wani Digital Service,
-tuntuɓe mu kai tsaye.
-</p>
-
-<div class="contact-buttons">
-
-<a
-class="btn whatsapp"
-href="https://wa.me/2348106414154?text=Assalamu%20alaikum%2C%20ina%20bukatar%20bayani%20game%20da%20Digital%20Services%20dinku."
-target="_blank">
-💬 WhatsApp
-</a>
-
-<a
-class="btn gmail"
-href="mailto:wababedigitalcentre@gmail.com?subject=Digital%20Service%20Inquiry&body=Assalamu%20alaikum%2C%20ina%20bukatar%20bayani%20game%20da%20Digital%20Services%20dinku."
->
-📧 Gmail
-</a>
-
-</div>
-
-</div>
-
-</div>
+    </div>
 
 </section>
 
 
 <!-- ================= EVENTS ================= -->
 
-<section id="events">
+<section id="events" class="view">
 
-<div class="container">
+    <div class="page-header">
+        <h1>Events & Announcements</h1>
+        <p>Sabbin abubuwa daga kungiyar</p>
+    </div>
 
-<div class="section-title">
+    <div class="container">
 
-<h2>Upcoming Events</h2>
+        <div id="eventsContainer">
 
-<p>
-Stay updated with our meetings, programs and activities.
-</p>
+            <div class="card">
+                <h3>📢 Welcome to WYMF Portal</h3>
+                <p>
+                    Wannan shi ne official membership portal na
+                    Wababe Youths Mobilization Forum.
+                </p>
+            </div>
 
-</div>
+            <div class="loading">
+                Ana loda events...
+            </div>
 
-<div class="event-box">
+        </div>
 
-<h3>No upcoming events yet</h3>
+        <button class="btn btn-primary"
+                onclick="showView('home')">
+            ← Back Home
+        </button>
 
-<p>
-Events and important announcements will appear here.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- ================= MEMBERSHIP ================= -->
-
-<section class="cta" id="membership">
-
-<div class="container">
-
-<h2>Become a Member</h2>
-
-<p>
-Join Wababe Youths Mobilization Forum and become
-part of a community working towards positive development.
-</p>
-
-<a href="#register" class="btn btn-primary">
-Register as a Member
-</a>
-
-</div>
+    </div>
 
 </section>
 
 
-<!-- ================= REGISTRATION ================= -->
+<!-- ================= REGISTER ================= -->
 
-<section class="form-section" id="register">
+<section id="register" class="view">
 
-<div class="container">
+    <div class="page-header">
+        <h1>Register as Member</h1>
+        <p>Shigar da bayananka domin yin membership registration</p>
+    </div>
 
-<div class="section-title">
+    <div class="form-card">
 
-<h2>Member Registration</h2>
+        <div class="form-title">
 
-<p>
-Create your WYMF membership account.
-</p>
+            <img src="logo.png"
+                 alt="Association Logo">
 
-</div>
+            <h2>Membership Registration</h2>
 
-<div class="form-card">
+            <p>
+                Phone Number, Email da NIN suna da dokokin
+                musamman kamar yadda tsarin kungiyar ya tanada.
+            </p>
 
-<div id="registerMessage" class="message"></div>
+        </div>
 
-<div class="form-note">
-<strong>Important:</strong>
-Phone Number is required. Email is optional.
-NIN is also optional. If you register with a phone
-number without email, login will be through SMS OTP.
-</div>
+        <div id="registerAlert" class="alert"></div>
 
-<form id="registerForm">
+        <form id="registerForm">
 
-<div class="form-grid">
+            <div class="form-grid">
 
-<div class="form-group">
-<label>Full Name *</label>
-<input type="text" id="fullName" required>
-</div>
+                <div class="form-group full">
+                    <label>Full Name *</label>
+                    <input
+                        type="text"
+                        id="regName"
+                        required
+                        placeholder="Enter full name">
+                </div>
 
-<div class="form-group">
-<label>Phone Number *</label>
-<input
-type="tel"
-id="phone"
-placeholder="+2348012345678"
-required>
-</div>
+                <div class="form-group">
+                    <label>Phone Number *</label>
+                    <input
+                        type="tel"
+                        id="regPhone"
+                        required
+                        placeholder="08012345678">
+                </div>
 
-<div class="form-group">
-<label>Email Address (Optional)</label>
-<input type="email" id="email">
-</div>
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input
+                        type="email"
+                        id="regEmail"
+                        placeholder="example@gmail.com">
+                </div>
 
-<div class="form-group">
-<label>Date of Birth *</label>
-<input type="date" id="dob" required>
-</div>
+                <div class="form-group">
+                    <label>Date of Birth *</label>
+                    <input
+                        type="date"
+                        id="regDob"
+                        required>
+                </div>
 
-<div class="form-group">
-<label>Gender *</label>
-<select id="gender" required>
-<option value="">Select Gender</option>
-<option>Male</option>
-<option>Female</option>
-</select>
-</div>
+                <div class="form-group">
+                    <label>Gender *</label>
+                    <select id="regGender" required>
+                        <option value="">Select Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </div>
 
-<div class="form-group">
-<label>Marital Status *</label>
-<select id="maritalStatus" required>
-<option value="">Select Status</option>
-<option>Single</option>
-<option>Married</option>
-<option>Divorced</option>
-<option>Widowed</option>
-</select>
-</div>
+                <div class="form-group">
+                    <label>Marital Status *</label>
+                    <select id="regMarital" required>
+                        <option value="">Select</option>
+                        <option>Single</option>
+                        <option>Married</option>
+                        <option>Divorced</option>
+                        <option>Widowed</option>
+                    </select>
+                </div>
 
-<div class="form-group">
-<label>State *</label>
-<input type="text" id="state" placeholder="e.g. Sokoto" required>
-</div>
+                <div class="form-group">
+                    <label>State *</label>
+                    <input
+                        type="text"
+                        id="regState"
+                        required
+                        placeholder="e.g. Sokoto">
+                </div>
 
-<div class="form-group">
-<label>LGA *</label>
-<input type="text" id="lga" required>
-</div>
+                <div class="form-group">
+                    <label>LGA *</label>
+                    <input
+                        type="text"
+                        id="regLga"
+                        required
+                        placeholder="Local Government">
+                </div>
 
-<div class="form-group">
-<label>Village / Town *</label>
-<input type="text" id="town" required>
-</div>
+                <div class="form-group">
+                    <label>Village / Town *</label>
+                    <input
+                        type="text"
+                        id="regVillage"
+                        required>
+                </div>
 
-<div class="form-group full">
-<label>Residential Address *</label>
-<textarea id="address" rows="3" required></textarea>
-</div>
+                <div class="form-group full">
+                    <label>Residential Address *</label>
+                    <textarea
+                        id="regAddress"
+                        rows="3"
+                        required></textarea>
+                </div>
 
-<div class="form-group">
-<label>Occupation *</label>
-<input type="text" id="occupation" required>
-</div>
+                <div class="form-group">
+                    <label>Occupation *</label>
+                    <input
+                        type="text"
+                        id="regOccupation"
+                        required>
+                </div>
 
-<div class="form-group">
-<label>Educational Qualification *</label>
-<input type="text" id="education" required>
-</div>
+                <div class="form-group">
+                    <label>Educational Qualification *</label>
+                    <input
+                        type="text"
+                        id="regEducation"
+                        required
+                        placeholder="e.g. B.Sc">
+                </div>
 
-<div class="form-group">
-<label>NIN (Optional)</label>
-<input
-type="text"
-id="nin"
-inputmode="numeric"
-maxlength="11"
-placeholder="Optional">
-</div>
+                <div class="form-group">
+                    <label>NIN (Optional)</label>
+                    <input
+                        type="text"
+                        id="regNin"
+                        maxlength="11"
+                        placeholder="Optional">
+                </div>
 
-<div class="form-group">
-<label>Passport Photo (Optional)</label>
-<input
-type="file"
-id="passport"
-accept="image/*">
-<div class="password-note">
-Photo upload will be activated after Firebase Storage is configured.
-</div>
-</div>
+                <div class="form-group">
+                    <label>Passport Photo</label>
+                    <input
+                        type="file"
+                        id="regPhoto"
+                        accept="image/*">
+                    <small>
+                        Photo upload za Storage za zo daga baya.
+                    </small>
+                </div>
 
-<div class="form-group">
-<label>Password *</label>
-<input
-type="password"
-id="password"
-minlength="6"
-required>
-<div class="password-note">
-Required for Email/Password registration.
-</div>
-</div>
+                <div class="form-group">
+                    <label>Password *</label>
 
-<div class="form-group">
-<label>Confirm Password *</label>
-<input
-type="password"
-id="confirmPassword"
-minlength="6"
-required>
-</div>
+                    <div class="password-box">
+                        <input
+                            type="password"
+                            id="regPassword"
+                            required
+                            minlength="6"
+                            placeholder="At least 6 characters">
 
-</div>
+                        <button
+                            type="button"
+                            class="eye-btn"
+                            onclick="togglePassword('regPassword',this)">
+                            👁️
+                        </button>
+                    </div>
+                </div>
 
-<div class="form-actions">
+                <div class="form-group">
+                    <label>Confirm Password *</label>
 
-<button
-type="submit"
-class="btn btn-green"
-id="registerBtn">
-Create Membership Account
-</button>
+                    <div class="password-box">
 
-<button
-type="reset"
-class="btn"
-style="background:#e5e7eb;">
-Clear
-</button>
+                        <input
+                            type="password"
+                            id="regConfirmPassword"
+                            required
+                            minlength="6"
+                            placeholder="Repeat password">
 
-</div>
+                        <button
+                            type="button"
+                            class="eye-btn"
+                            onclick="togglePassword('regConfirmPassword',this)">
+                            👁️
+                        </button>
 
-</form>
+                    </div>
+                </div>
 
-</div>
+            </div>
 
-</div>
+            <br>
+
+            <button
+                type="submit"
+                id="registerBtn"
+                class="btn btn-primary"
+                style="width:100%">
+                📝 Create Membership Account
+            </button>
+
+        </form>
+
+        <div class="auth-switch">
+            Already registered?
+            <button
+                class="link-btn"
+                onclick="showView('login')">
+                Sign In
+            </button>
+        </div>
+
+    </div>
 
 </section>
 
 
 <!-- ================= LOGIN ================= -->
 
-<section class="form-section" id="login">
+<section id="login" class="view">
 
-<div class="container">
+    <div class="page-header">
+        <h1>Member Sign In</h1>
+        <p>Shiga cikin membership account ɗinka</p>
+    </div>
 
-<div class="section-title">
+    <div class="form-card login-card">
 
-<h2>Member Login</h2>
+        <div class="form-title">
 
-<p>
-Login to access your WYMF member dashboard.
-</p>
+            <img src="logo.png"
+                 alt="Association Logo">
 
-</div>
+            <h2>Welcome Back</h2>
 
-<div class="form-card">
+        </div>
 
-<div class="auth-tabs">
+        <div id="loginAlert" class="alert"></div>
 
-<button
-class="auth-tab active"
-onclick="showLoginTab('emailLogin',this)">
-Email Login
-</button>
+        <!-- EMAIL LOGIN -->
 
-<button
-class="auth-tab"
-onclick="showLoginTab('phoneLogin',this)">
-Phone OTP
-</button>
+        <form id="loginForm">
 
-</div>
+            <div class="form-group">
+                <label>Email Address</label>
+                <input
+                    type="email"
+                    id="loginEmail"
+                    placeholder="example@gmail.com">
+            </div>
 
+            <div class="form-group">
 
-<!-- EMAIL LOGIN -->
+                <label>Password</label>
 
-<div id="emailLogin" class="auth-panel active">
+                <div class="password-box">
 
-<div id="emailLoginMessage" class="message"></div>
+                    <input
+                        type="password"
+                        id="loginPassword"
+                        placeholder="Password">
 
-<form id="emailLoginForm">
+                    <button
+                        type="button"
+                        class="eye-btn"
+                        onclick="togglePassword('loginPassword',this)">
+                        👁️
+                    </button>
 
-<div class="form-group">
-<label>Email Address</label>
-<input type="email" id="loginEmail" required>
-</div>
+                </div>
 
-<div class="form-group" style="margin-top:15px;">
-<label>Password</label>
-<input type="password" id="loginPassword" required>
-</div>
+            </div>
 
-<div class="form-actions">
+            <button
+                type="submit"
+                class="btn btn-primary"
+                style="width:100%">
+                🔐 Sign In with Email
+            </button>
 
-<button
-type="submit"
-class="btn btn-green">
-Login
-</button>
+        </form>
 
-<button
-type="button"
-class="btn"
-style="background:#e5e7eb;"
-onclick="resetPassword()">
-Forgot Password?
-</button>
+        <br>
 
-</div>
+        <div style="text-align:center;color:#777">
+            — OR —
+        </div>
 
-</form>
+        <br>
 
-</div>
+        <!-- PHONE LOGIN -->
 
+        <div class="form-group">
 
-<!-- PHONE LOGIN -->
+            <label>Phone Number</label>
 
-<div id="phoneLogin" class="auth-panel">
+            <input
+                type="tel"
+                id="phoneLoginNumber"
+                placeholder="08012345678">
 
-<div id="phoneLoginMessage" class="message"></div>
+        </div>
 
-<div class="form-group">
+        <div id="recaptcha-container"></div>
 
-<label>Phone Number</label>
+        <button
+            type="button"
+            class="btn btn-gold"
+            style="width:100%"
+            onclick="sendPhoneCode()">
+            📱 Send SMS OTP
+        </button>
 
-<input
-type="tel"
-id="loginPhone"
-placeholder="+2348012345678">
+        <div
+            id="otpArea"
+            style="display:none;margin-top:15px">
 
-</div>
+            <div class="form-group">
 
-<div id="loginRecaptcha" class="recaptcha-container"></div>
+                <label>Enter OTP</label>
 
-<div class="form-actions">
+                <input
+                    type="text"
+                    id="phoneOtp"
+                    maxlength="6"
+                    placeholder="6 digit code">
 
-<button
-type="button"
-class="btn btn-green"
-onclick="sendLoginOTP()">
-Send OTP
-</button>
+            </div>
 
-</div>
+            <button
+                type="button"
+                class="btn btn-success"
+                style="width:100%"
+                onclick="verifyPhoneCode()">
+                Verify OTP
+            </button>
 
-<div class="otp-box" id="loginOtpBox">
+        </div>
 
-<div class="form-group">
+        <br>
 
-<label>Enter OTP</label>
+        <div style="text-align:center">
 
-<input
-type="text"
-id="loginOtp"
-inputmode="numeric"
-maxlength="6"
-placeholder="6-digit OTP">
+            <button
+                class="link-btn"
+                onclick="resetPassword()">
+                Forgot Password?
+            </button>
 
-</div>
+        </div>
 
-<div class="form-actions">
+        <div class="auth-switch">
 
-<button
-type="button"
-class="btn btn-green"
-onclick="verifyLoginOTP()">
-Verify & Login
-</button>
+            Don't have an account?
 
-</div>
+            <button
+                class="link-btn"
+                onclick="showView('register')">
+                Register
+            </button>
 
-</div>
+        </div>
 
-</div>
-
-</div>
-
-</div>
+    </div>
 
 </section>
 
 
 <!-- ================= DASHBOARD ================= -->
 
-<section class="dashboard hidden" id="dashboard">
+<section id="dashboard" class="view">
 
-<div class="container">
+    <div class="page-header">
+        <h1>Member Dashboard</h1>
+        <p>Membership profile ɗinka</p>
+    </div>
 
-<div class="section-title">
+    <div class="container">
 
-<h2>Member Dashboard</h2>
+        <div id="dashboardAlert" class="alert"></div>
 
-<p>Welcome to your WYMF member account.</p>
+        <div class="card">
 
-</div>
+            <div class="profile-header">
 
-<div class="dashboard-card">
+                <div>
 
-<div id="dashboardMessage" class="message"></div>
+                    <h2 id="dashName">
+                        Member
+                    </h2>
 
-<h3 id="welcomeName">
-Welcome
-</h3>
+                    <span
+                        class="profile-id"
+                        id="dashMemberId">
+                        WYMF-2026-00000
+                    </span>
 
-<div class="member-id">
+                </div>
 
-<span>YOUR WYMF MEMBER ID</span>
+                <div>
 
-<strong id="dashboardMemberId">
-Loading...
-</strong>
+                    <span
+                        id="dashStatus"
+                        class="status">
+                        Pending
+                    </span>
 
-</div>
+                </div>
 
-<div style="margin-top:20px;">
+            </div>
 
-<strong>Membership Status:</strong>
+        </div>
 
-<span
-id="dashboardStatus"
-class="status pending">
-Pending
-</span>
 
-</div>
+        <div class="card">
 
-<div class="profile-grid">
+            <div class="profile-grid">
 
-<div class="profile-item">
-<small>Full Name</small>
-<strong id="profileName">-</strong>
-</div>
+                <div>
 
-<div class="profile-item">
-<small>Phone</small>
-<strong id="profilePhone">-</strong>
-</div>
+                    <img
+                        id="dashPhoto"
+                        class="profile-photo"
+                        src="logo.png"
+                        alt="Member Photo">
 
-<div class="profile-item">
-<small>Email</small>
-<strong id="profileEmail">-</strong>
-</div>
+                </div>
 
-<div class="profile-item">
-<small>Date of Birth</small>
-<strong id="profileDob">-</strong>
-</div>
+                <div>
 
-<div class="profile-item">
-<small>Gender</small>
-<strong id="profileGender">-</strong>
-</div>
+                    <h3>Personal Information</h3>
 
-<div class="profile-item">
-<small>Marital Status</small>
-<strong id="profileMarital">-</strong>
-</div>
+                    <div class="info-grid">
 
-<div class="profile-item">
-<small>State</small>
-<strong id="profileState">-</strong>
-</div>
+                        <div class="info-item">
+                            <small>Full Name</small>
+                            <span id="infoName">-</span>
+                        </div>
 
-<div class="profile-item">
-<small>LGA</small>
-<strong id="profileLga">-</strong>
-</div>
+                        <div class="info-item">
+                            <small>Phone</small>
+                            <span id="infoPhone">-</span>
+                        </div>
 
-<div class="profile-item">
-<small>Village / Town</small>
-<strong id="profileTown">-</strong>
-</div>
+                        <div class="info-item">
+                            <small>Email</small>
+                            <span id="infoEmail">-</span>
+                        </div>
 
-<div class="profile-item">
-<small>Occupation</small>
-<strong id="profileOccupation">-</strong>
-</div>
+                        <div class="info-item">
+                            <small>Date of Birth</small>
+                            <span id="infoDob">-</span>
+                        </div>
 
-<div class="profile-item">
-<small>Education</small>
-<strong id="profileEducation">-</strong>
-</div>
+                        <div class="info-item">
+                            <small>Gender</small>
+                            <span id="infoGender">-</span>
+                        </div>
 
-</div>
+                        <div class="info-item">
+                            <small>Marital Status</small>
+                            <span id="infoMarital">-</span>
+                        </div>
 
-<div class="form-actions">
+                        <div class="info-item">
+                            <small>State</small>
+                            <span id="infoState">-</span>
+                        </div>
 
-<button
-class="btn btn-danger"
-onclick="logout()">
-Logout
-</button>
+                        <div class="info-item">
+                            <small>LGA</small>
+                            <span id="infoLga">-</span>
+                        </div>
 
-</div>
+                        <div class="info-item">
+                            <small>Village/Town</small>
+                            <span id="infoVillage">-</span>
+                        </div>
 
-</div>
+                        <div class="info-item">
+                            <small>Occupation</small>
+                            <span id="infoOccupation">-</span>
+                        </div>
 
-</div>
+                        <div class="info-item">
+                            <small>Education</small>
+                            <span id="infoEducation">-</span>
+                        </div>
+
+                        <div class="info-item">
+                            <small>NIN</small>
+                            <span id="infoNin">Not provided</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="btn-row">
+
+            <button
+                class="btn btn-danger"
+                onclick="logout()">
+                🚪 Logout
+            </button>
+
+            <button
+                class="btn btn-primary"
+                onclick="showView('home')">
+                ← Home
+            </button>
+
+        </div>
+
+    </div>
 
 </section>
 
 
 <!-- ================= CONTACT ================= -->
 
-<section id="contact">
+<section id="contact" class="view">
 
-<div class="container">
+    <div class="page-header">
+        <h1>Contact Support</h1>
+        <p>Muna nan domin taimaka maka</p>
+    </div>
 
-<div class="section-title">
+    <div class="container">
 
-<h2>Contact Us</h2>
+        <div class="grid-2">
 
-<p>
-Get in touch with Wababe Youths Mobilization Forum.
-</p>
+            <div class="card">
 
-</div>
+                <h2>📱 WhatsApp</h2>
 
-<div class="about-grid">
+                <p>
+                    Tuntuɓe mu ta WhatsApp domin samun bayanai.
+                </p>
 
-<div class="about-box">
+                <br>
 
-<h3>WYMF Contact</h3>
+                <a
+                href="https://wa.me/2348106414154"
+                target="_blank"
+                class="btn btn-success"
+                style="text-decoration:none">
+                    Open WhatsApp
+                </a>
 
-<p>📍 Location: Wababe</p>
+            </div>
 
-<p>📞 Phone: Coming Soon</p>
+            <div class="card">
 
-<p>📧 Email: Coming Soon</p>
+                <h2>✉️ Email</h2>
 
-</div>
+                <p>
+                    Aiko mana da saƙo ta Gmail.
+                </p>
 
-<div class="about-box">
+                <br>
 
-<h3>WababeDigitalCentre</h3>
+                <a
+                href="mailto:wababedigitalcentre@gmail.com"
+                class="btn btn-primary"
+                style="text-decoration:none">
+                    Send Email
+                </a>
 
-<p>
-For websites, apps, portals, invitation cards,
-wedding videos and other digital services:
-</p>
+            </div>
 
-<div class="contact-buttons"
-style="justify-content:flex-start;">
+        </div>
 
-<a
-class="btn whatsapp"
-href="https://wa.me/2348106414154?text=Assalamu%20alaikum%2C%20ina%20bukatar%20bayani%20game%20da%20Digital%20Services%20dinku."
-target="_blank">
-WhatsApp
-</a>
 
-<a
-class="btn gmail"
-href="mailto:wababedigitalcentre@gmail.com?subject=Digital%20Service%20Inquiry">
-Gmail
-</a>
+        <div class="card">
 
-</div>
+            <h2>Send a Message</h2>
 
-</div>
+            <div id="contactAlert" class="alert"></div>
 
-</div>
+            <form id="contactForm">
 
-</div>
+                <div class="form-group">
+                    <label>Name</label>
+                    <input
+                        type="text"
+                        id="contactName"
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <label>Email / Phone</label>
+                    <input
+                        type="text"
+                        id="contactContact"
+                        required>
+                </div>
+
+                <div class="form-group">
+                    <label>Message</label>
+                    <textarea
+                        id="contactMessage"
+                        rows="5"
+                        required></textarea>
+                </div>
+
+                <button
+                    type="submit"
+                    class="btn btn-primary">
+                    Send Message
+                </button>
+
+            </form>
+
+        </div>
+
+        <button
+            class="btn btn-primary"
+            onclick="showView('home')">
+            ← Back Home
+        </button>
+
+    </div>
 
 </section>
 
@@ -1544,60 +1781,85 @@ Gmail
 
 <footer>
 
-<div class="footer-grid">
+    <div class="footer-inner">
 
-<div class="footer-col">
+        <div>
 
-<h3>Wababe Youths Mobilization Forum</h3>
+            <h3>Wababe Youths Mobilization Forum</h3>
 
-<p>
-United youths. Responsible leadership.
-Community development.
-</p>
+            <p>
+                Ƙarfi a Haɗin Kai, Ci Gaba a Tare.
+            </p>
 
-</div>
+        </div>
 
-<div class="footer-col">
+        <div>
 
-<h3>Quick Links</h3>
+            <h3>Quick Links</h3>
 
-<a href="#home">Home</a>
-<a href="#about">About Us</a>
-<a href="#activities">Activities</a>
-<a href="#digital">Digital Services</a>
-<a href="#events">Events</a>
+            <ul>
+                <li>
+                    <button class="link-btn"
+                            onclick="showView('home')">
+                        Home
+                    </button>
+                </li>
 
-</div>
+                <li>
+                    <button class="link-btn"
+                            onclick="showView('about')">
+                        About Us
+                    </button>
+                </li>
 
-<div class="footer-col">
+                <li>
+                    <button class="link-btn"
+                            onclick="showView('register')">
+                        Membership
+                    </button>
+                </li>
 
-<h3>Membership</h3>
+                <li>
+                    <button class="link-btn"
+                            onclick="showView('contact')">
+                        Contact
+                    </button>
+                </li>
+            </ul>
 
-<a href="#register">Register</a>
-<a href="#login">Member Login</a>
-<a href="#dashboard">Dashboard</a>
+        </div>
 
-</div>
+        <div>
 
-</div>
+            <h3>Membership</h3>
 
-<div class="copyright">
+            <p>
+                Become a member of Wababe Youths Mobilization Forum.
+            </p>
 
-© 2026 Wababe Youths Mobilization Forum.
-All Rights Reserved.
+            <br>
 
-<br>
+            <button
+                class="btn btn-gold"
+                onclick="showView('register')">
+                Register Now
+            </button>
 
-Digital Services by WababeDigitalCentre
+        </div>
 
-</div>
+    </div>
+
+    <div class="footer-bottom">
+
+        © 2026 Wababe Youths Mobilization Forum.
+        All Rights Reserved.
+
+    </div>
 
 </footer>
 
 
-<!-- ===================================================== -->
-<!-- FIREBASE -->
-<!-- ===================================================== -->
+<!-- ================= FIREBASE ================= -->
 
 <script type="module">
 
@@ -1608,11 +1870,11 @@ import {
     getAuth,
     createUserWithEmailAndPassword,
     signInWithEmailAndPassword,
-    signOut,
-    onAuthStateChanged,
-    sendPasswordResetEmail,
+    signInWithPhoneNumber,
     RecaptchaVerifier,
-    signInWithPhoneNumber
+    sendPasswordResetEmail,
+    onAuthStateChanged,
+    signOut
 }
 from "https://www.gstatic.com/firebasejs/11.10.0/firebase-auth.js";
 
@@ -1621,6 +1883,11 @@ import {
     doc,
     setDoc,
     getDoc,
+    collection,
+    addDoc,
+    getDocs,
+    query,
+    where,
     serverTimestamp
 }
 from "https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js";
@@ -1647,7 +1914,6 @@ const firebaseConfig = {
 
     appId:
     "1:772603286711:web:39f010d1d91b5482046932"
-
 };
 
 
@@ -1660,22 +1926,95 @@ const auth = getAuth(app);
 const db = getFirestore(app);
 
 
-/* ================= HELPERS ================= */
+/* ================= GLOBAL PHONE CONFIRMATION ================= */
 
-window.showMessage = function(id,text,type){
+let confirmationResult = null;
+let recaptchaVerifier = null;
 
-    const box = document.getElementById(id);
 
-    box.className = "message " + type;
+/* ================= NAVIGATION ================= */
 
-    box.textContent = text;
+window.showView = function(viewName){
+
+    document
+    .querySelectorAll(".view")
+    .forEach(view => {
+        view.classList.remove("active");
+    });
+
+    const target =
+    document.getElementById(viewName);
+
+    if(target){
+        target.classList.add("active");
+    }
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+
+    document
+    .getElementById("navLinks")
+    ?.classList.remove("open");
+};
+
+
+/* ================= MOBILE MENU ================= */
+
+window.toggleMenu = function(){
+
+    document
+    .getElementById("navLinks")
+    .classList.toggle("open");
 
 };
 
 
+/* ================= PASSWORD EYE ================= */
+
+window.togglePassword = function(id,button){
+
+    const input =
+    document.getElementById(id);
+
+    if(input.type === "password"){
+
+        input.type = "text";
+
+        button.textContent = "🙈";
+
+    }else{
+
+        input.type = "password";
+
+        button.textContent = "👁️";
+    }
+};
+
+
+/* ================= ALERT ================= */
+
+function showAlert(id,message,type="error"){
+
+    const el =
+    document.getElementById(id);
+
+    if(!el) return;
+
+    el.textContent = message;
+
+    el.className =
+    "alert show " + type;
+
+}
+
+
+/* ================= NORMALIZE PHONE ================= */
+
 function normalizePhone(phone){
 
-    phone = phone.trim();
+    phone = phone.trim().replace(/\s+/g,"");
 
     if(phone.startsWith("0")){
         return "+234" + phone.substring(1);
@@ -1689,26 +2028,24 @@ function normalizePhone(phone){
 }
 
 
-/*
-   Temporary Member ID generator.
-
-   Later we can move Member ID generation
-   completely to a secure backend/Admin process.
-*/
+/* ================= MEMBER ID ================= */
 
 function generateMemberId(){
 
-    const year = new Date().getFullYear();
+    const year =
+    new Date().getFullYear();
 
-    const randomNumber =
-        Math.floor(10000 + Math.random() * 90000);
+    const random =
+    Math.floor(10000 + Math.random() * 90000);
 
-    return `WYMF-${year}-${randomNumber}`;
+    return `WYMF-${year}-${random}`;
 
 }
 
 
-/* ================= REGISTRATION ================= */
+/* =========================================================
+   REGISTER
+========================================================= */
 
 document
 .getElementById("registerForm")
@@ -1716,157 +2053,142 @@ document
 
     e.preventDefault();
 
-    const button =
-        document.getElementById("registerBtn");
+    const btn =
+    document.getElementById("registerBtn");
 
-    button.disabled = true;
+    const name =
+    document.getElementById("regName").value.trim();
+
+    const phone =
+    normalizePhone(
+        document.getElementById("regPhone").value
+    );
+
+    const email =
+    document.getElementById("regEmail").value.trim();
+
+    const password =
+    document.getElementById("regPassword").value;
+
+    const confirmPassword =
+    document.getElementById("regConfirmPassword").value;
+
+
+    if(password !== confirmPassword){
+
+        showAlert(
+            "registerAlert",
+            "Passwords ba su yi daidai ba.",
+            "error"
+        );
+
+        return;
+    }
+
+
+    if(password.length < 6){
+
+        showAlert(
+            "registerAlert",
+            "Password dole ya kasance aƙalla characters 6.",
+            "error"
+        );
+
+        return;
+    }
+
+
+    btn.disabled = true;
+    btn.textContent = "Ana registration...";
+
 
     try{
 
-        const fullName =
-            document.getElementById("fullName").value.trim();
-
-        const phone =
-            normalizePhone(
-                document.getElementById("phone").value
-            );
-
-        const email =
-            document.getElementById("email").value.trim();
-
-        const dob =
-            document.getElementById("dob").value;
-
-        const gender =
-            document.getElementById("gender").value;
-
-        const maritalStatus =
-            document.getElementById("maritalStatus").value;
-
-        const state =
-            document.getElementById("state").value.trim();
-
-        const lga =
-            document.getElementById("lga").value.trim();
-
-        const town =
-            document.getElementById("town").value.trim();
-
-        const address =
-            document.getElementById("address").value.trim();
-
-        const occupation =
-            document.getElementById("occupation").value.trim();
-
-        const education =
-            document.getElementById("education").value.trim();
-
-        const nin =
-            document.getElementById("nin").value.trim();
-
-        const password =
-            document.getElementById("password").value;
-
-        const confirmPassword =
-            document.getElementById("confirmPassword").value;
-
-
-        if(password !== confirmPassword){
-
-            showMessage(
-                "registerMessage",
-                "Password da Confirm Password ba su yi daidai ba.",
-                "error"
-            );
-
-            button.disabled = false;
-
-            return;
-        }
-
-
-        if(nin && !/^\d{11}$/.test(nin)){
-
-            showMessage(
-                "registerMessage",
-                "NIN idan za a saka dole ya kasance lambobi 11.",
-                "error"
-            );
-
-            button.disabled = false;
-
-            return;
-        }
-
-
         /*
-           Email registration
-        */
+         * IMPORTANT:
+         * Email registration uses Firebase Authentication.
+         *
+         * Firebase itself prevents the same email from
+         * creating another account.
+         */
 
         if(email){
 
-            const credential =
-                await createUserWithEmailAndPassword(
-                    auth,
-                    email,
-                    password
-                );
+            const userCredential =
+            await createUserWithEmailAndPassword(
+                auth,
+                email,
+                password
+            );
 
-            const uid = credential.user.uid;
+            const user =
+            userCredential.user;
 
             const memberId =
-                generateMemberId();
+            generateMemberId();
 
 
             await setDoc(
-                doc(db,"members",uid),
+                doc(db,"members",user.uid),
                 {
 
-                    memberId: memberId,
+                    uid:user.uid,
 
-                    role: "member",
+                    memberId:memberId,
 
-                    status: "pending",
+                    fullName:name,
 
-                    fullName: fullName,
+                    phone:phone,
 
-                    phone: phone,
+                    email:email,
 
-                    email: email,
+                    dateOfBirth:
+                    document.getElementById("regDob").value,
 
-                    dateOfBirth: dob,
+                    gender:
+                    document.getElementById("regGender").value,
 
-                    gender: gender,
+                    maritalStatus:
+                    document.getElementById("regMarital").value,
 
-                    maritalStatus: maritalStatus,
+                    state:
+                    document.getElementById("regState").value,
 
-                    state: state,
+                    lga:
+                    document.getElementById("regLga").value,
 
-                    lga: lga,
+                    village:
+                    document.getElementById("regVillage").value,
 
-                    town: town,
+                    residentialAddress:
+                    document.getElementById("regAddress").value,
 
-                    address: address,
+                    occupation:
+                    document.getElementById("regOccupation").value,
 
-                    occupation: occupation,
+                    educationalQualification:
+                    document.getElementById("regEducation").value,
 
-                    education: education,
+                    nin:
+                    document.getElementById("regNin").value.trim() || null,
 
-                    nin: nin || "",
+                    passportPhoto:"",
+                    
+                    status:"pending",
 
-                    passportPhoto: "",
+                    role:"member",
 
-                    createdAt: serverTimestamp()
+                    createdAt:serverTimestamp()
 
                 }
             );
 
 
-            showMessage(
-                "registerMessage",
-                "An yi registration successfully! Member ID ɗinka: " +
+            showAlert(
+                "registerAlert",
+                "Registration ta yi nasara! Member ID ɗinka: " +
                 memberId +
-                ". Ana jiran Admin ya amince da account ɗinka.",
+                ". Ana kai ka dashboard...",
                 "success"
             );
 
@@ -1876,140 +2198,303 @@ document
             .reset();
 
 
-            showDashboard(uid);
+            setTimeout(()=>{
+                showView("dashboard");
+            },1500);
 
-        }
-
-        else{
+        }else{
 
             /*
-              Phone-only registration.
+             * Phone-only registration:
+             *
+             * Firebase Phone Authentication does not use
+             * password. Therefore we don't create a phone
+             * account here until OTP registration flow is
+             * enabled.
+             */
 
-              Firebase Phone Auth requires SMS OTP.
-              Password is not used for phone authentication.
-            */
-
-            showMessage(
-                "registerMessage",
-                "Phone-only registration yana amfani da SMS OTP. Za mu kunna wannan tsarin a mataki na gaba bayan mun tabbatar da Phone Authentication/reCAPTCHA.",
-                "error"
+            showAlert(
+                "registerAlert",
+                "Idan babu Gmail, za a yi registration da Phone + SMS OTP. Wannan tsarin za mu haɗa shi da cikakken OTP registration a mataki na gaba.",
+                "info"
             );
 
         }
 
-    }
-    catch(error){
+    }catch(error){
 
         console.error(error);
 
         let message =
-            "An samu matsala wajen registration.";
+        "An samu matsala wajen registration.";
 
-        if(error.code === "auth/email-already-in-use"){
+        if(
+            error.code ===
+            "auth/email-already-in-use"
+        ){
+
             message =
-            "Wannan Email ɗin an riga an yi amfani da shi.";
+            "Wannan Gmail ɗin an riga an yi registration da shi. Ba za a iya yin duplicate account ba.";
+
+        }else if(
+            error.code ===
+            "auth/invalid-email"
+        ){
+
+            message =
+            "Email address ɗin ba daidai ba ne.";
+
+        }else if(
+            error.code ===
+            "auth/weak-password"
+        ){
+
+            message =
+            "Password ɗin ya yi rauni. Yi amfani da aƙalla characters 6.";
+
         }
 
-        else if(error.code === "auth/weak-password"){
-            message =
-            "Password ya kamata ya kasance aƙalla characters 6.";
-        }
-
-        else if(error.code === "auth/invalid-email"){
-            message =
-            "Email ɗin ba daidai yake ba.";
-        }
-
-        else if(error.code === "permission-denied"){
-            message =
-            "Firebase Firestore Rules sun hana wannan operation.";
-        }
-
-        showMessage(
-            "registerMessage",
+        showAlert(
+            "registerAlert",
             message,
             "error"
         );
 
-    }
+    }finally{
 
-    button.disabled = false;
+        btn.disabled = false;
+        btn.textContent =
+        "📝 Create Membership Account";
+
+    }
 
 });
 
 
-/* ================= EMAIL LOGIN ================= */
+/* =========================================================
+   EMAIL LOGIN
+========================================================= */
 
 document
-.getElementById("emailLoginForm")
-.addEventListener("submit", async function(e){
+.getElementById("loginForm")
+.addEventListener("submit",async function(e){
 
     e.preventDefault();
 
     const email =
-        document.getElementById("loginEmail").value.trim();
+    document.getElementById("loginEmail").value.trim();
 
     const password =
-        document.getElementById("loginPassword").value;
-
-    try{
-
-        const credential =
-            await signInWithEmailAndPassword(
-                auth,
-                email,
-                password
-            );
-
-        await showDashboard(
-            credential.user.uid
-        );
-
-    }
-    catch(error){
-
-        console.error(error);
-
-        let message =
-            "Email ko Password ba daidai ba.";
-
-        if(error.code === "auth/user-not-found"){
-            message = "Ba a samu wannan account ba.";
-        }
-
-        if(error.code === "auth/too-many-requests"){
-            message =
-            "An yi login attempts da yawa. Ka ɗan jira sannan ka sake gwadawa.";
-        }
-
-        showMessage(
-            "emailLoginMessage",
-            message,
-            "error"
-        );
-
-    }
-
-});
+    document.getElementById("loginPassword").value;
 
 
-/* ================= PASSWORD RESET ================= */
+    if(!email || !password){
 
-window.resetPassword = async function(){
-
-    const email =
-        document.getElementById("loginEmail").value.trim();
-
-    if(!email){
-
-        showMessage(
-            "emailLoginMessage",
-            "Da farko ka saka Email ɗinka.",
+        showAlert(
+            "loginAlert",
+            "Shigar da Email da Password.",
             "error"
         );
 
         return;
     }
+
+
+    try{
+
+        await signInWithEmailAndPassword(
+            auth,
+            email,
+            password
+        );
+
+        showAlert(
+            "loginAlert",
+            "An shiga successfully.",
+            "success"
+        );
+
+    }catch(error){
+
+        console.error(error);
+
+        let message =
+        "Email ko Password ba daidai ba ne.";
+
+        if(
+            error.code ===
+            "auth/user-not-found"
+        ){
+
+            message =
+            "Ba a samu account da wannan Email ba.";
+
+        }else if(
+            error.code ===
+            "auth/wrong-password"
+        ){
+
+            message =
+            "Password ba daidai ba ne.";
+
+        }
+
+        showAlert(
+            "loginAlert",
+            message,
+            "error"
+        );
+
+    }
+
+});
+
+
+/* =========================================================
+   PHONE OTP LOGIN
+========================================================= */
+
+window.sendPhoneCode = async function(){
+
+    const phone =
+    normalizePhone(
+        document
+        .getElementById("phoneLoginNumber")
+        .value
+    );
+
+
+    if(!phone){
+
+        showAlert(
+            "loginAlert",
+            "Shigar da Phone Number.",
+            "error"
+        );
+
+        return;
+    }
+
+
+    try{
+
+        if(!recaptchaVerifier){
+
+            recaptchaVerifier =
+            new RecaptchaVerifier(
+                auth,
+                "recaptcha-container",
+                {
+                    size:"normal"
+                }
+            );
+
+        }
+
+
+        confirmationResult =
+        await signInWithPhoneNumber(
+            auth,
+            phone,
+            recaptchaVerifier
+        );
+
+
+        document
+        .getElementById("otpArea")
+        .style.display="block";
+
+
+        showAlert(
+            "loginAlert",
+            "An tura maka OTP ta SMS.",
+            "success"
+        );
+
+
+    }catch(error){
+
+        console.error(error);
+
+        showAlert(
+            "loginAlert",
+            "An kasa tura OTP. Tabbatar Phone Authentication da reCAPTCHA suna aiki a Firebase.",
+            "error"
+        );
+
+    }
+
+};
+
+
+/* ================= VERIFY OTP ================= */
+
+window.verifyPhoneCode = async function(){
+
+    const code =
+    document
+    .getElementById("phoneOtp")
+    .value.trim();
+
+
+    if(!confirmationResult){
+
+        showAlert(
+            "loginAlert",
+            "Da farko danna Send SMS OTP.",
+            "error"
+        );
+
+        return;
+    }
+
+
+    try{
+
+        await confirmationResult.confirm(code);
+
+        showAlert(
+            "loginAlert",
+            "An tabbatar da Phone Number.",
+            "success"
+        );
+
+    }catch(error){
+
+        showAlert(
+            "loginAlert",
+            "OTP ɗin ba daidai ba ne.",
+            "error"
+        );
+
+    }
+
+};
+
+
+/* =========================================================
+   PASSWORD RESET
+========================================================= */
+
+window.resetPassword = async function(){
+
+    const email =
+    document
+    .getElementById("loginEmail")
+    .value.trim();
+
+
+    if(!email){
+
+        showAlert(
+            "loginAlert",
+            "Da farko shigar da Gmail ɗinka a Email field.",
+            "info"
+        );
+
+        return;
+    }
+
 
     try{
 
@@ -2018,18 +2503,17 @@ window.resetPassword = async function(){
             email
         );
 
-        showMessage(
-            "emailLoginMessage",
-            "An aika password reset link zuwa Email ɗinka.",
+        showAlert(
+            "loginAlert",
+            "An tura password reset link zuwa Gmail ɗinka.",
             "success"
         );
 
-    }
-    catch(error){
+    }catch(error){
 
-        showMessage(
-            "emailLoginMessage",
-            "An kasa aika password reset link.",
+        showAlert(
+            "loginAlert",
+            "Ba a iya tura password reset link ba.",
             "error"
         );
 
@@ -2038,319 +2522,24 @@ window.resetPassword = async function(){
 };
 
 
-/* ================= PHONE LOGIN ================= */
-
-let loginConfirmationResult = null;
-
-let loginRecaptcha = null;
-
-
-window.sendLoginOTP = async function(){
-
-    const phone =
-        normalizePhone(
-            document.getElementById("loginPhone").value
-        );
-
-    if(!phone){
-
-        showMessage(
-            "phoneLoginMessage",
-            "Saka Phone Number.",
-            "error"
-        );
-
-        return;
-    }
-
-
-    try{
-
-        if(!loginRecaptcha){
-
-            loginRecaptcha =
-                new RecaptchaVerifier(
-                    auth,
-                    "loginRecaptcha",
-                    {
-                        size:"normal"
-                    }
-                );
-
-        }
-
-
-        loginConfirmationResult =
-            await signInWithPhoneNumber(
-                auth,
-                phone,
-                loginRecaptcha
-            );
-
-
-        document
-        .getElementById("loginOtpBox")
-        .style.display = "block";
-
-
-        showMessage(
-            "phoneLoginMessage",
-            "An aika maka OTP ta SMS.",
-            "success"
-        );
-
-    }
-    catch(error){
-
-        console.error(error);
-
-        showMessage(
-            "phoneLoginMessage",
-            "An kasa aika OTP. Ka tabbatar da Phone Authentication da reCAPTCHA suna aiki a Firebase.",
-            "error"
-        );
-
-    }
-
-};
-
-
-window.verifyLoginOTP = async function(){
-
-    const otp =
-        document
-        .getElementById("loginOtp")
-        .value
-        .trim();
-
-    if(!loginConfirmationResult){
-
-        showMessage(
-            "phoneLoginMessage",
-            "Da farko danna Send OTP.",
-            "error"
-        );
-
-        return;
-    }
-
-    try{
-
-        const credential =
-            await loginConfirmationResult.confirm(
-                otp
-            );
-
-        await showDashboard(
-            credential.user.uid
-        );
-
-    }
-    catch(error){
-
-        showMessage(
-            "phoneLoginMessage",
-            "OTP ba daidai ba ne ko ya ƙare.",
-            "error"
-        );
-
-    }
-
-};
-
-
-/* ================= DASHBOARD ================= */
-
-async function showDashboard(uid){
-
-    try{
-
-        const memberRef =
-            doc(db,"members",uid);
-
-        const memberSnap =
-            await getDoc(memberRef);
-
-
-        if(!memberSnap.exists()){
-
-            showMessage(
-                "emailLoginMessage",
-                "An shiga account, amma ba a samu member profile a Firestore ba.",
-                "error"
-            );
-
-            return;
-        }
-
-
-        const data =
-            memberSnap.data();
-
-
-        document
-        .getElementById("dashboard")
-        .classList.remove("hidden");
-
-
-        document
-        .getElementById("dashboard")
-        .scrollIntoView({
-            behavior:"smooth"
-        });
-
-
-        document
-        .getElementById("welcomeName")
-        .textContent =
-            "Welcome, " +
-            (data.fullName || "Member");
-
-
-        document
-        .getElementById("dashboardMemberId")
-        .textContent =
-            data.memberId || "Pending";
-
-
-        const status =
-            data.status || "pending";
-
-
-        const statusElement =
-            document
-            .getElementById("dashboardStatus");
-
-
-        statusElement.textContent =
-            status.charAt(0).toUpperCase() +
-            status.slice(1);
-
-
-        statusElement.className =
-            "status " + status;
-
-
-        document
-        .getElementById("profileName")
-        .textContent =
-            data.fullName || "-";
-
-
-        document
-        .getElementById("profilePhone")
-        .textContent =
-            data.phone || "-";
-
-
-        document
-        .getElementById("profileEmail")
-        .textContent =
-            data.email || "-";
-
-
-        document
-        .getElementById("profileDob")
-        .textContent =
-            data.dateOfBirth || "-";
-
-
-        document
-        .getElementById("profileGender")
-        .textContent =
-            data.gender || "-";
-
-
-        document
-        .getElementById("profileMarital")
-        .textContent =
-            data.maritalStatus || "-";
-
-
-        document
-        .getElementById("profileState")
-        .textContent =
-            data.state || "-";
-
-
-        document
-        .getElementById("profileLga")
-        .textContent =
-            data.lga || "-";
-
-
-        document
-        .getElementById("profileTown")
-        .textContent =
-            data.town || "-";
-
-
-        document
-        .getElementById("profileOccupation")
-        .textContent =
-            data.occupation || "-";
-
-
-        document
-        .getElementById("profileEducation")
-        .textContent =
-            data.education || "-";
-
-    }
-    catch(error){
-
-        console.error(error);
-
-        showMessage(
-            "dashboardMessage",
-            "An kasa ɗauko bayanan member.",
-            "error"
-        );
-
-    }
-
-}
-
-
-/* ================= LOGOUT ================= */
-
-window.logout = async function(){
-
-    try{
-
-        await signOut(auth);
-
-        document
-        .getElementById("dashboard")
-        .classList.add("hidden");
-
-        window.location.hash =
-            "home";
-
-        window.scrollTo({
-            top:0,
-            behavior:"smooth"
-        });
-
-    }
-    catch(error){
-
-        console.error(error);
-
-    }
-
-};
-
-
-/* ================= AUTH STATE ================= */
+/* =========================================================
+   AUTH STATE
+========================================================= */
 
 onAuthStateChanged(
     auth,
-    function(user){
+    async function(user){
 
         if(user){
 
-            showDashboard(user.uid);
+            await loadDashboard(user);
+
+        }else{
+
+            /*
+             * Do nothing.
+             * User remains on current public page.
+             */
 
         }
 
@@ -2358,57 +2547,363 @@ onAuthStateChanged(
 );
 
 
-/* ================= MENU ================= */
+/* =========================================================
+   LOAD DASHBOARD
+========================================================= */
 
-window.toggleMenu = function(){
+async function loadDashboard(user){
 
-    document
-    .getElementById("navMenu")
-    .classList.toggle("active");
+    try{
+
+        const memberRef =
+        doc(db,"members",user.uid);
+
+        const memberSnap =
+        await getDoc(memberRef);
+
+
+        if(!memberSnap.exists()){
+
+            showView("home");
+
+            return;
+        }
+
+
+        const data =
+        memberSnap.data();
+
+
+        document
+        .getElementById("dashName")
+        .textContent =
+        data.fullName || "Member";
+
+
+        document
+        .getElementById("dashMemberId")
+        .textContent =
+        data.memberId || "Not Assigned";
+
+
+        const status =
+        document
+        .getElementById("dashStatus");
+
+
+        status.textContent =
+        data.status || "pending";
+
+
+        status.className =
+        "status " +
+        (
+            data.status === "approved"
+            ? "approved"
+            : data.status === "rejected"
+            ? "rejected"
+            : ""
+        );
+
+
+        document
+        .getElementById("infoName")
+        .textContent =
+        data.fullName || "-";
+
+
+        document
+        .getElementById("infoPhone")
+        .textContent =
+        data.phone || "-";
+
+
+        document
+        .getElementById("infoEmail")
+        .textContent =
+        data.email || "-";
+
+
+        document
+        .getElementById("infoDob")
+        .textContent =
+        data.dateOfBirth || "-";
+
+
+        document
+        .getElementById("infoGender")
+        .textContent =
+        data.gender || "-";
+
+
+        document
+        .getElementById("infoMarital")
+        .textContent =
+        data.maritalStatus || "-";
+
+
+        document
+        .getElementById("infoState")
+        .textContent =
+        data.state || "-";
+
+
+        document
+        .getElementById("infoLga")
+        .textContent =
+        data.lga || "-";
+
+
+        document
+        .getElementById("infoVillage")
+        .textContent =
+        data.village || "-";
+
+
+        document
+        .getElementById("infoOccupation")
+        .textContent =
+        data.occupation || "-";
+
+
+        document
+        .getElementById("infoEducation")
+        .textContent =
+        data.educationalQualification || "-";
+
+
+        document
+        .getElementById("infoNin")
+        .textContent =
+        data.nin || "Not provided";
+
+
+        if(data.passportPhoto){
+
+            document
+            .getElementById("dashPhoto")
+            .src =
+            data.passportPhoto;
+
+        }
+
+
+    }catch(error){
+
+        console.error(error);
+
+    }
+
+}
+
+
+/* =========================================================
+   LOGOUT
+========================================================= */
+
+window.logout = async function(){
+
+    try{
+
+        await signOut(auth);
+
+        showView("home");
+
+    }catch(error){
+
+        console.error(error);
+
+    }
 
 };
 
 
-window.closeMenu = function(){
+/* =========================================================
+   CONTACT MESSAGE
+========================================================= */
 
-    document
-    .getElementById("navMenu")
-    .classList.remove("active");
+document
+.getElementById("contactForm")
+.addEventListener(
+"submit",
+async function(e){
 
-};
-
-
-/* ================= LOGIN TABS ================= */
-
-window.showLoginTab =
-function(panelId,button){
-
-    document
-    .querySelectorAll(".auth-panel")
-    .forEach(function(panel){
-
-        panel.classList.remove("active");
-
-    });
+    e.preventDefault();
 
 
-    document
-    .querySelectorAll(".auth-tab")
-    .forEach(function(tab){
+    try{
 
-        tab.classList.remove("active");
+        await addDoc(
+            collection(db,"contactMessages"),
+            {
 
-    });
+                name:
+                document
+                .getElementById("contactName")
+                .value.trim(),
+
+                contact:
+                document
+                .getElementById("contactContact")
+                .value.trim(),
+
+                message:
+                document
+                .getElementById("contactMessage")
+                .value.trim(),
+
+                createdAt:
+                serverTimestamp()
+
+            }
+        );
 
 
-    document
-    .getElementById(panelId)
-    .classList.add("active");
+        showAlert(
+            "contactAlert",
+            "An tura saƙonka successfully.",
+            "success"
+        );
 
 
-    button.classList.add("active");
+        document
+        .getElementById("contactForm")
+        .reset();
 
-};
+
+    }catch(error){
+
+        console.error(error);
+
+        showAlert(
+            "contactAlert",
+            "An kasa tura saƙon.",
+            "error"
+        );
+
+    }
+
+});
+
+
+/* =========================================================
+   LOAD EVENTS FROM FIRESTORE
+========================================================= */
+
+async function loadEvents(){
+
+    const container =
+    document.getElementById("eventsContainer");
+
+    try{
+
+        const snapshot =
+        await getDocs(
+            collection(db,"events")
+        );
+
+
+        if(snapshot.empty){
+
+            container.innerHTML = `
+
+                <div class="card">
+
+                    <h3>📅 No Events Yet</h3>
+
+                    <p>
+                        Babu events da aka saka a yanzu.
+                    </p>
+
+                </div>
+
+            `;
+
+            return;
+        }
+
+
+        container.innerHTML = "";
+
+
+        snapshot.forEach(docSnap => {
+
+            const data =
+            docSnap.data();
+
+
+            const card =
+            document.createElement("div");
+
+            card.className="card";
+
+
+            card.innerHTML = `
+
+                <h3>
+                    📅 ${
+                        escapeHtml(
+                            data.title || "Event"
+                        )
+                    }
+                </h3>
+
+                <p>
+                    ${
+                        escapeHtml(
+                            data.description || ""
+                        )
+                    }
+                </p>
+
+            `;
+
+
+            container.appendChild(card);
+
+        });
+
+
+    }catch(error){
+
+        console.error(error);
+
+        container.innerHTML = `
+
+            <div class="card">
+
+                <h3>📅 Events</h3>
+
+                <p>
+                    Ba a samu events a yanzu ba.
+                </p>
+
+            </div>
+
+        `;
+
+    }
+
+}
+
+
+/* ================= SAFE HTML ================= */
+
+function escapeHtml(value){
+
+    return String(value)
+    .replaceAll("&","&amp;")
+    .replaceAll("<","&lt;")
+    .replaceAll(">","&gt;")
+    .replaceAll('"',"&quot;")
+    .replaceAll("'","&#039;");
+
+}
+
+
+/* ================= LOAD EVENTS ================= */
+
+loadEvents();
 
 </script>
 
