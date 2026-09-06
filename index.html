@@ -1,716 +1,2414 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Wababe Youths Mobilization Forum</title>
+<title>Wababe Youths Mobilization Forum</title>
 
-    <meta name="description"
-          content="Official website of Wababe Youths Mobilization Forum. Join us, stay informed and participate in community development.">
+<meta name="description"
+content="Official website and membership portal of Wababe Youths Mobilization Forum.">
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-        html {
-            scroll-behavior: smooth;
-        }
+html{
+    scroll-behavior:smooth;
+}
 
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #f5f7fa;
-            color: #1f2937;
-            line-height: 1.6;
-        }
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f5f7fa;
+    color:#1f2937;
+    line-height:1.6;
+}
 
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
+a{
+    text-decoration:none;
+    color:inherit;
+}
 
-        /* HEADER */
-        header {
-            background: #0b5d3b;
-            color: white;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
-        }
+button,input,select,textarea{
+    font:inherit;
+}
 
-        .navbar {
-            max-width: 1150px;
-            margin: auto;
-            padding: 15px 20px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
+header{
+    background:#0b5d3b;
+    color:white;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 2px 10px rgba(0,0,0,.15);
+}
 
-        .brand {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
+.navbar{
+    max-width:1150px;
+    margin:auto;
+    padding:12px 18px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
 
-        .logo {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            background: white;
-            color: #0b5d3b;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            font-size: 14px;
-        }
+.brand{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
 
-        .brand-text h1 {
-            font-size: 16px;
-            line-height: 1.2;
-        }
+.logo{
+    width:48px;
+    height:48px;
+    border-radius:50%;
+    background:white;
+    color:#0b5d3b;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:bold;
+    font-size:13px;
+}
 
-        .brand-text span {
-            font-size: 11px;
-            opacity: 0.85;
-        }
+.brand-text h1{
+    font-size:16px;
+    line-height:1.2;
+}
 
-        nav {
-            display: flex;
-            gap: 20px;
-            align-items: center;
-        }
+.brand-text span{
+    font-size:11px;
+    opacity:.85;
+}
 
-        nav a {
-            font-size: 14px;
-            font-weight: bold;
-        }
+nav{
+    display:flex;
+    gap:18px;
+    align-items:center;
+}
 
-        nav a:hover {
-            opacity: 0.75;
-        }
+nav a{
+    font-size:14px;
+    font-weight:bold;
+}
 
-        .menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 28px;
-            cursor: pointer;
-        }
+nav a:hover{
+    opacity:.75;
+}
 
-        /* HERO */
-        .hero {
-            min-height: 570px;
-            background:
-                linear-gradient(rgba(0,0,0,0.58), rgba(0,0,0,0.58)),
-                linear-gradient(135deg, #0b5d3b, #128451);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            padding: 70px 20px;
-        }
+.menu-btn{
+    display:none;
+    background:none;
+    border:0;
+    color:white;
+    font-size:28px;
+    cursor:pointer;
+}
 
-        .hero-content {
-            max-width: 850px;
-        }
+.hero{
+    min-height:570px;
+    background:
+    linear-gradient(rgba(0,0,0,.58),rgba(0,0,0,.58)),
+    linear-gradient(135deg,#0b5d3b,#128451);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:white;
+    padding:70px 20px;
+}
 
-        .hero h2 {
-            font-size: 46px;
-            margin-bottom: 20px;
-            line-height: 1.15;
-        }
+.hero-content{
+    max-width:850px;
+}
 
-        .hero p {
-            max-width: 700px;
-            margin: auto;
-            font-size: 18px;
-            opacity: 0.95;
-        }
+.hero h2{
+    font-size:46px;
+    margin-bottom:20px;
+    line-height:1.15;
+}
 
-        .hero-buttons {
-            margin-top: 30px;
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
+.hero p{
+    max-width:700px;
+    margin:auto;
+    font-size:18px;
+}
 
-        .btn {
-            padding: 13px 25px;
-            border-radius: 7px;
-            font-weight: bold;
-            display: inline-block;
-            transition: 0.2s;
-        }
+.hero-buttons{
+    margin-top:30px;
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
 
-        .btn-primary {
-            background: white;
-            color: #0b5d3b;
-        }
+.btn{
+    padding:13px 25px;
+    border-radius:7px;
+    font-weight:bold;
+    display:inline-block;
+    border:0;
+    cursor:pointer;
+    transition:.2s;
+}
 
-        .btn-secondary {
-            border: 2px solid white;
-            color: white;
-        }
+.btn:hover{
+    transform:translateY(-2px);
+}
 
-        .btn:hover {
-            transform: translateY(-2px);
-        }
+.btn-primary{
+    background:white;
+    color:#0b5d3b;
+}
 
-        /* SECTION */
-        section {
-            padding: 70px 20px;
-        }
+.btn-green{
+    background:#0b5d3b;
+    color:white;
+}
 
-        .container {
-            max-width: 1150px;
-            margin: auto;
-        }
+.btn-outline{
+    background:transparent;
+    border:2px solid white;
+    color:white;
+}
 
-        .section-title {
-            text-align: center;
-            margin-bottom: 45px;
-        }
+.btn-danger{
+    background:#b91c1c;
+    color:white;
+}
 
-        .section-title h2 {
-            font-size: 32px;
-            color: #0b5d3b;
-            margin-bottom: 10px;
-        }
+section{
+    padding:70px 20px;
+}
 
-        .section-title p {
-            color: #6b7280;
-            max-width: 700px;
-            margin: auto;
-        }
+.container{
+    max-width:1150px;
+    margin:auto;
+}
 
-        /* ABOUT */
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: center;
-        }
+.section-title{
+    text-align:center;
+    margin-bottom:45px;
+}
 
-        .about-box {
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.07);
-        }
+.section-title h2{
+    font-size:32px;
+    color:#0b5d3b;
+    margin-bottom:10px;
+}
 
-        .about-box h3 {
-            color: #0b5d3b;
-            margin-bottom: 15px;
-        }
+.section-title p{
+    color:#6b7280;
+    max-width:700px;
+    margin:auto;
+}
 
-        /* FEATURES */
-        .features {
-            background: white;
-        }
+/* ABOUT */
 
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-        }
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:30px;
+}
 
-        .feature-card {
-            background: #f5f7fa;
-            padding: 30px 22px;
-            border-radius: 12px;
-            text-align: center;
-            border: 1px solid #e5e7eb;
-        }
+.about-box{
+    background:white;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 4px 20px rgba(0,0,0,.07);
+}
 
-        .feature-icon {
-            font-size: 40px;
-            margin-bottom: 15px;
-        }
+.about-box h3{
+    color:#0b5d3b;
+    margin-bottom:15px;
+}
 
-        .feature-card h3 {
-            color: #0b5d3b;
-            margin-bottom: 10px;
-        }
+/* ACTIVITIES */
 
-        /* CTA */
-        .cta {
-            background: #0b5d3b;
-            color: white;
-            text-align: center;
-        }
+.features{
+    background:white;
+}
 
-        .cta h2 {
-            font-size: 32px;
-            margin-bottom: 12px;
-        }
+.feature-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
 
-        .cta p {
-            max-width: 650px;
-            margin: 0 auto 25px;
-        }
+.feature-card{
+    background:#f5f7fa;
+    padding:30px 22px;
+    border-radius:12px;
+    text-align:center;
+    border:1px solid #e5e7eb;
+}
 
-        /* FOOTER */
-        footer {
-            background: #10251c;
-            color: white;
-            padding: 45px 20px 20px;
-        }
+.feature-icon{
+    font-size:40px;
+    margin-bottom:15px;
+}
 
-        .footer-grid {
-            max-width: 1150px;
-            margin: auto;
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            gap: 40px;
-        }
+.feature-card h3{
+    color:#0b5d3b;
+    margin-bottom:10px;
+}
 
-        .footer-col h3 {
-            margin-bottom: 15px;
-        }
+/* DIGITAL AD */
 
-        .footer-col p,
-        .footer-col a {
-            color: #cbd5d1;
-            font-size: 14px;
-            display: block;
-            margin-bottom: 8px;
-        }
+.digital-ad{
+    background:linear-gradient(135deg,#062e20,#0b5d3b);
+    color:white;
+}
 
-        .copyright {
-            max-width: 1150px;
-            margin: 30px auto 0;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255,255,255,0.15);
-            text-align: center;
-            color: #9ca3af;
-            font-size: 13px;
-        }
+.digital-ad .section-title h2{
+    color:white;
+}
 
-        /* MOBILE */
-        @media (max-width: 768px) {
+.digital-ad .section-title p{
+    color:#d8eee4;
+}
 
-            .navbar {
-                padding: 12px 15px;
-            }
+.service-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
 
-            nav {
-                display: none;
-                position: absolute;
-                top: 72px;
-                left: 0;
-                width: 100%;
-                background: #0b5d3b;
-                flex-direction: column;
-                padding: 20px;
-                gap: 18px;
-            }
+.service{
+    background:rgba(255,255,255,.1);
+    border:1px solid rgba(255,255,255,.2);
+    border-radius:10px;
+    padding:18px;
+    text-align:center;
+}
 
-            nav.active {
-                display: flex;
-            }
+.service-icon{
+    font-size:30px;
+    margin-bottom:7px;
+}
 
-            .menu-btn {
-                display: block;
-            }
+.digital-contact{
+    margin-top:35px;
+    text-align:center;
+}
 
-            .hero {
-                min-height: 520px;
-            }
+.digital-contact h3{
+    font-size:25px;
+    margin-bottom:10px;
+}
 
-            .hero h2 {
-                font-size: 34px;
-            }
+.contact-buttons{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    flex-wrap:wrap;
+    margin-top:20px;
+}
 
-            .hero p {
-                font-size: 16px;
-            }
+.whatsapp{
+    background:#25D366;
+    color:white;
+}
 
-            .about-grid {
-                grid-template-columns: 1fr;
-            }
+.gmail{
+    background:#ea4335;
+    color:white;
+}
 
-            .feature-grid {
-                grid-template-columns: 1fr;
-            }
+/* CTA */
 
-            .footer-grid {
-                grid-template-columns: 1fr;
-            }
+.cta{
+    background:#0b5d3b;
+    color:white;
+    text-align:center;
+}
 
-            section {
-                padding: 55px 18px;
-            }
-        }
-    </style>
+.cta h2{
+    font-size:32px;
+    margin-bottom:12px;
+}
+
+.cta p{
+    max-width:650px;
+    margin:0 auto 25px;
+}
+
+/* FORMS */
+
+.form-section{
+    background:#eef5f1;
+}
+
+.form-card{
+    max-width:900px;
+    margin:auto;
+    background:white;
+    padding:30px;
+    border-radius:14px;
+    box-shadow:0 4px 25px rgba(0,0,0,.08);
+}
+
+.form-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+}
+
+.form-group{
+    display:flex;
+    flex-direction:column;
+}
+
+.form-group.full{
+    grid-column:1/-1;
+}
+
+.form-group label{
+    font-weight:bold;
+    margin-bottom:6px;
+    color:#374151;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+    width:100%;
+    padding:12px;
+    border:1px solid #d1d5db;
+    border-radius:7px;
+    outline:none;
+    background:white;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{
+    border-color:#0b5d3b;
+}
+
+.form-note{
+    background:#fff7ed;
+    border-left:4px solid #f97316;
+    padding:12px;
+    margin-bottom:20px;
+    border-radius:5px;
+    font-size:14px;
+}
+
+.password-note{
+    font-size:12px;
+    color:#6b7280;
+    margin-top:4px;
+}
+
+.form-actions{
+    margin-top:25px;
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+/* AUTH */
+
+.auth-tabs{
+    display:flex;
+    margin-bottom:25px;
+    border-bottom:1px solid #ddd;
+}
+
+.auth-tab{
+    padding:12px 20px;
+    border:0;
+    background:none;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.auth-tab.active{
+    color:#0b5d3b;
+    border-bottom:3px solid #0b5d3b;
+}
+
+.auth-panel{
+    display:none;
+}
+
+.auth-panel.active{
+    display:block;
+}
+
+.otp-box{
+    margin-top:15px;
+    display:none;
+}
+
+.recaptcha-container{
+    margin:15px 0;
+}
+
+/* DASHBOARD */
+
+.dashboard{
+    background:#f3f7f5;
+}
+
+.dashboard-card{
+    max-width:1000px;
+    margin:auto;
+    background:white;
+    border-radius:15px;
+    padding:30px;
+    box-shadow:0 4px 25px rgba(0,0,0,.08);
+}
+
+.profile-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+    margin-top:25px;
+}
+
+.profile-item{
+    background:#f5f7fa;
+    padding:15px;
+    border-radius:8px;
+}
+
+.profile-item small{
+    display:block;
+    color:#6b7280;
+    margin-bottom:3px;
+}
+
+.profile-item strong{
+    color:#111827;
+    word-break:break-word;
+}
+
+.status{
+    display:inline-block;
+    padding:5px 12px;
+    border-radius:20px;
+    font-size:13px;
+    font-weight:bold;
+}
+
+.status.pending{
+    background:#fff7ed;
+    color:#c2410c;
+}
+
+.status.approved{
+    background:#dcfce7;
+    color:#166534;
+}
+
+.status.rejected{
+    background:#fee2e2;
+    color:#991b1b;
+}
+
+.member-id{
+    background:#0b5d3b;
+    color:white;
+    padding:18px;
+    border-radius:10px;
+    margin-top:20px;
+    text-align:center;
+}
+
+.member-id span{
+    display:block;
+    font-size:12px;
+    opacity:.8;
+}
+
+.member-id strong{
+    font-size:25px;
+    letter-spacing:1px;
+}
+
+/* EVENTS */
+
+.event-box{
+    background:white;
+    text-align:center;
+    padding:35px;
+    border-radius:12px;
+    box-shadow:0 4px 20px rgba(0,0,0,.07);
+}
+
+/* FOOTER */
+
+footer{
+    background:#10251c;
+    color:white;
+    padding:45px 20px 20px;
+}
+
+.footer-grid{
+    max-width:1150px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr;
+    gap:40px;
+}
+
+.footer-col h3{
+    margin-bottom:15px;
+}
+
+.footer-col p,
+.footer-col a{
+    color:#cbd5d1;
+    font-size:14px;
+    display:block;
+    margin-bottom:8px;
+}
+
+.copyright{
+    max-width:1150px;
+    margin:30px auto 0;
+    padding-top:20px;
+    border-top:1px solid rgba(255,255,255,.15);
+    text-align:center;
+    color:#9ca3af;
+    font-size:13px;
+}
+
+/* HIDDEN */
+
+.hidden{
+    display:none !important;
+}
+
+.message{
+    padding:12px;
+    border-radius:7px;
+    margin:15px 0;
+    display:none;
+}
+
+.message.success{
+    display:block;
+    background:#dcfce7;
+    color:#166534;
+}
+
+.message.error{
+    display:block;
+    background:#fee2e2;
+    color:#991b1b;
+}
+
+.loading{
+    opacity:.6;
+    pointer-events:none;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+    .navbar{
+        padding:12px 15px;
+    }
+
+    nav{
+        display:none;
+        position:absolute;
+        top:72px;
+        left:0;
+        width:100%;
+        background:#0b5d3b;
+        flex-direction:column;
+        padding:20px;
+        gap:18px;
+    }
+
+    nav.active{
+        display:flex;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .hero{
+        min-height:520px;
+    }
+
+    .hero h2{
+        font-size:34px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .about-grid,
+    .form-grid{
+        grid-template-columns:1fr;
+    }
+
+    .feature-grid{
+        grid-template-columns:1fr;
+    }
+
+    .service-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .profile-grid{
+        grid-template-columns:1fr;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
+
+    section{
+        padding:55px 18px;
+    }
+}
+
+@media(max-width:420px){
+
+    .service-grid{
+        grid-template-columns:1fr;
+    }
+
+    .form-card,
+    .dashboard-card{
+        padding:20px;
+    }
+
+    .hero h2{
+        font-size:30px;
+    }
+}
+</style>
 </head>
 
 <body>
 
-<!-- HEADER -->
+<!-- ================= HEADER ================= -->
+
 <header>
 
-    <div class="navbar">
+<div class="navbar">
 
-        <div class="brand">
+<div class="brand">
 
-            <div class="logo">
-                WYMF
-            </div>
+<div class="logo">
+WYMF
+</div>
 
-            <div class="brand-text">
-                <h1>Wababe Youths</h1>
-                <span>Mobilization Forum</span>
-            </div>
+<div class="brand-text">
+<h1>Wababe Youths</h1>
+<span>Mobilization Forum</span>
+</div>
 
-        </div>
+</div>
 
-        <button class="menu-btn" onclick="toggleMenu()">
-            ☰
-        </button>
+<button class="menu-btn" onclick="toggleMenu()">☰</button>
 
-        <nav id="navMenu">
+<nav id="navMenu">
 
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#activities">Activities</a>
-            <a href="#events">Events</a>
-            <a href="#contact">Contact</a>
+<a href="#home" onclick="closeMenu()">Home</a>
+<a href="#about" onclick="closeMenu()">About</a>
+<a href="#activities" onclick="closeMenu()">Activities</a>
+<a href="#digital" onclick="closeMenu()">Digital Services</a>
+<a href="#events" onclick="closeMenu()">Events</a>
+<a href="#membership" onclick="closeMenu()">Membership</a>
+<a href="#login" onclick="closeMenu()">Login</a>
 
-        </nav>
+</nav>
 
-    </div>
+</div>
 
 </header>
 
 
-<!-- HERO -->
+<!-- ================= HERO ================= -->
+
 <section class="hero" id="home">
 
-    <div class="hero-content">
+<div class="hero-content">
 
-        <h2>
-            Wababe Youths Mobilization Forum
-        </h2>
+<h2>Wababe Youths Mobilization Forum</h2>
 
-        <p>
-            Building a united, responsible and development-oriented
-            youth community through participation, empowerment and
-            collective action.
-        </p>
+<p>
+Building a united, responsible and development-oriented
+youth community through participation, empowerment and
+collective action.
+</p>
 
-        <div class="hero-buttons">
+<div class="hero-buttons">
 
-            <a href="#membership" class="btn btn-primary">
-                Join Us
-            </a>
+<a href="#membership" class="btn btn-primary">
+Join Us
+</a>
 
-            <a href="#about" class="btn btn-secondary">
-                Learn More
-            </a>
+<a href="#about" class="btn btn-outline">
+Learn More
+</a>
 
-        </div>
+</div>
 
-    </div>
+</div>
 
 </section>
 
 
-<!-- ABOUT -->
+<!-- ================= ABOUT ================= -->
+
 <section id="about">
 
-    <div class="container">
+<div class="container">
 
-        <div class="section-title">
+<div class="section-title">
 
-            <h2>About Us</h2>
+<h2>About Us</h2>
 
-            <p>
-                Learn more about Wababe Youths Mobilization Forum
-                and our commitment to youth development.
-            </p>
+<p>
+Learn more about Wababe Youths Mobilization Forum
+and our commitment to youth development.
+</p>
 
-        </div>
+</div>
 
+<div class="about-grid">
 
-        <div class="about-grid">
+<div class="about-box">
 
-            <div class="about-box">
+<h3>Who We Are</h3>
 
-                <h3>Who We Are</h3>
+<p>
+Wababe Youths Mobilization Forum is a youth-focused
+association created to bring young people together,
+encourage participation and support initiatives
+that contribute to the development of our community.
+</p>
 
-                <p>
-                    Wababe Youths Mobilization Forum is a youth-focused
-                    association created to bring young people together,
-                    encourage participation and support initiatives
-                    that contribute to the development of our community.
-                </p>
+</div>
 
-            </div>
+<div class="about-box">
 
+<h3>Our Vision</h3>
 
-            <div class="about-box">
+<p>
+To build a united and empowered generation of youths
+who actively contribute to the social and economic
+development of their community.
+</p>
 
-                <h3>Our Vision</h3>
+</div>
 
-                <p>
-                    To build a united and empowered generation of youths
-                    who actively contribute to the social and economic
-                    development of their community.
-                </p>
+</div>
 
-            </div>
-
-        </div>
-
-    </div>
+</div>
 
 </section>
 
 
-<!-- ACTIVITIES -->
+<!-- ================= ACTIVITIES ================= -->
+
 <section class="features" id="activities">
 
-    <div class="container">
+<div class="container">
 
-        <div class="section-title">
+<div class="section-title">
 
-            <h2>What We Do</h2>
+<h2>What We Do</h2>
 
-            <p>
-                Our major areas of activities and community engagement.
-            </p>
+<p>
+Our major areas of activities and community engagement.
+</p>
 
-        </div>
+</div>
 
+<div class="feature-grid">
 
-        <div class="feature-grid">
+<div class="feature-card">
 
-            <div class="feature-card">
+<div class="feature-icon">🤝</div>
 
-                <div class="feature-icon">🤝</div>
+<h3>Youth Mobilization</h3>
 
-                <h3>Youth Mobilization</h3>
+<p>
+Bringing youths together for positive participation
+and community development.
+</p>
 
-                <p>
-                    Bringing youths together for positive participation
-                    and community development.
-                </p>
+</div>
 
-            </div>
+<div class="feature-card">
 
+<div class="feature-icon">🎓</div>
 
-            <div class="feature-card">
+<h3>Empowerment</h3>
 
-                <div class="feature-icon">🎓</div>
+<p>
+Supporting education, skills development and
+opportunities for young people.
+</p>
 
-                <h3>Empowerment</h3>
+</div>
 
-                <p>
-                    Supporting education, skills development and
-                    opportunities for young people.
-                </p>
+<div class="feature-card">
 
-            </div>
+<div class="feature-icon">🌍</div>
 
+<h3>Community Development</h3>
 
-            <div class="feature-card">
+<p>
+Supporting initiatives that promote progress,
+unity and development.
+</p>
 
-                <div class="feature-icon">🌍</div>
+</div>
 
-                <h3>Community Development</h3>
+</div>
 
-                <p>
-                    Supporting initiatives that promote progress,
-                    unity and development.
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
+</div>
 
 </section>
 
 
-<!-- EVENTS -->
+<!-- ================= DIGITAL SERVICES AD ================= -->
+
+<section class="digital-ad" id="digital">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>Need Digital Services?</h2>
+
+<p>
+WababeDigitalCentre na samar muku da ingantattun
+Digital Solutions na Online da Offline.
+</p>
+
+</div>
+
+<div class="service-grid">
+
+<div class="service">
+<div class="service-icon">📱</div>
+<strong>Mobile Apps</strong>
+<p>Online & Offline Apps</p>
+</div>
+
+<div class="service">
+<div class="service-icon">🌐</div>
+<strong>Websites</strong>
+<p>Modern Websites</p>
+</div>
+
+<div class="service">
+<div class="service-icon">💍</div>
+<strong>Wedding Videos</strong>
+<p>Beautiful Invitations</p>
+</div>
+
+<div class="service">
+<div class="service-icon">💌</div>
+<strong>Invitation Cards</strong>
+<p>Modern Photo Cards</p>
+</div>
+
+<div class="service">
+<div class="service-icon">🏷️</div>
+<strong>Stickers</strong>
+<p>Custom Designs</p>
+</div>
+
+<div class="service">
+<div class="service-icon">🏫</div>
+<strong>School Portals</strong>
+<p>School Management</p>
+</div>
+
+<div class="service">
+<div class="service-icon">👥</div>
+<strong>Association Portals</strong>
+<p>Membership Systems</p>
+</div>
+
+<div class="service">
+<div class="service-icon">📸</div>
+<strong>Photo Album Apps</strong>
+<p>Digital Albums</p>
+</div>
+
+</div>
+
+<div class="digital-contact">
+
+<h3>Da sauran kayan Digital!</h3>
+
+<p>
+Idan kana buƙatar ƙirƙirar App, Website, Portal,
+Invitation, Sticker ko wani Digital Service,
+tuntuɓe mu kai tsaye.
+</p>
+
+<div class="contact-buttons">
+
+<a
+class="btn whatsapp"
+href="https://wa.me/2348106414154?text=Assalamu%20alaikum%2C%20ina%20bukatar%20bayani%20game%20da%20Digital%20Services%20dinku."
+target="_blank">
+💬 WhatsApp
+</a>
+
+<a
+class="btn gmail"
+href="mailto:wababedigitalcentre@gmail.com?subject=Digital%20Service%20Inquiry&body=Assalamu%20alaikum%2C%20ina%20bukatar%20bayani%20game%20da%20Digital%20Services%20dinku."
+>
+📧 Gmail
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= EVENTS ================= -->
+
 <section id="events">
 
-    <div class="container">
+<div class="container">
 
-        <div class="section-title">
+<div class="section-title">
 
-            <h2>Upcoming Events</h2>
+<h2>Upcoming Events</h2>
 
-            <p>
-                Stay updated with our meetings, programs and activities.
-            </p>
+<p>
+Stay updated with our meetings, programs and activities.
+</p>
 
-        </div>
+</div>
 
+<div class="event-box">
 
-        <div class="about-box" style="text-align:center;">
+<h3>No upcoming events yet</h3>
 
-            <h3>No upcoming events yet</h3>
+<p>
+Events and important announcements will appear here.
+</p>
 
-            <p>
-                Events and important announcements will appear here.
-            </p>
+</div>
 
-        </div>
-
-    </div>
+</div>
 
 </section>
 
 
-<!-- MEMBERSHIP -->
+<!-- ================= MEMBERSHIP ================= -->
+
 <section class="cta" id="membership">
 
-    <div class="container">
+<div class="container">
 
-        <h2>Become a Member</h2>
+<h2>Become a Member</h2>
 
-        <p>
-            Join Wababe Youths Mobilization Forum and become part
-            of a community working towards positive development.
-        </p>
+<p>
+Join Wababe Youths Mobilization Forum and become
+part of a community working towards positive development.
+</p>
 
-        <a href="#" class="btn btn-primary">
-            Register as a Member
-        </a>
+<a href="#register" class="btn btn-primary">
+Register as a Member
+</a>
 
-    </div>
+</div>
 
 </section>
 
 
-<!-- CONTACT -->
+<!-- ================= REGISTRATION ================= -->
+
+<section class="form-section" id="register">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>Member Registration</h2>
+
+<p>
+Create your WYMF membership account.
+</p>
+
+</div>
+
+<div class="form-card">
+
+<div id="registerMessage" class="message"></div>
+
+<div class="form-note">
+<strong>Important:</strong>
+Phone Number is required. Email is optional.
+NIN is also optional. If you register with a phone
+number without email, login will be through SMS OTP.
+</div>
+
+<form id="registerForm">
+
+<div class="form-grid">
+
+<div class="form-group">
+<label>Full Name *</label>
+<input type="text" id="fullName" required>
+</div>
+
+<div class="form-group">
+<label>Phone Number *</label>
+<input
+type="tel"
+id="phone"
+placeholder="+2348012345678"
+required>
+</div>
+
+<div class="form-group">
+<label>Email Address (Optional)</label>
+<input type="email" id="email">
+</div>
+
+<div class="form-group">
+<label>Date of Birth *</label>
+<input type="date" id="dob" required>
+</div>
+
+<div class="form-group">
+<label>Gender *</label>
+<select id="gender" required>
+<option value="">Select Gender</option>
+<option>Male</option>
+<option>Female</option>
+</select>
+</div>
+
+<div class="form-group">
+<label>Marital Status *</label>
+<select id="maritalStatus" required>
+<option value="">Select Status</option>
+<option>Single</option>
+<option>Married</option>
+<option>Divorced</option>
+<option>Widowed</option>
+</select>
+</div>
+
+<div class="form-group">
+<label>State *</label>
+<input type="text" id="state" placeholder="e.g. Sokoto" required>
+</div>
+
+<div class="form-group">
+<label>LGA *</label>
+<input type="text" id="lga" required>
+</div>
+
+<div class="form-group">
+<label>Village / Town *</label>
+<input type="text" id="town" required>
+</div>
+
+<div class="form-group full">
+<label>Residential Address *</label>
+<textarea id="address" rows="3" required></textarea>
+</div>
+
+<div class="form-group">
+<label>Occupation *</label>
+<input type="text" id="occupation" required>
+</div>
+
+<div class="form-group">
+<label>Educational Qualification *</label>
+<input type="text" id="education" required>
+</div>
+
+<div class="form-group">
+<label>NIN (Optional)</label>
+<input
+type="text"
+id="nin"
+inputmode="numeric"
+maxlength="11"
+placeholder="Optional">
+</div>
+
+<div class="form-group">
+<label>Passport Photo (Optional)</label>
+<input
+type="file"
+id="passport"
+accept="image/*">
+<div class="password-note">
+Photo upload will be activated after Firebase Storage is configured.
+</div>
+</div>
+
+<div class="form-group">
+<label>Password *</label>
+<input
+type="password"
+id="password"
+minlength="6"
+required>
+<div class="password-note">
+Required for Email/Password registration.
+</div>
+</div>
+
+<div class="form-group">
+<label>Confirm Password *</label>
+<input
+type="password"
+id="confirmPassword"
+minlength="6"
+required>
+</div>
+
+</div>
+
+<div class="form-actions">
+
+<button
+type="submit"
+class="btn btn-green"
+id="registerBtn">
+Create Membership Account
+</button>
+
+<button
+type="reset"
+class="btn"
+style="background:#e5e7eb;">
+Clear
+</button>
+
+</div>
+
+</form>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= LOGIN ================= -->
+
+<section class="form-section" id="login">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>Member Login</h2>
+
+<p>
+Login to access your WYMF member dashboard.
+</p>
+
+</div>
+
+<div class="form-card">
+
+<div class="auth-tabs">
+
+<button
+class="auth-tab active"
+onclick="showLoginTab('emailLogin',this)">
+Email Login
+</button>
+
+<button
+class="auth-tab"
+onclick="showLoginTab('phoneLogin',this)">
+Phone OTP
+</button>
+
+</div>
+
+
+<!-- EMAIL LOGIN -->
+
+<div id="emailLogin" class="auth-panel active">
+
+<div id="emailLoginMessage" class="message"></div>
+
+<form id="emailLoginForm">
+
+<div class="form-group">
+<label>Email Address</label>
+<input type="email" id="loginEmail" required>
+</div>
+
+<div class="form-group" style="margin-top:15px;">
+<label>Password</label>
+<input type="password" id="loginPassword" required>
+</div>
+
+<div class="form-actions">
+
+<button
+type="submit"
+class="btn btn-green">
+Login
+</button>
+
+<button
+type="button"
+class="btn"
+style="background:#e5e7eb;"
+onclick="resetPassword()">
+Forgot Password?
+</button>
+
+</div>
+
+</form>
+
+</div>
+
+
+<!-- PHONE LOGIN -->
+
+<div id="phoneLogin" class="auth-panel">
+
+<div id="phoneLoginMessage" class="message"></div>
+
+<div class="form-group">
+
+<label>Phone Number</label>
+
+<input
+type="tel"
+id="loginPhone"
+placeholder="+2348012345678">
+
+</div>
+
+<div id="loginRecaptcha" class="recaptcha-container"></div>
+
+<div class="form-actions">
+
+<button
+type="button"
+class="btn btn-green"
+onclick="sendLoginOTP()">
+Send OTP
+</button>
+
+</div>
+
+<div class="otp-box" id="loginOtpBox">
+
+<div class="form-group">
+
+<label>Enter OTP</label>
+
+<input
+type="text"
+id="loginOtp"
+inputmode="numeric"
+maxlength="6"
+placeholder="6-digit OTP">
+
+</div>
+
+<div class="form-actions">
+
+<button
+type="button"
+class="btn btn-green"
+onclick="verifyLoginOTP()">
+Verify & Login
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= DASHBOARD ================= -->
+
+<section class="dashboard hidden" id="dashboard">
+
+<div class="container">
+
+<div class="section-title">
+
+<h2>Member Dashboard</h2>
+
+<p>Welcome to your WYMF member account.</p>
+
+</div>
+
+<div class="dashboard-card">
+
+<div id="dashboardMessage" class="message"></div>
+
+<h3 id="welcomeName">
+Welcome
+</h3>
+
+<div class="member-id">
+
+<span>YOUR WYMF MEMBER ID</span>
+
+<strong id="dashboardMemberId">
+Loading...
+</strong>
+
+</div>
+
+<div style="margin-top:20px;">
+
+<strong>Membership Status:</strong>
+
+<span
+id="dashboardStatus"
+class="status pending">
+Pending
+</span>
+
+</div>
+
+<div class="profile-grid">
+
+<div class="profile-item">
+<small>Full Name</small>
+<strong id="profileName">-</strong>
+</div>
+
+<div class="profile-item">
+<small>Phone</small>
+<strong id="profilePhone">-</strong>
+</div>
+
+<div class="profile-item">
+<small>Email</small>
+<strong id="profileEmail">-</strong>
+</div>
+
+<div class="profile-item">
+<small>Date of Birth</small>
+<strong id="profileDob">-</strong>
+</div>
+
+<div class="profile-item">
+<small>Gender</small>
+<strong id="profileGender">-</strong>
+</div>
+
+<div class="profile-item">
+<small>Marital Status</small>
+<strong id="profileMarital">-</strong>
+</div>
+
+<div class="profile-item">
+<small>State</small>
+<strong id="profileState">-</strong>
+</div>
+
+<div class="profile-item">
+<small>LGA</small>
+<strong id="profileLga">-</strong>
+</div>
+
+<div class="profile-item">
+<small>Village / Town</small>
+<strong id="profileTown">-</strong>
+</div>
+
+<div class="profile-item">
+<small>Occupation</small>
+<strong id="profileOccupation">-</strong>
+</div>
+
+<div class="profile-item">
+<small>Education</small>
+<strong id="profileEducation">-</strong>
+</div>
+
+</div>
+
+<div class="form-actions">
+
+<button
+class="btn btn-danger"
+onclick="logout()">
+Logout
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
 <section id="contact">
 
-    <div class="container">
+<div class="container">
 
-        <div class="section-title">
+<div class="section-title">
 
-            <h2>Contact Us</h2>
+<h2>Contact Us</h2>
 
-            <p>
-                Get in touch with Wababe Youths Mobilization Forum.
-            </p>
+<p>
+Get in touch with Wababe Youths Mobilization Forum.
+</p>
 
-        </div>
+</div>
 
+<div class="about-grid">
 
-        <div class="about-grid">
+<div class="about-box">
 
-            <div class="about-box">
+<h3>WYMF Contact</h3>
 
-                <h3>Contact Information</h3>
+<p>📍 Location: Wababe</p>
 
-                <p>
-                    📞 Phone: Coming Soon
-                </p>
+<p>📞 Phone: Coming Soon</p>
 
-                <p>
-                    📧 Email: Coming Soon
-                </p>
+<p>📧 Email: Coming Soon</p>
 
-                <p>
-                    📍 Location: Wababe
-                </p>
+</div>
 
-            </div>
+<div class="about-box">
 
+<h3>WababeDigitalCentre</h3>
 
-            <div class="about-box">
+<p>
+For websites, apps, portals, invitation cards,
+wedding videos and other digital services:
+</p>
 
-                <h3>Connect With Us</h3>
+<div class="contact-buttons"
+style="justify-content:flex-start;">
 
-                <p>
-                    Follow our official social media pages for
-                    announcements, activities and updates.
-                </p>
+<a
+class="btn whatsapp"
+href="https://wa.me/2348106414154?text=Assalamu%20alaikum%2C%20ina%20bukatar%20bayani%20game%20da%20Digital%20Services%20dinku."
+target="_blank">
+WhatsApp
+</a>
 
-            </div>
+<a
+class="btn gmail"
+href="mailto:wababedigitalcentre@gmail.com?subject=Digital%20Service%20Inquiry">
+Gmail
+</a>
 
-        </div>
+</div>
 
-    </div>
+</div>
+
+</div>
+
+</div>
 
 </section>
 
 
-<!-- FOOTER -->
+<!-- ================= FOOTER ================= -->
+
 <footer>
 
-    <div class="footer-grid">
+<div class="footer-grid">
 
-        <div class="footer-col">
+<div class="footer-col">
 
-            <h3>Wababe Youths Mobilization Forum</h3>
+<h3>Wababe Youths Mobilization Forum</h3>
 
-            <p>
-                United youths. Responsible leadership.
-                Community development.
-            </p>
+<p>
+United youths. Responsible leadership.
+Community development.
+</p>
 
-        </div>
+</div>
 
+<div class="footer-col">
 
-        <div class="footer-col">
+<h3>Quick Links</h3>
 
-            <h3>Quick Links</h3>
+<a href="#home">Home</a>
+<a href="#about">About Us</a>
+<a href="#activities">Activities</a>
+<a href="#digital">Digital Services</a>
+<a href="#events">Events</a>
 
-            <a href="#home">Home</a>
-            <a href="#about">About Us</a>
-            <a href="#activities">Activities</a>
-            <a href="#events">Events</a>
-            <a href="#membership">Membership</a>
+</div>
 
-        </div>
+<div class="footer-col">
 
+<h3>Membership</h3>
 
-        <div class="footer-col">
+<a href="#register">Register</a>
+<a href="#login">Member Login</a>
+<a href="#dashboard">Dashboard</a>
 
-            <h3>Membership</h3>
+</div>
 
-            <a href="#membership">Register</a>
-            <a href="#">Member Login</a>
-            <a href="#">Member Verification</a>
+</div>
 
-        </div>
+<div class="copyright">
 
-    </div>
+© 2026 Wababe Youths Mobilization Forum.
+All Rights Reserved.
 
+<br>
 
-    <div class="copyright">
+Digital Services by WababeDigitalCentre
 
-        © 2026 Wababe Youths Mobilization Forum.
-        All Rights Reserved.
-
-    </div>
+</div>
 
 </footer>
 
 
-<script>
+<!-- ===================================================== -->
+<!-- FIREBASE -->
+<!-- ===================================================== -->
 
-    function toggleMenu() {
+<script type="module">
 
-        const nav = document.getElementById("navMenu");
+import { initializeApp }
+from "https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js";
 
-        nav.classList.toggle("active");
+import {
+    getAuth,
+    createUserWithEmailAndPassword,
+    signInWithEmailAndPassword,
+    signOut,
+    onAuthStateChanged,
+    sendPasswordResetEmail,
+    RecaptchaVerifier,
+    signInWithPhoneNumber
+}
+from "https://www.gstatic.com/firebasejs/11.10.0/firebase-auth.js";
+
+import {
+    getFirestore,
+    doc,
+    setDoc,
+    getDoc,
+    serverTimestamp
+}
+from "https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js";
+
+
+/* ================= FIREBASE CONFIG ================= */
+
+const firebaseConfig = {
+
+    apiKey:
+    "AIzaSyAnr5fP-CCykrvEPJaj0LOLwwQt00yUlEU",
+
+    authDomain:
+    "wymf-portal.firebaseapp.com",
+
+    projectId:
+    "wymf-portal",
+
+    storageBucket:
+    "wymf-portal.firebasestorage.app",
+
+    messagingSenderId:
+    "772603286711",
+
+    appId:
+    "1:772603286711:web:39f010d1d91b5482046932"
+
+};
+
+
+/* ================= INITIALIZE ================= */
+
+const app = initializeApp(firebaseConfig);
+
+const auth = getAuth(app);
+
+const db = getFirestore(app);
+
+
+/* ================= HELPERS ================= */
+
+window.showMessage = function(id,text,type){
+
+    const box = document.getElementById(id);
+
+    box.className = "message " + type;
+
+    box.textContent = text;
+
+};
+
+
+function normalizePhone(phone){
+
+    phone = phone.trim();
+
+    if(phone.startsWith("0")){
+        return "+234" + phone.substring(1);
+    }
+
+    if(phone.startsWith("234")){
+        return "+" + phone;
+    }
+
+    return phone;
+}
+
+
+/*
+   Temporary Member ID generator.
+
+   Later we can move Member ID generation
+   completely to a secure backend/Admin process.
+*/
+
+function generateMemberId(){
+
+    const year = new Date().getFullYear();
+
+    const randomNumber =
+        Math.floor(10000 + Math.random() * 90000);
+
+    return `WYMF-${year}-${randomNumber}`;
+
+}
+
+
+/* ================= REGISTRATION ================= */
+
+document
+.getElementById("registerForm")
+.addEventListener("submit", async function(e){
+
+    e.preventDefault();
+
+    const button =
+        document.getElementById("registerBtn");
+
+    button.disabled = true;
+
+    try{
+
+        const fullName =
+            document.getElementById("fullName").value.trim();
+
+        const phone =
+            normalizePhone(
+                document.getElementById("phone").value
+            );
+
+        const email =
+            document.getElementById("email").value.trim();
+
+        const dob =
+            document.getElementById("dob").value;
+
+        const gender =
+            document.getElementById("gender").value;
+
+        const maritalStatus =
+            document.getElementById("maritalStatus").value;
+
+        const state =
+            document.getElementById("state").value.trim();
+
+        const lga =
+            document.getElementById("lga").value.trim();
+
+        const town =
+            document.getElementById("town").value.trim();
+
+        const address =
+            document.getElementById("address").value.trim();
+
+        const occupation =
+            document.getElementById("occupation").value.trim();
+
+        const education =
+            document.getElementById("education").value.trim();
+
+        const nin =
+            document.getElementById("nin").value.trim();
+
+        const password =
+            document.getElementById("password").value;
+
+        const confirmPassword =
+            document.getElementById("confirmPassword").value;
+
+
+        if(password !== confirmPassword){
+
+            showMessage(
+                "registerMessage",
+                "Password da Confirm Password ba su yi daidai ba.",
+                "error"
+            );
+
+            button.disabled = false;
+
+            return;
+        }
+
+
+        if(nin && !/^\d{11}$/.test(nin)){
+
+            showMessage(
+                "registerMessage",
+                "NIN idan za a saka dole ya kasance lambobi 11.",
+                "error"
+            );
+
+            button.disabled = false;
+
+            return;
+        }
+
+
+        /*
+           Email registration
+        */
+
+        if(email){
+
+            const credential =
+                await createUserWithEmailAndPassword(
+                    auth,
+                    email,
+                    password
+                );
+
+            const uid = credential.user.uid;
+
+            const memberId =
+                generateMemberId();
+
+
+            await setDoc(
+                doc(db,"members",uid),
+                {
+
+                    memberId: memberId,
+
+                    role: "member",
+
+                    status: "pending",
+
+                    fullName: fullName,
+
+                    phone: phone,
+
+                    email: email,
+
+                    dateOfBirth: dob,
+
+                    gender: gender,
+
+                    maritalStatus: maritalStatus,
+
+                    state: state,
+
+                    lga: lga,
+
+                    town: town,
+
+                    address: address,
+
+                    occupation: occupation,
+
+                    education: education,
+
+                    nin: nin || "",
+
+                    passportPhoto: "",
+
+                    createdAt: serverTimestamp()
+
+                }
+            );
+
+
+            showMessage(
+                "registerMessage",
+                "An yi registration successfully! Member ID ɗinka: " +
+                memberId +
+                ". Ana jiran Admin ya amince da account ɗinka.",
+                "success"
+            );
+
+
+            document
+            .getElementById("registerForm")
+            .reset();
+
+
+            showDashboard(uid);
+
+        }
+
+        else{
+
+            /*
+              Phone-only registration.
+
+              Firebase Phone Auth requires SMS OTP.
+              Password is not used for phone authentication.
+            */
+
+            showMessage(
+                "registerMessage",
+                "Phone-only registration yana amfani da SMS OTP. Za mu kunna wannan tsarin a mataki na gaba bayan mun tabbatar da Phone Authentication/reCAPTCHA.",
+                "error"
+            );
+
+        }
 
     }
+    catch(error){
+
+        console.error(error);
+
+        let message =
+            "An samu matsala wajen registration.";
+
+        if(error.code === "auth/email-already-in-use"){
+            message =
+            "Wannan Email ɗin an riga an yi amfani da shi.";
+        }
+
+        else if(error.code === "auth/weak-password"){
+            message =
+            "Password ya kamata ya kasance aƙalla characters 6.";
+        }
+
+        else if(error.code === "auth/invalid-email"){
+            message =
+            "Email ɗin ba daidai yake ba.";
+        }
+
+        else if(error.code === "permission-denied"){
+            message =
+            "Firebase Firestore Rules sun hana wannan operation.";
+        }
+
+        showMessage(
+            "registerMessage",
+            message,
+            "error"
+        );
+
+    }
+
+    button.disabled = false;
+
+});
+
+
+/* ================= EMAIL LOGIN ================= */
+
+document
+.getElementById("emailLoginForm")
+.addEventListener("submit", async function(e){
+
+    e.preventDefault();
+
+    const email =
+        document.getElementById("loginEmail").value.trim();
+
+    const password =
+        document.getElementById("loginPassword").value;
+
+    try{
+
+        const credential =
+            await signInWithEmailAndPassword(
+                auth,
+                email,
+                password
+            );
+
+        await showDashboard(
+            credential.user.uid
+        );
+
+    }
+    catch(error){
+
+        console.error(error);
+
+        let message =
+            "Email ko Password ba daidai ba.";
+
+        if(error.code === "auth/user-not-found"){
+            message = "Ba a samu wannan account ba.";
+        }
+
+        if(error.code === "auth/too-many-requests"){
+            message =
+            "An yi login attempts da yawa. Ka ɗan jira sannan ka sake gwadawa.";
+        }
+
+        showMessage(
+            "emailLoginMessage",
+            message,
+            "error"
+        );
+
+    }
+
+});
+
+
+/* ================= PASSWORD RESET ================= */
+
+window.resetPassword = async function(){
+
+    const email =
+        document.getElementById("loginEmail").value.trim();
+
+    if(!email){
+
+        showMessage(
+            "emailLoginMessage",
+            "Da farko ka saka Email ɗinka.",
+            "error"
+        );
+
+        return;
+    }
+
+    try{
+
+        await sendPasswordResetEmail(
+            auth,
+            email
+        );
+
+        showMessage(
+            "emailLoginMessage",
+            "An aika password reset link zuwa Email ɗinka.",
+            "success"
+        );
+
+    }
+    catch(error){
+
+        showMessage(
+            "emailLoginMessage",
+            "An kasa aika password reset link.",
+            "error"
+        );
+
+    }
+
+};
+
+
+/* ================= PHONE LOGIN ================= */
+
+let loginConfirmationResult = null;
+
+let loginRecaptcha = null;
+
+
+window.sendLoginOTP = async function(){
+
+    const phone =
+        normalizePhone(
+            document.getElementById("loginPhone").value
+        );
+
+    if(!phone){
+
+        showMessage(
+            "phoneLoginMessage",
+            "Saka Phone Number.",
+            "error"
+        );
+
+        return;
+    }
+
+
+    try{
+
+        if(!loginRecaptcha){
+
+            loginRecaptcha =
+                new RecaptchaVerifier(
+                    auth,
+                    "loginRecaptcha",
+                    {
+                        size:"normal"
+                    }
+                );
+
+        }
+
+
+        loginConfirmationResult =
+            await signInWithPhoneNumber(
+                auth,
+                phone,
+                loginRecaptcha
+            );
+
+
+        document
+        .getElementById("loginOtpBox")
+        .style.display = "block";
+
+
+        showMessage(
+            "phoneLoginMessage",
+            "An aika maka OTP ta SMS.",
+            "success"
+        );
+
+    }
+    catch(error){
+
+        console.error(error);
+
+        showMessage(
+            "phoneLoginMessage",
+            "An kasa aika OTP. Ka tabbatar da Phone Authentication da reCAPTCHA suna aiki a Firebase.",
+            "error"
+        );
+
+    }
+
+};
+
+
+window.verifyLoginOTP = async function(){
+
+    const otp =
+        document
+        .getElementById("loginOtp")
+        .value
+        .trim();
+
+    if(!loginConfirmationResult){
+
+        showMessage(
+            "phoneLoginMessage",
+            "Da farko danna Send OTP.",
+            "error"
+        );
+
+        return;
+    }
+
+    try{
+
+        const credential =
+            await loginConfirmationResult.confirm(
+                otp
+            );
+
+        await showDashboard(
+            credential.user.uid
+        );
+
+    }
+    catch(error){
+
+        showMessage(
+            "phoneLoginMessage",
+            "OTP ba daidai ba ne ko ya ƙare.",
+            "error"
+        );
+
+    }
+
+};
+
+
+/* ================= DASHBOARD ================= */
+
+async function showDashboard(uid){
+
+    try{
+
+        const memberRef =
+            doc(db,"members",uid);
+
+        const memberSnap =
+            await getDoc(memberRef);
+
+
+        if(!memberSnap.exists()){
+
+            showMessage(
+                "emailLoginMessage",
+                "An shiga account, amma ba a samu member profile a Firestore ba.",
+                "error"
+            );
+
+            return;
+        }
+
+
+        const data =
+            memberSnap.data();
+
+
+        document
+        .getElementById("dashboard")
+        .classList.remove("hidden");
+
+
+        document
+        .getElementById("dashboard")
+        .scrollIntoView({
+            behavior:"smooth"
+        });
+
+
+        document
+        .getElementById("welcomeName")
+        .textContent =
+            "Welcome, " +
+            (data.fullName || "Member");
+
+
+        document
+        .getElementById("dashboardMemberId")
+        .textContent =
+            data.memberId || "Pending";
+
+
+        const status =
+            data.status || "pending";
+
+
+        const statusElement =
+            document
+            .getElementById("dashboardStatus");
+
+
+        statusElement.textContent =
+            status.charAt(0).toUpperCase() +
+            status.slice(1);
+
+
+        statusElement.className =
+            "status " + status;
+
+
+        document
+        .getElementById("profileName")
+        .textContent =
+            data.fullName || "-";
+
+
+        document
+        .getElementById("profilePhone")
+        .textContent =
+            data.phone || "-";
+
+
+        document
+        .getElementById("profileEmail")
+        .textContent =
+            data.email || "-";
+
+
+        document
+        .getElementById("profileDob")
+        .textContent =
+            data.dateOfBirth || "-";
+
+
+        document
+        .getElementById("profileGender")
+        .textContent =
+            data.gender || "-";
+
+
+        document
+        .getElementById("profileMarital")
+        .textContent =
+            data.maritalStatus || "-";
+
+
+        document
+        .getElementById("profileState")
+        .textContent =
+            data.state || "-";
+
+
+        document
+        .getElementById("profileLga")
+        .textContent =
+            data.lga || "-";
+
+
+        document
+        .getElementById("profileTown")
+        .textContent =
+            data.town || "-";
+
+
+        document
+        .getElementById("profileOccupation")
+        .textContent =
+            data.occupation || "-";
+
+
+        document
+        .getElementById("profileEducation")
+        .textContent =
+            data.education || "-";
+
+    }
+    catch(error){
+
+        console.error(error);
+
+        showMessage(
+            "dashboardMessage",
+            "An kasa ɗauko bayanan member.",
+            "error"
+        );
+
+    }
+
+}
+
+
+/* ================= LOGOUT ================= */
+
+window.logout = async function(){
+
+    try{
+
+        await signOut(auth);
+
+        document
+        .getElementById("dashboard")
+        .classList.add("hidden");
+
+        window.location.hash =
+            "home";
+
+        window.scrollTo({
+            top:0,
+            behavior:"smooth"
+        });
+
+    }
+    catch(error){
+
+        console.error(error);
+
+    }
+
+};
+
+
+/* ================= AUTH STATE ================= */
+
+onAuthStateChanged(
+    auth,
+    function(user){
+
+        if(user){
+
+            showDashboard(user.uid);
+
+        }
+
+    }
+);
+
+
+/* ================= MENU ================= */
+
+window.toggleMenu = function(){
+
+    document
+    .getElementById("navMenu")
+    .classList.toggle("active");
+
+};
+
+
+window.closeMenu = function(){
+
+    document
+    .getElementById("navMenu")
+    .classList.remove("active");
+
+};
+
+
+/* ================= LOGIN TABS ================= */
+
+window.showLoginTab =
+function(panelId,button){
+
+    document
+    .querySelectorAll(".auth-panel")
+    .forEach(function(panel){
+
+        panel.classList.remove("active");
+
+    });
+
+
+    document
+    .querySelectorAll(".auth-tab")
+    .forEach(function(tab){
+
+        tab.classList.remove("active");
+
+    });
+
+
+    document
+    .getElementById(panelId)
+    .classList.add("active");
+
+
+    button.classList.add("active");
+
+};
 
 </script>
 
