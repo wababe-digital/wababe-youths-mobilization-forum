@@ -48,96 +48,6 @@ button{
     cursor:pointer;
 }
 
-
-/* ================= URGENT PAYMENT WARNING ================= */
-
-.payment-warning{
-    width:100%;
-    background:linear-gradient(135deg,#8b0000,#d32f2f);
-    color:white;
-    padding:14px 18px;
-    text-align:center;
-    border-bottom:3px solid #ffca28;
-    box-shadow:0 4px 18px rgba(0,0,0,.18);
-    position:relative;
-    z-index:1100;
-    animation:paymentPulse 1.8s infinite;
-}
-
-.payment-warning .warning-title{
-    font-size:18px;
-    font-weight:800;
-    letter-spacing:.5px;
-    margin-bottom:4px;
-}
-
-.payment-warning .warning-text{
-    font-size:14px;
-    line-height:1.5;
-    max-width:900px;
-    margin:auto;
-}
-
-.payment-warning .warning-amount{
-    display:inline-block;
-    background:#ffca28;
-    color:#4a2600;
-    padding:3px 9px;
-    border-radius:6px;
-    font-weight:900;
-    margin:0 3px;
-}
-
-.payment-warning .warning-icon{
-    display:inline-block;
-    margin-right:5px;
-    animation:warningShake .7s infinite;
-}
-
-@keyframes paymentPulse{
-    0%{
-        box-shadow:0 4px 18px rgba(0,0,0,.18);
-    }
-
-    50%{
-        box-shadow:0 4px 28px rgba(211,47,47,.55);
-    }
-
-    100%{
-        box-shadow:0 4px 18px rgba(0,0,0,.18);
-    }
-}
-
-@keyframes warningShake{
-    0%,100%{
-        transform:rotate(0deg);
-    }
-
-    25%{
-        transform:rotate(-8deg);
-    }
-
-    75%{
-        transform:rotate(8deg);
-    }
-}
-
-@media(max-width:480px){
-
-    .payment-warning{
-        padding:12px 13px;
-    }
-
-    .payment-warning .warning-title{
-        font-size:16px;
-    }
-
-    .payment-warning .warning-text{
-        font-size:13px;
-    }
-}
-
-
 /* ================= HEADER ================= */
 
 header{
@@ -204,7 +114,7 @@ header{
 
 .nav-links button:hover{
     background:#e9f3ee;
- suspensionnterruptionvoidossibleossible  color:var(--primary);
+    color:var(--primary);
 }
 
 .menu-btn{
@@ -217,7 +127,6 @@ header{
     border-radius:10px;
     font-size:21px;
 }
-
 
 /* ================= VIEWS ================= */
 
@@ -235,7 +144,6 @@ header{
     margin:auto;
     padding:35px 20px;
 }
-
 
 /* ================= HOME ================= */
 
@@ -340,7 +248,6 @@ header{
     color:white;
 }
 
-
 /* ================= HOME CARDS ================= */
 
 .home-section{
@@ -399,7 +306,6 @@ header{
     margin-bottom:15px;
 }
 
-
 /* ================= DIGITAL SERVICES ================= */
 
 .services-ad{
@@ -436,7 +342,6 @@ header{
     font-size:13px;
 }
 
-
 /* ================= PAGE ================= */
 
 .page-header{
@@ -453,7 +358,6 @@ header{
 .page-header p{
     color:#dcece5;
 }
-
 
 /* ================= CARDS ================= */
 
@@ -482,7 +386,6 @@ header{
     grid-template-columns:repeat(2,1fr);
     gap:20px;
 }
-
 
 /* ================= FORMS ================= */
 
@@ -570,7 +473,6 @@ header{
     font-size:19px;
 }
 
-
 /* ================= ALERT ================= */
 
 .alert{
@@ -600,7 +502,6 @@ header{
     color:#175b91;
 }
 
-
 /* ================= LOGIN ================= */
 
 .login-card{
@@ -619,7 +520,6 @@ header{
     color:var(--primary);
     font-weight:bold;
 }
-
 
 /* ================= DASHBOARD ================= */
 
@@ -692,7 +592,6 @@ header{
     margin-bottom:3px;
 }
 
-
 /* ================= FOOTER ================= */
 
 footer{
@@ -738,7 +637,6 @@ footer li{
     font-size:13px;
 }
 
-
 /* ================= LOADING ================= */
 
 .loading{
@@ -746,7 +644,6 @@ footer li{
     padding:25px;
     color:var(--gray);
 }
-
 
 /* ================= MOBILE ================= */
 
@@ -862,29 +759,6 @@ footer li{
 </head>
 
 <body>
-
-
-<!-- ================= URGENT PAYMENT WARNING ================= -->
-
-<div class="payment-warning">
-
-    <div class="warning-title">
-        <span class="warning-icon">⚠️</span>
-        URGENT PAYMENT NOTICE
-    </div>
-
-    <div class="warning-text">
-
-        Please make the required payment of
-        <span class="warning-amount">$11.28</span> make a payment within 48 hours to avoid interruption or suspension
-        of website services.
-
-    </div>
-
-</div>
-
-<!-- ================= END PAYMENT WARNING ================= -->
-
 
 <!-- ================= HEADER ================= -->
 
