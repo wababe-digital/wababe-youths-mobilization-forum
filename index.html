@@ -1,15 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Wababe Youths Mobilization Forum</title>
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>
+Wababe Youths Mobilization Forum
+</title>
 
 <meta name="description"
 content="Official website and membership portal of Wababe Youths Mobilization Forum.">
 
 <style>
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
 *{
     box-sizing:border-box;
     margin:0;
@@ -17,23 +27,41 @@ content="Official website and membership portal of Wababe Youths Mobilization Fo
 }
 
 :root{
+
     --primary:#075b3b;
     --primary-dark:#043d29;
     --secondary:#d9a928;
+
     --light:#f5f8f6;
     --white:#ffffff;
+
     --dark:#17221d;
     --gray:#66736c;
+
     --danger:#c62828;
     --success:#16834c;
-    --shadow:0 8px 30px rgba(0,0,0,.09);
+    --warning:#b47b00;
+    --info:#1769aa;
+
+    --shadow:
+    0 8px 30px rgba(0,0,0,.09);
+
     --radius:18px;
 }
 
 body{
-    font-family:Arial,Helvetica,sans-serif;
-    background:#f5f8f6;
-    color:var(--dark);
+
+    font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
+    background:
+    var(--light);
+
+    color:
+    var(--dark);
+
     line-height:1.6;
 }
 
@@ -41,783 +69,1758 @@ button,
 input,
 select,
 textarea{
-    font-family:inherit;
+
+    font-family:
+    inherit;
 }
 
 button{
+
     cursor:pointer;
 }
 
-/* ================= HEADER ================= */
+
+/* =========================================================
+   HEADER
+========================================================= */
 
 header{
+
     position:sticky;
+
     top:0;
+
     z-index:1000;
-    background:rgba(255,255,255,.97);
-    box-shadow:0 2px 15px rgba(0,0,0,.08);
+
+    background:
+    rgba(255,255,255,.97);
+
+    box-shadow:
+    0 2px 15px rgba(0,0,0,.08);
 }
 
 .navbar{
+
     max-width:1200px;
+
     margin:auto;
+
     min-height:75px;
-    padding:10px 20px;
+
+    padding:
+    10px 20px;
+
     display:flex;
+
     align-items:center;
+
     justify-content:space-between;
+
     gap:20px;
 }
 
 .brand{
+
     display:flex;
+
     align-items:center;
+
     gap:10px;
+
     cursor:pointer;
 }
 
 .brand img{
+
     width:52px;
+
     height:52px;
+
     border-radius:50%;
+
     object-fit:contain;
+
     background:white;
 }
 
 .brand-text{
+
     font-weight:bold;
-    color:var(--primary);
+
+    color:
+    var(--primary);
+
     line-height:1.15;
 }
 
 .brand-text small{
+
     display:block;
+
     color:#777;
+
     font-size:10px;
+
     margin-top:3px;
 }
 
 .nav-links{
+
     display:flex;
+
     align-items:center;
+
     gap:6px;
 }
 
 .nav-links button{
+
     border:0;
+
     background:transparent;
+
     color:#26352e;
-    padding:10px 12px;
+
+    padding:
+    10px 12px;
+
     border-radius:10px;
+
     font-weight:600;
 }
 
 .nav-links button:hover{
+
     background:#e9f3ee;
-    color:var(--primary);
+
+    color:
+    var(--primary);
 }
 
 .menu-btn{
+
     display:none;
+
     border:0;
-    background:var(--primary);
+
+    background:
+    var(--primary);
+
     color:white;
+
     width:42px;
+
     height:42px;
+
     border-radius:10px;
+
     font-size:21px;
 }
 
-/* ================= VIEWS ================= */
+
+/* =========================================================
+   VIEWS
+========================================================= */
 
 .view{
+
     display:none;
-    min-height:calc(100vh - 75px);
+
+    min-height:
+    calc(100vh - 75px);
 }
 
 .view.active{
+
     display:block;
 }
 
 .container{
+
     max-width:1150px;
+
     margin:auto;
-    padding:35px 20px;
+
+    padding:
+    35px 20px;
 }
 
-/* ================= HOME ================= */
+
+/* =========================================================
+   HOME
+========================================================= */
 
 .hero{
+
     min-height:520px;
+
     display:flex;
+
     align-items:center;
+
     background:
-    linear-gradient(135deg,rgba(4,61,41,.97),rgba(7,91,59,.92));
+    linear-gradient(
+        135deg,
+        rgba(4,61,41,.97),
+        rgba(7,91,59,.92)
+    );
+
     color:white;
 }
 
 .hero-inner{
+
     max-width:1150px;
+
     width:100%;
+
     margin:auto;
-    padding:65px 20px;
+
+    padding:
+    65px 20px;
+
     display:grid;
-    grid-template-columns:1.25fr .75fr;
+
+    grid-template-columns:
+    1.25fr .75fr;
+
     gap:40px;
+
     align-items:center;
 }
 
 .hero h1{
-    font-size:clamp(35px,5vw,62px);
+
+    font-size:
+    clamp(35px,5vw,62px);
+
     line-height:1.05;
+
     margin-bottom:18px;
 }
 
 .hero p{
+
     max-width:650px;
+
     color:#e4f1eb;
+
     font-size:18px;
+
     margin-bottom:28px;
 }
 
 .hero-logo{
+
     display:flex;
+
     justify-content:center;
 }
 
 .hero-logo img{
+
     width:min(300px,75vw);
+
     height:min(300px,75vw);
+
     object-fit:contain;
+
     background:white;
+
     border-radius:50%;
+
     padding:10px;
-    box-shadow:0 15px 45px rgba(0,0,0,.25);
+
+    box-shadow:
+    0 15px 45px rgba(0,0,0,.25);
 }
 
 .gold{
-    color:var(--secondary);
+
+    color:
+    var(--secondary);
 }
 
 .btn-row{
+
     display:flex;
+
     flex-wrap:wrap;
+
     gap:12px;
 }
 
 .btn{
+
     border:0;
+
     border-radius:12px;
-    padding:13px 20px;
+
+    padding:
+    13px 20px;
+
     font-weight:bold;
+
     transition:.2s;
 }
 
 .btn:hover{
-    transform:translateY(-2px);
+
+    transform:
+    translateY(-2px);
+}
+
+.btn:disabled{
+
+    opacity:.6;
+
+    cursor:not-allowed;
+
+    transform:none;
 }
 
 .btn-primary{
-    background:var(--primary);
+
+    background:
+    var(--primary);
+
     color:white;
 }
 
 .btn-gold{
-    background:var(--secondary);
+
+    background:
+    var(--secondary);
+
     color:#17221d;
 }
 
 .btn-white{
+
     background:white;
-    color:var(--primary);
+
+    color:
+    var(--primary);
 }
 
 .btn-outline{
+
     background:transparent;
-    border:1px solid #d5ddd8;
-    color:var(--dark);
+
+    border:
+    1px solid #d5ddd8;
+
+    color:
+    var(--dark);
 }
 
 .btn-danger{
-    background:var(--danger);
+
+    background:
+    var(--danger);
+
     color:white;
 }
 
 .btn-success{
-    background:var(--success);
+
+    background:
+    var(--success);
+
     color:white;
 }
 
-/* ================= HOME CARDS ================= */
+.btn-warning{
+
+    background:
+    var(--warning);
+
+    color:white;
+}
+
+.btn-info{
+
+    background:
+    var(--info);
+
+    color:white;
+}
+
+.small-btn{
+
+    padding:
+    8px 11px;
+
+    border-radius:8px;
+
+    font-size:12px;
+}
+
+
+/* =========================================================
+   HOME CARDS
+========================================================= */
 
 .home-section{
-    padding:40px 20px;
+
+    padding:
+    40px 20px;
 }
 
 .section-title{
+
     text-align:center;
+
     margin-bottom:28px;
 }
 
 .section-title h2{
-    color:var(--primary);
+
+    color:
+    var(--primary);
+
     font-size:30px;
 }
 
 .section-title p{
-    color:var(--gray);
+
+    color:
+    var(--gray);
 }
 
 .page-cards{
+
     max-width:1100px;
+
     margin:auto;
+
     display:grid;
-    grid-template-columns:repeat(3,1fr);
+
+    grid-template-columns:
+    repeat(3,1fr);
+
     gap:18px;
 }
 
 .page-card{
+
     background:white;
+
     padding:25px;
-    border-radius:var(--radius);
-    box-shadow:var(--shadow);
-    border:1px solid #edf1ee;
+
+    border-radius:
+    var(--radius);
+
+    box-shadow:
+    var(--shadow);
+
+    border:
+    1px solid #edf1ee;
+
     text-align:center;
+
     transition:.25s;
 }
 
 .page-card:hover{
-    transform:translateY(-5px);
+
+    transform:
+    translateY(-5px);
 }
 
 .page-card .icon{
+
     font-size:36px;
+
     margin-bottom:12px;
 }
 
 .page-card h3{
-    color:var(--primary);
+
+    color:
+    var(--primary);
+
     margin-bottom:8px;
 }
 
 .page-card p{
-    color:var(--gray);
+
+    color:
+    var(--gray);
+
     font-size:14px;
+
     margin-bottom:15px;
 }
 
-/* ================= DIGITAL SERVICES ================= */
+
+/* =========================================================
+   DIGITAL SERVICES
+========================================================= */
 
 .services-ad{
+
     max-width:1100px;
-    margin:10px auto 40px;
+
+    margin:
+    10px auto 40px;
+
     padding:30px;
+
     border-radius:22px;
-    background:linear-gradient(135deg,#062f23,#0b6a45);
+
+    background:
+    linear-gradient(
+        135deg,
+        #062f23,
+        #0b6a45
+    );
+
     color:white;
-    box-shadow:var(--shadow);
+
+    box-shadow:
+    var(--shadow);
 }
 
 .services-ad h2{
-    color:var(--secondary);
+
+    color:
+    var(--secondary);
+
     margin-bottom:8px;
 }
 
 .services-ad p{
+
     color:#e5eee9;
 }
 
 .services-list{
+
     display:flex;
+
     flex-wrap:wrap;
+
     gap:9px;
-    margin:20px 0;
+
+    margin:
+    20px 0;
 }
 
 .service-tag{
-    background:rgba(255,255,255,.12);
-    border:1px solid rgba(255,255,255,.18);
-    padding:8px 12px;
+
+    background:
+    rgba(255,255,255,.12);
+
+    border:
+    1px solid rgba(255,255,255,.18);
+
+    padding:
+    8px 12px;
+
     border-radius:20px;
+
     font-size:13px;
 }
 
-/* ================= PAGE ================= */
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
 
 .page-header{
-    background:linear-gradient(135deg,var(--primary-dark),var(--primary));
+
+    background:
+    linear-gradient(
+        135deg,
+        var(--primary-dark),
+        var(--primary)
+    );
+
     color:white;
-    padding:45px 20px;
+
+    padding:
+    45px 20px;
+
     text-align:center;
 }
 
 .page-header h1{
+
     font-size:36px;
 }
 
 .page-header p{
+
     color:#dcece5;
 }
 
-/* ================= CARDS ================= */
+
+/* =========================================================
+   CARDS
+========================================================= */
 
 .card{
+
     background:white;
-    border-radius:var(--radius);
+
+    border-radius:
+    var(--radius);
+
     padding:25px;
-    box-shadow:var(--shadow);
+
+    box-shadow:
+    var(--shadow);
+
     margin-bottom:20px;
 }
 
 .card h2,
 .card h3{
-    color:var(--primary);
+
+    color:
+    var(--primary);
+
     margin-bottom:12px;
 }
 
 .grid-3{
+
     display:grid;
-    grid-template-columns:repeat(3,1fr);
+
+    grid-template-columns:
+    repeat(3,1fr);
+
     gap:20px;
 }
 
 .grid-2{
+
     display:grid;
-    grid-template-columns:repeat(2,1fr);
+
+    grid-template-columns:
+    repeat(2,1fr);
+
     gap:20px;
 }
 
-/* ================= FORMS ================= */
+
+/* =========================================================
+   FORMS
+========================================================= */
 
 .form-card{
+
     max-width:850px;
-    margin:35px auto;
+
+    margin:
+    35px auto;
+
     background:white;
+
     padding:28px;
+
     border-radius:20px;
-    box-shadow:var(--shadow);
+
+    box-shadow:
+    var(--shadow);
 }
 
 .form-title{
+
     text-align:center;
+
     margin-bottom:25px;
 }
 
 .form-title img{
+
     width:75px;
+
     height:75px;
+
     object-fit:contain;
+
     border-radius:50%;
 }
 
 .form-title h2{
-    color:var(--primary);
+
+    color:
+    var(--primary);
+
     margin-top:8px;
 }
 
 .form-grid{
+
     display:grid;
-    grid-template-columns:repeat(2,1fr);
+
+    grid-template-columns:
+    repeat(2,1fr);
+
     gap:15px;
 }
 
 .form-group{
+
     margin-bottom:15px;
 }
 
 .form-group.full{
-    grid-column:1/-1;
+
+    grid-column:
+    1/-1;
 }
 
 .form-group label{
+
     display:block;
+
     font-weight:bold;
+
     font-size:14px;
+
     margin-bottom:6px;
 }
 
 .form-group input,
 .form-group select,
 .form-group textarea{
+
     width:100%;
-    padding:12px 13px;
-    border:1px solid #d8e0db;
+
+    padding:
+    12px 13px;
+
+    border:
+    1px solid #d8e0db;
+
     border-radius:10px;
+
     outline:none;
+
     background:white;
 }
 
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus{
-    border-color:var(--primary);
-    box-shadow:0 0 0 3px rgba(7,91,59,.08);
+
+    border-color:
+    var(--primary);
+
+    box-shadow:
+    0 0 0 3px
+    rgba(7,91,59,.08);
 }
 
 .password-box{
+
     position:relative;
 }
 
 .password-box input{
+
     padding-right:48px;
 }
 
 .eye-btn{
+
     position:absolute;
+
     right:6px;
+
     top:5px;
+
     width:38px;
+
     height:38px;
+
     border:0;
+
     background:transparent;
+
     font-size:19px;
 }
 
-/* ================= ALERT ================= */
+
+/* =========================================================
+   ALERT
+========================================================= */
 
 .alert{
-    padding:12px 15px;
+
+    padding:
+    12px 15px;
+
     border-radius:10px;
+
     margin-bottom:18px;
+
     display:none;
+
     font-size:14px;
 }
 
 .alert.show{
+
     display:block;
 }
 
 .alert.error{
+
     background:#fdecec;
+
     color:#a51f1f;
 }
 
 .alert.success{
+
     background:#eaf7ef;
+
     color:#126b3e;
 }
 
 .alert.info{
+
     background:#eaf2fb;
+
     color:#175b91;
 }
 
-/* ================= LOGIN ================= */
+.alert.warning{
+
+    background:#fff6dd;
+
+    color:#7a5b00;
+}
+
+
+/* =========================================================
+   LOGIN
+========================================================= */
 
 .login-card{
+
     max-width:480px;
 }
 
 .auth-switch{
+
     text-align:center;
+
     margin-top:18px;
-    color:var(--gray);
+
+    color:
+    var(--gray);
 }
 
 .link-btn{
+
     border:0;
+
     background:none;
-    color:var(--primary);
+
+    color:
+    var(--primary);
+
     font-weight:bold;
 }
 
-/* ================= DASHBOARD ================= */
+
+/* =========================================================
+   MEMBER DASHBOARD
+========================================================= */
 
 .profile-header{
+
     display:flex;
+
     justify-content:space-between;
+
     align-items:center;
+
     gap:20px;
+
     flex-wrap:wrap;
 }
 
 .profile-id{
+
     display:inline-block;
+
     background:#eaf5ef;
-    color:var(--primary);
-    padding:8px 13px;
+
+    color:
+    var(--primary);
+
+    padding:
+    8px 13px;
+
     border-radius:20px;
+
     font-weight:bold;
 }
 
 .status{
+
     display:inline-block;
-    padding:6px 12px;
+
+    padding:
+    6px 12px;
+
     border-radius:20px;
+
     font-size:12px;
+
     font-weight:bold;
+
     background:#fff4d6;
+
     color:#805e00;
 }
 
 .status.approved{
+
     background:#e8f7ed;
+
     color:#13713e;
 }
 
 .status.rejected{
+
     background:#fdeaea;
+
     color:#a51e1e;
 }
 
 .profile-grid{
+
     display:grid;
-    grid-template-columns:180px 1fr;
+
+    grid-template-columns:
+    180px 1fr;
+
     gap:25px;
 }
 
 .profile-photo{
+
     width:150px;
+
     height:150px;
+
     border-radius:20px;
+
     object-fit:cover;
+
     background:#e9efeb;
 }
 
 .info-grid{
+
     display:grid;
-    grid-template-columns:repeat(2,1fr);
+
+    grid-template-columns:
+    repeat(2,1fr);
+
     gap:12px;
 }
 
 .info-item{
+
     background:#f7faf8;
+
     padding:12px;
+
     border-radius:10px;
 }
 
 .info-item small{
+
     display:block;
+
     color:#768179;
+
     margin-bottom:3px;
 }
 
-/* ================= FOOTER ================= */
+
+/* =========================================================
+   ADMIN DASHBOARD
+========================================================= */
+
+.admin-welcome{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:15px;
+
+    flex-wrap:wrap;
+}
+
+.admin-badge{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:7px;
+
+    background:#eaf5ef;
+
+    color:
+    var(--primary);
+
+    padding:
+    7px 12px;
+
+    border-radius:20px;
+
+    font-size:13px;
+
+    font-weight:bold;
+}
+
+.admin-stats{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    gap:18px;
+
+    margin-bottom:25px;
+}
+
+.stat-card{
+
+    background:white;
+
+    border-radius:
+    var(--radius);
+
+    padding:22px;
+
+    box-shadow:
+    var(--shadow);
+
+    border:
+    1px solid #edf1ee;
+}
+
+.stat-icon{
+
+    font-size:30px;
+
+    margin-bottom:8px;
+}
+
+.stat-card small{
+
+    color:
+    var(--gray);
+
+    display:block;
+}
+
+.stat-number{
+
+    font-size:30px;
+
+    font-weight:bold;
+
+    color:
+    var(--primary);
+}
+
+.admin-tools{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:15px;
+
+    margin-bottom:25px;
+}
+
+.admin-tool{
+
+    border:0;
+
+    background:white;
+
+    padding:20px;
+
+    border-radius:15px;
+
+    box-shadow:
+    var(--shadow);
+
+    text-align:left;
+
+    transition:.2s;
+}
+
+.admin-tool:hover{
+
+    transform:
+    translateY(-3px);
+}
+
+.admin-tool-icon{
+
+    font-size:30px;
+
+    margin-bottom:8px;
+}
+
+.admin-tool h3{
+
+    color:
+    var(--primary);
+
+    margin-bottom:5px;
+}
+
+.admin-tool p{
+
+    color:
+    var(--gray);
+
+    font-size:13px;
+}
+
+.admin-filter-row{
+
+    display:grid;
+
+    grid-template-columns:
+    1fr 200px;
+
+    gap:12px;
+
+    margin-bottom:20px;
+}
+
+.admin-search{
+
+    width:100%;
+
+    padding:12px;
+
+    border:
+    1px solid #d8e0db;
+
+    border-radius:10px;
+
+    outline:none;
+}
+
+.admin-filter{
+
+    padding:12px;
+
+    border:
+    1px solid #d8e0db;
+
+    border-radius:10px;
+
+    background:white;
+}
+
+.table-wrap{
+
+    width:100%;
+
+    overflow-x:auto;
+}
+
+.admin-table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    min-width:850px;
+}
+
+.admin-table th{
+
+    background:
+    var(--primary);
+
+    color:white;
+
+    padding:12px;
+
+    text-align:left;
+
+    font-size:13px;
+}
+
+.admin-table td{
+
+    padding:11px;
+
+    border-bottom:
+    1px solid #edf1ee;
+
+    font-size:13px;
+
+    vertical-align:middle;
+}
+
+.admin-table tr:hover td{
+
+    background:#f7faf8;
+}
+
+.member-mini{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:9px;
+}
+
+.member-mini-avatar{
+
+    width:40px;
+
+    height:40px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    background:#e9efeb;
+}
+
+.admin-actions{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:5px;
+}
+
+.admin-empty{
+
+    text-align:center;
+
+    padding:35px;
+
+    color:
+    var(--gray);
+}
+
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+.modal{
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:5000;
+
+    background:
+    rgba(0,0,0,.65);
+
+    display:none;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:20px;
+}
+
+.modal.show{
+
+    display:flex;
+}
+
+.modal-box{
+
+    width:
+    min(850px,100%);
+
+    max-height:
+    90vh;
+
+    overflow-y:auto;
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:25px;
+
+    box-shadow:
+    0 20px 60px rgba(0,0,0,.25);
+}
+
+.modal-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:15px;
+
+    margin-bottom:20px;
+}
+
+.modal-header h2{
+
+    color:
+    var(--primary);
+}
+
+.close-modal{
+
+    width:38px;
+
+    height:38px;
+
+    border:0;
+
+    border-radius:50%;
+
+    background:#edf2ef;
+
+    font-size:20px;
+}
+
+.detail-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+    gap:10px;
+}
+
+.detail-item{
+
+    background:#f7faf8;
+
+    padding:12px;
+
+    border-radius:10px;
+}
+
+.detail-item.full{
+
+    grid-column:
+    1/-1;
+}
+
+.detail-item small{
+
+    display:block;
+
+    color:
+    var(--gray);
+
+    margin-bottom:3px;
+}
+
+.modal-photo{
+
+    width:120px;
+
+    height:120px;
+
+    object-fit:cover;
+
+    border-radius:15px;
+
+    background:#e9efeb;
+
+    margin-bottom:15px;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
 
 footer{
+
     background:#062f23;
+
     color:white;
-    padding:35px 20px;
+
+    padding:
+    35px 20px;
+
     margin-top:30px;
 }
 
 .footer-inner{
+
     max-width:1100px;
+
     margin:auto;
+
     display:grid;
-    grid-template-columns:1.2fr 1fr 1fr;
+
+    grid-template-columns:
+    1.2fr 1fr 1fr;
+
     gap:30px;
 }
 
 footer h3{
-    color:var(--secondary);
+
+    color:
+    var(--secondary);
+
     margin-bottom:10px;
 }
 
 footer p,
 footer li{
+
     color:#d2dfd8;
+
     font-size:14px;
 }
 
 footer ul{
+
     list-style:none;
 }
 
 footer li{
+
     margin:6px 0;
 }
 
 .footer-bottom{
+
     text-align:center;
-    border-top:1px solid rgba(255,255,255,.12);
+
+    border-top:
+    1px solid rgba(255,255,255,.12);
+
     margin-top:25px;
+
     padding-top:20px;
+
     color:#aebdb5;
+
     font-size:13px;
 }
 
-/* ================= LOADING ================= */
+
+/* =========================================================
+   LOADING
+========================================================= */
 
 .loading{
+
     text-align:center;
+
     padding:25px;
-    color:var(--gray);
+
+    color:
+    var(--gray);
 }
 
-/* ================= MOBILE ================= */
+
+/* =========================================================
+   MOBILE
+========================================================= */
 
 @media(max-width:850px){
 
     .nav-links{
+
         display:none;
+
         position:absolute;
+
         top:75px;
+
         left:0;
+
         right:0;
+
         background:white;
+
         padding:12px;
+
         flex-direction:column;
-        box-shadow:0 8px 20px rgba(0,0,0,.1);
+
+        box-shadow:
+        0 8px 20px rgba(0,0,0,.1);
     }
 
     .nav-links.open{
+
         display:flex;
     }
 
     .nav-links button{
+
         width:100%;
+
         text-align:left;
     }
 
     .menu-btn{
+
         display:block;
     }
 
     .hero-inner{
+
         grid-template-columns:1fr;
+
         text-align:center;
     }
 
     .hero p{
+
         margin-left:auto;
+
         margin-right:auto;
     }
 
     .btn-row{
+
         justify-content:center;
     }
 
     .hero-logo{
+
         order:-1;
     }
 
     .hero-logo img{
+
         width:190px;
+
         height:190px;
     }
 
     .page-cards,
-    .grid-3{
+    .grid-3,
+    .admin-tools{
+
         grid-template-columns:1fr;
     }
 
     .grid-2,
     .form-grid{
+
         grid-template-columns:1fr;
     }
 
     .form-group.full{
+
         grid-column:auto;
     }
 
     .profile-grid{
+
         grid-template-columns:1fr;
     }
 
     .info-grid{
+
         grid-template-columns:1fr;
     }
 
     .footer-inner{
+
         grid-template-columns:1fr;
     }
+
+    .admin-stats{
+
+        grid-template-columns:
+        repeat(2,1fr);
+    }
+
+    .admin-filter-row{
+
+        grid-template-columns:1fr;
+    }
+
 }
 
 @media(max-width:480px){
 
     .navbar{
-        padding:8px 12px;
+
+        padding:
+        8px 12px;
     }
 
     .brand-text{
+
         font-size:13px;
     }
 
     .brand img{
+
         width:45px;
+
         height:45px;
     }
 
     .container{
-        padding:25px 14px;
+
+        padding:
+        25px 14px;
     }
 
     .form-card{
-        padding:20px 15px;
+
+        padding:
+        20px 15px;
     }
 
     .hero{
+
         min-height:560px;
     }
 
     .hero h1{
+
         font-size:36px;
     }
+
+    .admin-stats{
+
+        grid-template-columns:1fr;
+    }
+
+    .detail-grid{
+
+        grid-template-columns:1fr;
+    }
+
+    .detail-item.full{
+
+        grid-column:auto;
+    }
+
 }
+
 </style>
 </head>
 
 <body>
 
-<!-- ================= HEADER ================= -->
+
+<!-- =========================================================
+     HEADER
+========================================================= -->
 
 <header>
+
 <nav class="navbar">
 
-    <div class="brand" onclick="showView('home')">
+    <div class="brand"
+         onclick="showView('home')">
 
-        <img src="logo.png"
-             alt="WYMF Logo"
-             onerror="this.style.display='none'">
+        <img
+            src="logo.png"
+            alt="WYMF Logo"
+            onerror="this.style.display='none'">
 
         <div class="brand-text">
+
             WABABE YOUTHS
-            <small>MOBILIZATION FORUM</small>
+
+            <small>
+                MOBILIZATION FORUM
+            </small>
+
         </div>
 
     </div>
 
-    <div class="nav-links" id="navLinks">
 
-        <button onclick="showView('home')">
+    <div
+        class="nav-links"
+        id="navLinks">
+
+        <button
+            onclick="showView('home')">
             Home
         </button>
 
-        <button onclick="showView('about')">
+        <button
+            onclick="showView('about')">
             About Us
         </button>
 
-        <button onclick="showView('activities')">
+        <button
+            onclick="showView('activities')">
             Activities
         </button>
 
-        <button onclick="showView('events')">
+        <button
+            onclick="showView('events')">
             Events
         </button>
 
-        <button onclick="showView('contact')">
+        <button
+            onclick="showView('contact')">
             Contact
         </button>
 
-        <button onclick="showView('login')">
+        <button
+            onclick="showView('login')">
             Sign In
         </button>
 
     </div>
 
-    <button class="menu-btn"
-            onclick="toggleMenu()">
+
+    <button
+        class="menu-btn"
+        onclick="toggleMenu()">
+
         ☰
+
     </button>
 
 </nav>
+
 </header>
 
 
-<!-- ================= HOME ================= -->
+<!-- =========================================================
+     HOME
+========================================================= -->
 
-<section id="home" class="view active">
+<section
+    id="home"
+    class="view active">
 
     <div class="hero">
 
@@ -826,42 +1829,64 @@ footer li{
             <div>
 
                 <div class="gold">
+
                     WABABE YOUTHS MOBILIZATION FORUM
+
                 </div>
 
+
                 <h1>
+
                     Ƙarfi a Haɗin Kai,
+
                     <span class="gold">
+
                         Ci Gaba a Tare.
+
                     </span>
+
                 </h1>
 
+
                 <p>
-                    Barka da zuwa shafin hukuma na Wababe Youths
-                    Mobilization Forum. Muna haɗa kan matasa domin
-                    ƙarfafa zumunci, haɗin kai da ci gaban al'umma.
+
+                    Barka da zuwa shafin hukuma na
+                    Wababe Youths Mobilization Forum.
+                    Muna haɗa kan matasa domin ƙarfafa
+                    zumunci, haɗin kai da ci gaban al'umma.
+
                 </p>
+
 
                 <div class="btn-row">
 
-                    <button class="btn btn-gold"
-                            onclick="showView('register')">
+                    <button
+                        class="btn btn-gold"
+                        onclick="showView('register')">
+
                         📝 Register as Member
+
                     </button>
 
-                    <button class="btn btn-white"
-                            onclick="showView('login')">
+
+                    <button
+                        class="btn btn-white"
+                        onclick="showView('login')">
+
                         🔐 Sign In
+
                     </button>
 
                 </div>
 
             </div>
 
+
             <div class="hero-logo">
 
-                <img src="logo.png"
-                     alt="Wababe Youths Mobilization Forum Logo">
+                <img
+                    src="logo.png"
+                    alt="Wababe Youths Mobilization Forum Logo">
 
             </div>
 
@@ -886,7 +1911,9 @@ footer li{
 
         </div>
 
+
         <div class="page-cards">
+
 
             <div class="page-card">
 
@@ -899,12 +1926,16 @@ footer li{
                 </h3>
 
                 <p>
-                    Koyi game da kungiyar, vision da manufofinmu.
+                    Koyi game da kungiyar,
+                    vision da manufofinmu.
                 </p>
 
-                <button class="btn btn-primary"
-                        onclick="showView('about')">
+                <button
+                    class="btn btn-primary"
+                    onclick="showView('about')">
+
                     View
+
                 </button>
 
             </div>
@@ -921,12 +1952,16 @@ footer li{
                 </h3>
 
                 <p>
-                    Duba ayyukan da kungiyar ke gudanarwa.
+                    Duba ayyukan da kungiyar
+                    ke gudanarwa.
                 </p>
 
-                <button class="btn btn-primary"
-                        onclick="showView('activities')">
+                <button
+                    class="btn btn-primary"
+                    onclick="showView('activities')">
+
                     View
+
                 </button>
 
             </div>
@@ -943,12 +1978,16 @@ footer li{
                 </h3>
 
                 <p>
-                    Duba events da announcements na kungiyar.
+                    Duba events da announcements
+                    na kungiyar.
                 </p>
 
-                <button class="btn btn-primary"
-                        onclick="showView('events')">
+                <button
+                    class="btn btn-primary"
+                    onclick="showView('events')">
+
                     View
+
                 </button>
 
             </div>
@@ -965,12 +2004,16 @@ footer li{
                 </h3>
 
                 <p>
-                    Yi registration domin zama memba.
+                    Yi registration domin
+                    zama memba.
                 </p>
 
-                <button class="btn btn-primary"
-                        onclick="showView('register')">
+                <button
+                    class="btn btn-primary"
+                    onclick="showView('register')">
+
                     Register
+
                 </button>
 
             </div>
@@ -987,12 +2030,16 @@ footer li{
                 </h3>
 
                 <p>
-                    Shiga dashboard ɗinka ka duba profile.
+                    Shiga dashboard ɗinka
+                    ka duba profile.
                 </p>
 
-                <button class="btn btn-primary"
-                        onclick="showView('login')">
+                <button
+                    class="btn btn-primary"
+                    onclick="showView('login')">
+
                     Sign In
+
                 </button>
 
             </div>
@@ -1009,12 +2056,16 @@ footer li{
                 </h3>
 
                 <p>
-                    Tuntuɓi kungiyar domin taimako ko bayani.
+                    Tuntuɓi kungiyar domin
+                    taimako ko bayani.
                 </p>
 
-                <button class="btn btn-primary"
-                        onclick="showView('contact')">
+                <button
+                    class="btn btn-primary"
+                    onclick="showView('contact')">
+
                     Contact
+
                 </button>
 
             </div>
@@ -1035,9 +2086,13 @@ footer li{
             </h2>
 
             <p>
-                Muna samar da Digital Services masu inganci
-                ga mutane, businesses, schools da associations.
+
+                Muna samar da Digital Services
+                masu inganci ga mutane,
+                businesses, schools da associations.
+
             </p>
+
 
             <div class="services-list">
 
@@ -1079,22 +2134,24 @@ footer li{
 
             </div>
 
+
             <div class="btn-row">
 
                 <a
-                href="https://wa.me/2348106414154?text=Assalamu%20alaikum%2C%20ina%20bu%C6%99atar%20bayanin%20ku%20game%20da%20Digital%20Services."
-                target="_blank"
-                class="btn btn-gold"
-                style="text-decoration:none">
+                    href="https://wa.me/2348106414154?text=Assalamu%20alaikum%2C%20ina%20bu%C6%99atar%20bayanin%20ku%20game%20da%20Digital%20Services."
+                    target="_blank"
+                    class="btn btn-gold"
+                    style="text-decoration:none">
 
                     💬 WhatsApp
 
                 </a>
 
+
                 <a
-                href="mailto:wababedigitalcentre@gmail.com?subject=Digital%20Service%20Inquiry"
-                class="btn btn-white"
-                style="text-decoration:none">
+                    href="mailto:wababedigitalcentre@gmail.com?subject=Digital%20Service%20Inquiry"
+                    class="btn btn-white"
+                    style="text-decoration:none">
 
                     ✉️ Gmail
 
@@ -1109,9 +2166,13 @@ footer li{
 </section>
 
 
-<!-- ================= ABOUT ================= -->
+<!-- =========================================================
+     ABOUT
+========================================================= -->
 
-<section id="about" class="view">
+<section
+    id="about"
+    class="view">
 
     <div class="page-header">
 
@@ -1125,6 +2186,7 @@ footer li{
 
     </div>
 
+
     <div class="container">
 
         <div class="grid-2">
@@ -1136,10 +2198,14 @@ footer li{
                 </h2>
 
                 <p>
-                    Wababe Youths Mobilization Forum kungiya ce
-                    da aka kafa domin haɗa kan matasa, ƙarfafa
-                    zumunci, haɗin kai da samar da ayyukan da
-                    za su taimaka wajen ci gaban matasa da al'umma.
+
+                    Wababe Youths Mobilization Forum
+                    kungiya ce da aka kafa domin haɗa
+                    kan matasa, ƙarfafa zumunci,
+                    haɗin kai da samar da ayyukan
+                    da za su taimaka wajen ci gaban
+                    matasa da al'umma.
+
                 </p>
 
             </div>
@@ -1152,9 +2218,12 @@ footer li{
                 </h2>
 
                 <p>
-                    Gina matasa masu haɗin kai, ilimi, ƙwarewa,
-                    kishin al'umma da kuma shirye-shiryen taimakawa
+
+                    Gina matasa masu haɗin kai,
+                    ilimi, ƙwarewa, kishin al'umma
+                    da kuma shirye-shiryen taimakawa
                     wajen ci gaban yankinmu.
+
                 </p>
 
             </div>
@@ -1169,17 +2238,24 @@ footer li{
             </h2>
 
             <p>
-                Muna aiki tare da matasa domin samar da dama,
-                ƙarfafa ilimi da sana'o'i, community development,
-                empowerment da kuma haɗin kai tsakanin matasa.
+
+                Muna aiki tare da matasa domin
+                samar da dama, ƙarfafa ilimi
+                da sana'o'i, community development,
+                empowerment da kuma haɗin kai
+                tsakanin matasa.
+
             </p>
 
         </div>
 
 
-        <button class="btn btn-primary"
-                onclick="showView('home')">
+        <button
+            class="btn btn-primary"
+            onclick="showView('home')">
+
             ← Back Home
+
         </button>
 
     </div>
@@ -1187,9 +2263,13 @@ footer li{
 </section>
 
 
-<!-- ================= ACTIVITIES ================= -->
+<!-- =========================================================
+     ACTIVITIES
+========================================================= -->
 
-<section id="activities" class="view">
+<section
+    id="activities"
+    class="view">
 
     <div class="page-header">
 
@@ -1203,9 +2283,11 @@ footer li{
 
     </div>
 
+
     <div class="container">
 
         <div class="grid-3">
+
 
             <div class="card">
 
@@ -1214,7 +2296,8 @@ footer li{
                 </h3>
 
                 <p>
-                    Haɗa kan matasa da ƙarfafa zumunci da haɗin kai.
+                    Haɗa kan matasa da ƙarfafa
+                    zumunci da haɗin kai.
                 </p>
 
             </div>
@@ -1227,8 +2310,8 @@ footer li{
                 </h3>
 
                 <p>
-                    Tallafawa matasa wajen samun ƙwarewa da damar
-                    dogaro da kai.
+                    Tallafawa matasa wajen samun
+                    ƙwarewa da damar dogaro da kai.
                 </p>
 
             </div>
@@ -1241,7 +2324,8 @@ footer li{
                 </h3>
 
                 <p>
-                    Shirya ayyukan da za su kawo ci gaba ga al'umma.
+                    Shirya ayyukan da za su kawo
+                    ci gaba ga al'umma.
                 </p>
 
             </div>
@@ -1254,7 +2338,8 @@ footer li{
                 </h3>
 
                 <p>
-                    Ƙarfafa ilimi da wayar da kan matasa.
+                    Ƙarfafa ilimi da wayar da
+                    kan matasa.
                 </p>
 
             </div>
@@ -1267,7 +2352,8 @@ footer li{
                 </h3>
 
                 <p>
-                    Samar da kyakkyawan tasiri a tsakanin al'umma.
+                    Samar da kyakkyawan tasiri
+                    a tsakanin al'umma.
                 </p>
 
             </div>
@@ -1280,8 +2366,8 @@ footer li{
                 </h3>
 
                 <p>
-                    Tattaunawa da matasa kan matsaloli da hanyoyin
-                    samun mafita.
+                    Tattaunawa da matasa kan
+                    matsaloli da hanyoyin samun mafita.
                 </p>
 
             </div>
@@ -1289,9 +2375,12 @@ footer li{
         </div>
 
 
-        <button class="btn btn-primary"
-                onclick="showView('home')">
+        <button
+            class="btn btn-primary"
+            onclick="showView('home')">
+
             ← Back Home
+
         </button>
 
     </div>
@@ -1299,9 +2388,13 @@ footer li{
 </section>
 
 
-<!-- ================= EVENTS ================= -->
+<!-- =========================================================
+     EVENTS
+========================================================= -->
 
-<section id="events" class="view">
+<section
+    id="events"
+    class="view">
 
     <div class="page-header">
 
@@ -1315,6 +2408,7 @@ footer li{
 
     </div>
 
+
     <div class="container">
 
         <div id="eventsContainer">
@@ -1326,22 +2420,31 @@ footer li{
                 </h3>
 
                 <p>
-                    Wannan shi ne official membership portal na
+
+                    Wannan shi ne official
+                    membership portal na
                     Wababe Youths Mobilization Forum.
+
                 </p>
 
             </div>
 
+
             <div class="loading">
+
                 Ana loda events...
+
             </div>
 
         </div>
 
 
-        <button class="btn btn-primary"
-                onclick="showView('home')">
+        <button
+            class="btn btn-primary"
+            onclick="showView('home')">
+
             ← Back Home
+
         </button>
 
     </div>
@@ -1349,9 +2452,13 @@ footer li{
 </section>
 
 
-<!-- ================= REGISTER ================= -->
+<!-- =========================================================
+     REGISTER
+========================================================= -->
 
-<section id="register" class="view">
+<section
+    id="register"
+    class="view">
 
     <div class="page-header">
 
@@ -1360,7 +2467,8 @@ footer li{
         </h1>
 
         <p>
-            Shigar da bayananka domin yin membership registration
+            Shigar da bayananka domin
+            yin membership registration
         </p>
 
     </div>
@@ -1370,29 +2478,35 @@ footer li{
 
         <div class="form-title">
 
-            <img src="logo.png"
-                 alt="Association Logo">
+            <img
+                src="logo.png"
+                alt="Association Logo">
 
             <h2>
                 Membership Registration
             </h2>
 
             <p>
-                Phone Number, Email da NIN suna da dokokin
-                musamman kamar yadda tsarin kungiyar ya tanada.
+
+                Phone Number, Email da NIN suna
+                da dokokin musamman kamar yadda
+                tsarin kungiyar ya tanada.
+
             </p>
 
         </div>
 
 
-        <div id="registerAlert"
-             class="alert">
+        <div
+            id="registerAlert"
+            class="alert">
         </div>
 
 
         <form id="registerForm">
 
             <div class="form-grid">
+
 
                 <div class="form-group full">
 
@@ -1458,8 +2572,9 @@ footer li{
                         Gender *
                     </label>
 
-                    <select id="regGender"
-                            required>
+                    <select
+                        id="regGender"
+                        required>
 
                         <option value="">
                             Select Gender
@@ -1484,8 +2599,9 @@ footer li{
                         Marital Status *
                     </label>
 
-                    <select id="regMarital"
-                            required>
+                    <select
+                        id="regMarital"
+                        required>
 
                         <option value="">
                             Select
@@ -1565,8 +2681,7 @@ footer li{
                     <textarea
                         id="regAddress"
                         rows="3"
-                        required>
-                    </textarea>
+                        required></textarea>
 
                 </div>
 
@@ -1627,7 +2742,10 @@ footer li{
                         accept="image/*">
 
                     <small>
-                        Photo upload za Storage za zo daga baya.
+
+                        Photo upload za Storage
+                        za zo daga baya.
+
                     </small>
 
                 </div>
@@ -1652,7 +2770,9 @@ footer li{
                             type="button"
                             class="eye-btn"
                             onclick="togglePassword('regPassword',this)">
+
                             👁️
+
                         </button>
 
                     </div>
@@ -1679,7 +2799,9 @@ footer li{
                             type="button"
                             class="eye-btn"
                             onclick="togglePassword('regConfirmPassword',this)">
+
                             👁️
+
                         </button>
 
                     </div>
@@ -1724,9 +2846,13 @@ footer li{
 </section>
 
 
-<!-- ================= LOGIN ================= -->
+<!-- =========================================================
+     LOGIN
+========================================================= -->
 
-<section id="login" class="view">
+<section
+    id="login"
+    class="view">
 
     <div class="page-header">
 
@@ -1745,8 +2871,9 @@ footer li{
 
         <div class="form-title">
 
-            <img src="logo.png"
-                 alt="Association Logo">
+            <img
+                src="logo.png"
+                alt="Association Logo">
 
             <h2>
                 Welcome Back
@@ -1755,12 +2882,11 @@ footer li{
         </div>
 
 
-        <div id="loginAlert"
-             class="alert">
+        <div
+            id="loginAlert"
+            class="alert">
         </div>
 
-
-        <!-- EMAIL LOGIN -->
 
         <form id="loginForm">
 
@@ -1795,7 +2921,9 @@ footer li{
                         type="button"
                         class="eye-btn"
                         onclick="togglePassword('loginPassword',this)">
+
                         👁️
+
                     </button>
 
                 </div>
@@ -1819,15 +2947,16 @@ footer li{
         <br>
 
 
-        <div style="text-align:center;color:#777">
+        <div
+            style="text-align:center;color:#777">
+
             — OR —
+
         </div>
 
 
         <br>
 
-
-        <!-- PHONE LOGIN -->
 
         <div class="form-group">
 
@@ -1927,9 +3056,13 @@ footer li{
 </section>
 
 
-<!-- ================= DASHBOARD ================= -->
+<!-- =========================================================
+     MEMBER DASHBOARD
+========================================================= -->
 
-<section id="dashboard" class="view">
+<section
+    id="dashboard"
+    class="view">
 
     <div class="page-header">
 
@@ -1946,8 +3079,9 @@ footer li{
 
     <div class="container">
 
-        <div id="dashboardAlert"
-             class="alert">
+        <div
+            id="dashboardAlert"
+            class="alert">
         </div>
 
 
@@ -2203,9 +3337,437 @@ footer li{
 </section>
 
 
-<!-- ================= CONTACT ================= -->
+<!-- =========================================================
+     ADMIN DASHBOARD
+========================================================= -->
 
-<section id="contact" class="view">
+<section
+    id="adminDashboard"
+    class="view">
+
+    <div class="page-header">
+
+        <h1>
+            Admin Dashboard
+        </h1>
+
+        <p>
+            Wababe Youths Mobilization Forum Administration
+        </p>
+
+    </div>
+
+
+    <div class="container">
+
+        <div
+            id="adminAlert"
+            class="alert">
+        </div>
+
+
+        <!-- ADMIN HEADER -->
+
+        <div class="card">
+
+            <div class="admin-welcome">
+
+                <div>
+
+                    <h2>
+                        👋 Welcome, Administrator
+                    </h2>
+
+                    <p>
+                        Wannan shi ne control panel
+                        na WYMF membership portal.
+                    </p>
+
+                </div>
+
+
+                <div class="admin-badge">
+
+                    🛡️ Administrator
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- STATISTICS -->
+
+        <div class="admin-stats">
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    👥
+                </div>
+
+                <small>
+                    Total Members
+                </small>
+
+                <div
+                    id="adminTotalMembers"
+                    class="stat-number">
+
+                    0
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    ⏳
+                </div>
+
+                <small>
+                    Pending
+                </small>
+
+                <div
+                    id="adminPendingMembers"
+                    class="stat-number">
+
+                    0
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    ✅
+                </div>
+
+                <small>
+                    Approved
+                </small>
+
+                <div
+                    id="adminApprovedMembers"
+                    class="stat-number">
+
+                    0
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    ❌
+                </div>
+
+                <small>
+                    Rejected
+                </small>
+
+                <div
+                    id="adminRejectedMembers"
+                    class="stat-number">
+
+                    0
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ADMIN TOOLS -->
+
+        <div class="admin-tools">
+
+
+            <button
+                class="admin-tool"
+                onclick="adminManageMembers()">
+
+                <div class="admin-tool-icon">
+                    👥
+                </div>
+
+                <h3>
+                    Manage Members
+                </h3>
+
+                <p>
+                    Duba, search, approve ko reject
+                    membership applications.
+                </p>
+
+            </button>
+
+
+            <button
+                class="admin-tool"
+                onclick="adminAnnouncements()">
+
+                <div class="admin-tool-icon">
+                    📢
+                </div>
+
+                <h3>
+                    Announcements
+                </h3>
+
+                <p>
+                    Manage news da announcements
+                    na kungiyar.
+                </p>
+
+            </button>
+
+
+            <button
+                class="admin-tool"
+                onclick="adminEvents()">
+
+                <div class="admin-tool-icon">
+                    📅
+                </div>
+
+                <h3>
+                    Events
+                </h3>
+
+                <p>
+                    Ƙirƙira da gyara events.
+                </p>
+
+            </button>
+
+
+            <button
+                class="admin-tool"
+                onclick="adminGallery()">
+
+                <div class="admin-tool-icon">
+                    🖼️
+                </div>
+
+                <h3>
+                    Gallery
+                </h3>
+
+                <p>
+                    Manage association photos
+                    da gallery.
+                </p>
+
+            </button>
+
+
+            <button
+                class="admin-tool"
+                onclick="adminExecutives()">
+
+                <div class="admin-tool-icon">
+                    👔
+                </div>
+
+                <h3>
+                    Executives
+                </h3>
+
+                <p>
+                    Manage leaders da executives.
+                </p>
+
+            </button>
+
+
+            <button
+                class="admin-tool"
+                onclick="adminSettings()">
+
+                <div class="admin-tool-icon">
+                    ⚙️
+                </div>
+
+                <h3>
+                    Association Settings
+                </h3>
+
+                <p>
+                    Manage bayanan kungiyar.
+                </p>
+
+            </button>
+
+        </div>
+
+
+        <!-- MEMBERS -->
+
+        <div
+            id="adminMembersSection"
+            class="card">
+
+            <div class="profile-header">
+
+                <div>
+
+                    <h2>
+                        👥 Membership Management
+                    </h2>
+
+                    <p>
+                        Duba da sarrafa registered members.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <br>
+
+
+            <div class="admin-filter-row">
+
+                <input
+                    type="search"
+                    id="memberSearch"
+                    class="admin-search"
+                    placeholder="🔎 Search by name, phone, email or member ID..."
+                    oninput="filterAdminMembers()">
+
+
+                <select
+                    id="memberStatusFilter"
+                    class="admin-filter"
+                    onchange="filterAdminMembers()">
+
+                    <option value="all">
+                        All Status
+                    </option>
+
+                    <option value="pending">
+                        Pending
+                    </option>
+
+                    <option value="approved">
+                        Approved
+                    </option>
+
+                    <option value="rejected">
+                        Rejected
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div
+                id="adminMembersLoading"
+                class="loading">
+
+                Ana loda members...
+
+            </div>
+
+
+            <div class="table-wrap">
+
+                <table
+                    class="admin-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Member
+                            </th>
+
+                            <th>
+                                Member ID
+                            </th>
+
+                            <th>
+                                Phone
+                            </th>
+
+                            <th>
+                                Status
+                            </th>
+
+                            <th>
+                                Date
+                            </th>
+
+                            <th>
+                                Actions
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody
+                        id="adminMembersBody">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+
+        <!-- ADMIN BOTTOM -->
+
+        <div class="btn-row">
+
+            <button
+                class="btn btn-danger"
+                onclick="logout()">
+
+                🚪 Admin Logout
+
+            </button>
+
+
+            <button
+                class="btn btn-primary"
+                onclick="showView('home')">
+
+                ← Home
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     CONTACT
+========================================================= -->
+
+<section
+    id="contact"
+    class="view">
 
     <div class="page-header">
 
@@ -2224,6 +3786,7 @@ footer li{
 
         <div class="grid-2">
 
+
             <div class="card">
 
                 <h2>
@@ -2231,16 +3794,17 @@ footer li{
                 </h2>
 
                 <p>
-                    Tuntuɓe mu ta WhatsApp domin samun bayanai.
+                    Tuntuɓe mu ta WhatsApp
+                    domin samun bayanai.
                 </p>
 
                 <br>
 
                 <a
-                href="https://wa.me/2348106414154"
-                target="_blank"
-                class="btn btn-success"
-                style="text-decoration:none">
+                    href="https://wa.me/2348106414154"
+                    target="_blank"
+                    class="btn btn-success"
+                    style="text-decoration:none">
 
                     Open WhatsApp
 
@@ -2262,9 +3826,9 @@ footer li{
                 <br>
 
                 <a
-                href="mailto:wababedigitalcentre@gmail.com"
-                class="btn btn-primary"
-                style="text-decoration:none">
+                    href="mailto:wababedigitalcentre@gmail.com"
+                    class="btn btn-primary"
+                    style="text-decoration:none">
 
                     Send Email
 
@@ -2282,8 +3846,9 @@ footer li{
             </h2>
 
 
-            <div id="contactAlert"
-                 class="alert">
+            <div
+                id="contactAlert"
+                class="alert">
             </div>
 
 
@@ -2326,8 +3891,7 @@ footer li{
                     <textarea
                         id="contactMessage"
                         rows="5"
-                        required>
-                    </textarea>
+                        required></textarea>
 
                 </div>
 
@@ -2358,11 +3922,52 @@ footer li{
 </section>
 
 
-<!-- ================= FOOTER ================= -->
+<!-- =========================================================
+     MEMBER DETAILS MODAL
+========================================================= -->
+
+<div
+    id="memberModal"
+    class="modal">
+
+    <div class="modal-box">
+
+        <div class="modal-header">
+
+            <h2>
+                Member Details
+            </h2>
+
+            <button
+                class="close-modal"
+                onclick="closeMemberModal()">
+
+                ×
+
+            </button>
+
+        </div>
+
+
+        <div id="memberModalContent">
+
+            Loading...
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
 
 <footer>
 
     <div class="footer-inner">
+
 
         <div>
 
@@ -2371,7 +3976,8 @@ footer li{
             </h3>
 
             <p>
-                Ƙarfi a Haɗin Kai, Ci Gaba a Tare.
+                Ƙarfi a Haɗin Kai,
+                Ci Gaba a Tare.
             </p>
 
         </div>
@@ -2448,7 +4054,8 @@ footer li{
             </h3>
 
             <p>
-                Become a member of Wababe Youths Mobilization Forum.
+                Become a member of
+                Wababe Youths Mobilization Forum.
             </p>
 
             <br>
@@ -2476,41 +4083,83 @@ footer li{
 </footer>
 
 
-<!-- ================= FIREBASE ================= -->
+<!-- =========================================================
+     FIREBASE
+========================================================= -->
 
 <script type="module">
 
-import { initializeApp }
-from "https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js";
 
+/* =========================================================
+   FIREBASE APP
+========================================================= */
 
 import {
+    initializeApp
+}
+from
+"https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js";
+
+
+/* =========================================================
+   FIREBASE AUTH
+========================================================= */
+
+import {
+
     getAuth,
-    createUserWithEmailAndPassword,
-    signInWithEmailAndPassword,
-    signInWithPhoneNumber,
-    RecaptchaVerifier,
-    sendPasswordResetEmail,
-    onAuthStateChanged,
-    signOut
-}
-from "https://www.gstatic.com/firebasejs/11.10.0/firebase-auth.js";
 
+    createUserWithEmailAndPassword,
+
+    signInWithEmailAndPassword,
+
+    signInWithPhoneNumber,
+
+    RecaptchaVerifier,
+
+    sendPasswordResetEmail,
+
+    onAuthStateChanged,
+
+    signOut
+
+}
+from
+"https://www.gstatic.com/firebasejs/11.10.0/firebase-auth.js";
+
+
+/* =========================================================
+   FIRESTORE
+========================================================= */
 
 import {
+
     getFirestore,
+
     doc,
+
     setDoc,
+
     getDoc,
+
     collection,
+
     addDoc,
+
     getDocs,
+
+    updateDoc,
+
     serverTimestamp
+
 }
-from "https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js";
+from
+"https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore.js";
 
 
-/* ================= FIREBASE CONFIG ================= */
+/* =========================================================
+   FIREBASE CONFIG
+========================================================= */
 
 const firebaseConfig = {
 
@@ -2531,31 +4180,60 @@ const firebaseConfig = {
 
     appId:
     "1:772603286711:web:39f010d1d91b5482046932"
+
 };
 
 
-/* ================= INITIALIZE ================= */
+/* =========================================================
+   INITIALIZE
+========================================================= */
 
 const app =
 initializeApp(firebaseConfig);
 
+
 const auth =
 getAuth(app);
+
 
 const db =
 getFirestore(app);
 
 
-/* ================= PHONE ================= */
+/* =========================================================
+   PHONE AUTH VARIABLES
+========================================================= */
 
-let confirmationResult = null;
+let confirmationResult =
+null;
 
-let recaptchaVerifier = null;
+
+let recaptchaVerifier =
+null;
 
 
-/* ================= NAVIGATION ================= */
+/* =========================================================
+   ADMIN MEMBERS CACHE
+========================================================= */
 
-window.showView = function(viewName){
+let adminMembers =
+[];
+
+
+/* =========================================================
+   CURRENT ADMIN STATUS
+========================================================= */
+
+let currentUserIsAdmin =
+false;
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+window.showView =
+function(viewName){
 
     document
     .querySelectorAll(".view")
@@ -2578,8 +4256,11 @@ window.showView = function(viewName){
 
 
     window.scrollTo({
+
         top:0,
+
         behavior:"smooth"
+
     });
 
 
@@ -2590,9 +4271,12 @@ window.showView = function(viewName){
 };
 
 
-/* ================= MOBILE MENU ================= */
+/* =========================================================
+   MOBILE MENU
+========================================================= */
 
-window.toggleMenu = function(){
+window.toggleMenu =
+function(){
 
     document
     .getElementById("navLinks")
@@ -2601,32 +4285,49 @@ window.toggleMenu = function(){
 };
 
 
-/* ================= PASSWORD ================= */
+/* =========================================================
+   PASSWORD VISIBILITY
+========================================================= */
 
-window.togglePassword = function(id,button){
+window.togglePassword =
+function(id,button){
 
     const input =
     document.getElementById(id);
 
 
+    if(!input){
+
+        return;
+
+    }
+
+
     if(input.type === "password"){
 
-        input.type = "text";
+        input.type =
+        "text";
 
-        button.textContent = "🙈";
+        button.textContent =
+        "🙈";
 
-    }else{
+    }
+    else{
 
-        input.type = "password";
+        input.type =
+        "password";
 
-        button.textContent = "👁️";
+        button.textContent =
+        "👁️";
 
     }
 
 };
 
 
-/* ================= ALERT ================= */
+/* =========================================================
+   ALERT
+========================================================= */
 
 function showAlert(
     id,
@@ -2638,7 +4339,11 @@ function showAlert(
     document.getElementById(id);
 
 
-    if(!el) return;
+    if(!el){
+
+        return;
+
+    }
 
 
     el.textContent =
@@ -2651,7 +4356,9 @@ function showAlert(
 }
 
 
-/* ================= PHONE NORMALIZE ================= */
+/* =========================================================
+   NORMALIZE PHONE
+========================================================= */
 
 function normalizePhone(phone){
 
@@ -2682,7 +4389,9 @@ function normalizePhone(phone){
 }
 
 
-/* ================= MEMBER ID ================= */
+/* =========================================================
+   MEMBER ID
+========================================================= */
 
 function generateMemberId(){
 
@@ -2703,6 +4412,1196 @@ function generateMemberId(){
 
 
 /* =========================================================
+   ADMIN CHECK
+========================================================= */
+
+async function isAdminUser(user){
+
+    if(!user){
+
+        return false;
+
+    }
+
+
+    try{
+
+        const adminRef =
+        doc(
+            db,
+            "admins",
+            user.uid
+        );
+
+
+        const adminSnap =
+        await getDoc(adminRef);
+
+
+        return adminSnap.exists();
+
+    }
+    catch(error){
+
+        console.error(
+            "Admin check error:",
+            error
+        );
+
+        return false;
+
+    }
+
+}
+
+
+/* =========================================================
+   LOAD ADMIN DASHBOARD
+========================================================= */
+
+async function loadAdminDashboard(user){
+
+    try{
+
+        const admin =
+        await isAdminUser(user);
+
+
+        if(!admin){
+
+            return false;
+
+        }
+
+
+        currentUserIsAdmin =
+        true;
+
+
+        showView(
+            "adminDashboard"
+        );
+
+
+        await loadAdminStatistics();
+
+        await loadAdminMembers();
+
+
+        return true;
+
+    }
+    catch(error){
+
+        console.error(
+            "Admin dashboard error:",
+            error
+        );
+
+        return false;
+
+    }
+
+}
+
+
+/* =========================================================
+   ADMIN STATISTICS
+========================================================= */
+
+async function loadAdminStatistics(){
+
+    try{
+
+        const snapshot =
+        await getDocs(
+            collection(
+                db,
+                "members"
+            )
+        );
+
+
+        let total =
+        0;
+
+        let pending =
+        0;
+
+        let approved =
+        0;
+
+        let rejected =
+        0;
+
+
+        snapshot.forEach(
+        docSnap => {
+
+            const data =
+            docSnap.data();
+
+
+            total++;
+
+
+            if(
+                data.status ===
+                "pending"
+            ){
+
+                pending++;
+
+            }
+
+
+            if(
+                data.status ===
+                "approved"
+            ){
+
+                approved++;
+
+            }
+
+
+            if(
+                data.status ===
+                "rejected"
+            ){
+
+                rejected++;
+
+            }
+
+        });
+
+
+        document
+        .getElementById(
+            "adminTotalMembers"
+        )
+        .textContent =
+        total;
+
+
+        document
+        .getElementById(
+            "adminPendingMembers"
+        )
+        .textContent =
+        pending;
+
+
+        document
+        .getElementById(
+            "adminApprovedMembers"
+        )
+        .textContent =
+        approved;
+
+
+        document
+        .getElementById(
+            "adminRejectedMembers"
+        )
+        .textContent =
+        rejected;
+
+    }
+    catch(error){
+
+        console.error(
+            "Statistics error:",
+            error
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   LOAD ADMIN MEMBERS
+========================================================= */
+
+async function loadAdminMembers(){
+
+    const loading =
+    document.getElementById(
+        "adminMembersLoading"
+    );
+
+
+    const body =
+    document.getElementById(
+        "adminMembersBody"
+    );
+
+
+    if(loading){
+
+        loading.style.display =
+        "block";
+
+    }
+
+
+    try{
+
+        const snapshot =
+        await getDocs(
+            collection(
+                db,
+                "members"
+            )
+        );
+
+
+        adminMembers =
+        [];
+
+
+        snapshot.forEach(
+        docSnap => {
+
+            adminMembers.push({
+
+                id:
+                docSnap.id,
+
+                data:
+                docSnap.data()
+
+            });
+
+        });
+
+
+        renderAdminMembers();
+
+    }
+    catch(error){
+
+        console.error(
+            "Load members error:",
+            error
+        );
+
+
+        if(body){
+
+            body.innerHTML = `
+
+                <tr>
+
+                    <td colspan="6">
+
+                        <div class="admin-empty">
+
+                            ❌ An kasa loda members.
+                            Duba Firestore Rules.
+
+                        </div>
+
+                    </td>
+
+                </tr>
+
+            `;
+
+        }
+
+    }
+    finally{
+
+        if(loading){
+
+            loading.style.display =
+            "none";
+
+        }
+
+    }
+
+}
+
+
+/* =========================================================
+   RENDER MEMBERS
+========================================================= */
+
+function renderAdminMembers(){
+
+    const body =
+    document.getElementById(
+        "adminMembersBody"
+    );
+
+
+    if(!body){
+
+        return;
+
+    }
+
+
+    const search =
+    (
+        document
+        .getElementById(
+            "memberSearch"
+        )
+        ?.value ||
+        ""
+    )
+    .trim()
+    .toLowerCase();
+
+
+    const statusFilter =
+    document
+    .getElementById(
+        "memberStatusFilter"
+    )
+    ?.value ||
+    "all";
+
+
+    const filtered =
+    adminMembers.filter(
+    member => {
+
+        const data =
+        member.data;
+
+
+        const name =
+        String(
+            data.fullName ||
+            ""
+        )
+        .toLowerCase();
+
+
+        const phone =
+        String(
+            data.phone ||
+            ""
+        )
+        .toLowerCase();
+
+
+        const email =
+        String(
+            data.email ||
+            ""
+        )
+        .toLowerCase();
+
+
+        const memberId =
+        String(
+            data.memberId ||
+            ""
+        )
+        .toLowerCase();
+
+
+        const status =
+        String(
+            data.status ||
+            "pending"
+        )
+        .toLowerCase();
+
+
+        const matchesSearch =
+            !search ||
+            name.includes(search) ||
+            phone.includes(search) ||
+            email.includes(search) ||
+            memberId.includes(search);
+
+
+        const matchesStatus =
+            statusFilter === "all" ||
+            status === statusFilter;
+
+
+        return (
+            matchesSearch &&
+            matchesStatus
+        );
+
+    });
+
+
+    if(filtered.length === 0){
+
+        body.innerHTML = `
+
+            <tr>
+
+                <td colspan="6">
+
+                    <div class="admin-empty">
+
+                        👥 Babu member da ya dace
+                        da search/filter ɗin nan.
+
+                    </div>
+
+                </td>
+
+            </tr>
+
+        `;
+
+        return;
+
+    }
+
+
+    body.innerHTML =
+    "";
+
+
+    filtered.forEach(
+    member => {
+
+        const data =
+        member.data;
+
+
+        const safeName =
+        escapeHtml(
+            data.fullName ||
+            "Unknown Member"
+        );
+
+
+        const safePhone =
+        escapeHtml(
+            data.phone ||
+            "-"
+        );
+
+
+        const safeMemberId =
+        escapeHtml(
+            data.memberId ||
+            "Not Assigned"
+        );
+
+
+        const status =
+        data.status ||
+        "pending";
+
+
+        const statusClass =
+            status === "approved"
+            ? "approved"
+            : status === "rejected"
+            ? "rejected"
+            : "";
+
+
+        let dateText =
+        "-";
+
+
+        if(
+            data.createdAt &&
+            data.createdAt.toDate
+        ){
+
+            try{
+
+                dateText =
+                data.createdAt
+                .toDate()
+                .toLocaleDateString();
+
+            }
+            catch(e){}
+
+        }
+
+
+        const tr =
+        document.createElement(
+            "tr"
+        );
+
+
+        tr.innerHTML = `
+
+            <td>
+
+                <div class="member-mini">
+
+                    <img
+                        class="member-mini-avatar"
+                        src="${
+                            data.passportPhoto
+                            ? escapeAttribute(data.passportPhoto)
+                            : "logo.png"
+                        }"
+                        alt="Member">
+
+                    <div>
+
+                        <strong>
+                            ${safeName}
+                        </strong>
+
+                        <br>
+
+                        <small>
+                            ${escapeHtml(data.email || "-")}
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </td>
+
+
+            <td>
+
+                ${safeMemberId}
+
+            </td>
+
+
+            <td>
+
+                ${safePhone}
+
+            </td>
+
+
+            <td>
+
+                <span
+                    class="status ${statusClass}">
+
+                    ${escapeHtml(status)}
+
+                </span>
+
+            </td>
+
+
+            <td>
+
+                ${escapeHtml(dateText)}
+
+            </td>
+
+
+            <td>
+
+                <div class="admin-actions">
+
+                    <button
+                        class="btn btn-info small-btn"
+                        onclick="viewMemberDetails('${member.id}')">
+
+                        View
+
+                    </button>
+
+
+                    <button
+                        class="btn btn-success small-btn"
+                        onclick="changeMemberStatus('${member.id}','approved')">
+
+                        Approve
+
+                    </button>
+
+
+                    <button
+                        class="btn btn-warning small-btn"
+                        onclick="changeMemberStatus('${member.id}','pending')">
+
+                        Pending
+
+                    </button>
+
+
+                    <button
+                        class="btn btn-danger small-btn"
+                        onclick="changeMemberStatus('${member.id}','rejected')">
+
+                        Reject
+
+                    </button>
+
+                </div>
+
+            </td>
+
+        `;
+
+
+        body.appendChild(
+            tr
+        );
+
+    });
+
+}
+
+
+/* =========================================================
+   FILTER MEMBERS
+========================================================= */
+
+window.filterAdminMembers =
+function(){
+
+    renderAdminMembers();
+
+};
+
+
+/* =========================================================
+   VIEW MEMBER DETAILS
+========================================================= */
+
+window.viewMemberDetails =
+function(memberId){
+
+    const member =
+    adminMembers.find(
+        item =>
+        item.id === memberId
+    );
+
+
+    if(!member){
+
+        return;
+
+    }
+
+
+    const data =
+    member.data;
+
+
+    const modal =
+    document.getElementById(
+        "memberModal"
+    );
+
+
+    const content =
+    document.getElementById(
+        "memberModalContent"
+    );
+
+
+    const status =
+    data.status ||
+    "pending";
+
+
+    const statusClass =
+        status === "approved"
+        ? "approved"
+        : status === "rejected"
+        ? "rejected"
+        : "";
+
+
+    content.innerHTML = `
+
+        <div style="text-align:center">
+
+            <img
+                class="modal-photo"
+                src="${
+                    data.passportPhoto
+                    ? escapeAttribute(data.passportPhoto)
+                    : "logo.png"
+                }"
+                alt="Member Photo">
+
+            <h2>
+                ${escapeHtml(data.fullName || "Member")}
+            </h2>
+
+            <br>
+
+            <span class="profile-id">
+
+                ${escapeHtml(
+                    data.memberId ||
+                    "Not Assigned"
+                )}
+
+            </span>
+
+            <br><br>
+
+            <span
+                class="status ${statusClass}">
+
+                ${escapeHtml(status)}
+
+            </span>
+
+        </div>
+
+
+        <br>
+
+
+        <div class="detail-grid">
+
+
+            <div class="detail-item">
+
+                <small>
+                    Full Name
+                </small>
+
+                <strong>
+                    ${escapeHtml(data.fullName || "-")}
+                </strong>
+
+            </div>
+
+
+            <div class="detail-item">
+
+                <small>
+                    Phone
+                </small>
+
+                <strong>
+                    ${escapeHtml(data.phone || "-")}
+                </strong>
+
+            </div>
+
+
+            <div class="detail-item">
+
+                <small>
+                    Email
+                </small>
+
+                <strong>
+                    ${escapeHtml(data.email || "-")}
+                </strong>
+
+            </div>
+
+
+            <div class="detail-item">
+
+                <small>
+                    Date of Birth
+                </small>
+
+                <strong>
+                    ${escapeHtml(data.dateOfBirth || "-")}
+                </strong>
+
+            </div>
+
+
+            <div class="detail-item">
+
+                <small>
+                    Gender
+                </small>
+
+                <strong>
+                    ${escapeHtml(data.gender || "-")}
+                </strong>
+
+            </div>
+
+
+            <div class="detail-item">
+
+                <small>
+                    Marital Status
+                </small>
+
+                <strong>
+                    ${escapeHtml(data.maritalStatus || "-")}
+                </strong>
+
+            </div>
+
+
+            <div class="detail-item">
+
+                <small>
+                    State
+                </small>
+
+                <strong>
+                    ${escapeHtml(data.state || "-")}
+                </strong>
+
+            </div>
+
+
+            <div class="detail-item">
+
+                <small>
+                    LGA
+                </small>
+
+                <strong>
+                    ${escapeHtml(data.lga || "-")}
+                </strong>
+
+            </div>
+
+
+            <div class="detail-item">
+
+                <small>
+                    Village / Town
+                </small>
+
+                <strong>
+                    ${escapeHtml(data.village || "-")}
+                </strong>
+
+            </div>
+
+
+            <div class="detail-item">
+
+                <small>
+                    Occupation
+                </small>
+
+                <strong>
+                    ${escapeHtml(data.occupation || "-")}
+                </strong>
+
+            </div>
+
+
+            <div class="detail-item">
+
+                <small>
+                    Educational Qualification
+                </small>
+
+                <strong>
+                    ${escapeHtml(
+                        data.educationalQualification ||
+                        "-"
+                    )}
+
+                </strong>
+
+            </div>
+
+
+            <div class="detail-item">
+
+                <small>
+                    NIN
+                </small>
+
+                <strong>
+                    ${escapeHtml(
+                        data.nin ||
+                        "Not provided"
+                    )}
+
+                </strong>
+
+            </div>
+
+
+            <div class="detail-item full">
+
+                <small>
+                    Residential Address
+                </small>
+
+                <strong>
+                    ${escapeHtml(
+                        data.residentialAddress ||
+                        "-"
+                    )}
+
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <br>
+
+
+        <div class="btn-row"
+             style="justify-content:center">
+
+            <button
+                class="btn btn-success"
+                onclick="changeMemberStatus('${memberId}','approved');closeMemberModal()">
+
+                ✅ Approve
+
+            </button>
+
+
+            <button
+                class="btn btn-warning"
+                onclick="changeMemberStatus('${memberId}','pending');closeMemberModal()">
+
+                ⏳ Pending
+
+            </button>
+
+
+            <button
+                class="btn btn-danger"
+                onclick="changeMemberStatus('${memberId}','rejected');closeMemberModal()">
+
+                ❌ Reject
+
+            </button>
+
+        </div>
+
+    `;
+
+
+    modal.classList.add(
+        "show"
+    );
+
+};
+
+
+/* =========================================================
+   CLOSE MEMBER MODAL
+========================================================= */
+
+window.closeMemberModal =
+function(){
+
+    document
+    .getElementById(
+        "memberModal"
+    )
+    .classList.remove(
+        "show"
+    );
+
+};
+
+
+/* =========================================================
+   CHANGE MEMBER STATUS
+========================================================= */
+
+window.changeMemberStatus =
+async function(memberId,newStatus){
+
+    if(!currentUserIsAdmin){
+
+        showAlert(
+            "adminAlert",
+            "Ba ka da permission na admin.",
+            "error"
+        );
+
+        return;
+
+    }
+
+
+    const member =
+    adminMembers.find(
+        item =>
+        item.id === memberId
+    );
+
+
+    if(!member){
+
+        showAlert(
+            "adminAlert",
+            "Ba a samu member ɗin ba.",
+            "error"
+        );
+
+        return;
+
+    }
+
+
+    const name =
+    member.data.fullName ||
+    "Member";
+
+
+    const confirmation =
+    confirm(
+        `Ka tabbata kana son canza status na ${name} zuwa "${newStatus}"?`
+    );
+
+
+    if(!confirmation){
+
+        return;
+
+    }
+
+
+    try{
+
+        await updateDoc(
+
+            doc(
+                db,
+                "members",
+                memberId
+            ),
+
+            {
+
+                status:
+                newStatus,
+
+                statusUpdatedAt:
+                serverTimestamp()
+
+            }
+
+        );
+
+
+        showAlert(
+            "adminAlert",
+            `An canza status na ${name} zuwa ${newStatus}.`,
+            "success"
+        );
+
+
+        await loadAdminStatistics();
+
+        await loadAdminMembers();
+
+    }
+    catch(error){
+
+        console.error(
+            "Status update error:",
+            error
+        );
+
+
+        showAlert(
+            "adminAlert",
+            "An kasa canza member status. Duba Firestore Rules.",
+            "error"
+        );
+
+    }
+
+};
+
+
+/* =========================================================
+   ADMIN TOOL BUTTONS
+========================================================= */
+
+window.adminManageMembers =
+function(){
+
+    document
+    .getElementById(
+        "adminMembersSection"
+    )
+    ?.scrollIntoView({
+        behavior:"smooth"
+    });
+
+};
+
+
+window.adminAnnouncements =
+function(){
+
+    showAlert(
+        "adminAlert",
+        "Announcements management zai zo a mataki na gaba.",
+        "info"
+    );
+
+};
+
+
+window.adminEvents =
+function(){
+
+    showAlert(
+        "adminAlert",
+        "Events management zai zo a mataki na gaba.",
+        "info"
+    );
+
+};
+
+
+window.adminGallery =
+function(){
+
+    showAlert(
+        "adminAlert",
+        "Gallery management zai zo bayan an haɗa Firebase Storage.",
+        "info"
+    );
+
+};
+
+
+window.adminExecutives =
+function(){
+
+    showAlert(
+        "adminAlert",
+        "Executives management zai zo a mataki na gaba.",
+        "info"
+    );
+
+};
+
+
+window.adminSettings =
+function(){
+
+    showAlert(
+        "adminAlert",
+        "Association Settings zai zo a mataki na gaba.",
+        "info"
+    );
+
+};
+
+
+/* =========================================================
    REGISTER
 ========================================================= */
 
@@ -2716,7 +5615,9 @@ async function(e){
 
 
     const btn =
-    document.getElementById("registerBtn");
+    document.getElementById(
+        "registerBtn"
+    );
 
 
     const name =
@@ -2749,7 +5650,9 @@ async function(e){
 
     const confirmPassword =
     document
-    .getElementById("regConfirmPassword")
+    .getElementById(
+        "regConfirmPassword"
+    )
     .value;
 
 
@@ -2779,26 +5682,28 @@ async function(e){
     }
 
 
-    btn.disabled = true;
+    if(!email){
+
+        showAlert(
+            "registerAlert",
+            "A yanzu registration yana bukatar Gmail. Phone + SMS OTP registration za mu haɗa a mataki na gaba.",
+            "info"
+        );
+
+        return;
+
+    }
+
+
+    btn.disabled =
+    true;
+
 
     btn.textContent =
     "Ana registration...";
 
 
     try{
-
-        if(!email){
-
-            showAlert(
-                "registerAlert",
-                "A yanzu registration yana bukatar Gmail. Phone + SMS OTP registration za mu haɗa a mataki na gaba.",
-                "info"
-            );
-
-            return;
-
-        }
-
 
         const userCredential =
         await createUserWithEmailAndPassword(
@@ -2817,84 +5722,116 @@ async function(e){
 
 
         await setDoc(
+
             doc(
                 db,
                 "members",
                 user.uid
             ),
+
             {
 
-                uid:user.uid,
+                uid:
+                user.uid,
 
-                memberId:memberId,
+                memberId:
+                memberId,
 
-                fullName:name,
+                fullName:
+                name,
 
-                phone:phone,
+                phone:
+                phone,
 
-                email:email,
+                email:
+                email,
 
                 dateOfBirth:
                 document
-                .getElementById("regDob")
+                .getElementById(
+                    "regDob"
+                )
                 .value,
 
                 gender:
                 document
-                .getElementById("regGender")
+                .getElementById(
+                    "regGender"
+                )
                 .value,
 
                 maritalStatus:
                 document
-                .getElementById("regMarital")
+                .getElementById(
+                    "regMarital"
+                )
                 .value,
 
                 state:
                 document
-                .getElementById("regState")
+                .getElementById(
+                    "regState"
+                )
                 .value,
 
                 lga:
                 document
-                .getElementById("regLga")
+                .getElementById(
+                    "regLga"
+                )
                 .value,
 
                 village:
                 document
-                .getElementById("regVillage")
+                .getElementById(
+                    "regVillage"
+                )
                 .value,
 
                 residentialAddress:
                 document
-                .getElementById("regAddress")
+                .getElementById(
+                    "regAddress"
+                )
                 .value,
 
                 occupation:
                 document
-                .getElementById("regOccupation")
+                .getElementById(
+                    "regOccupation"
+                )
                 .value,
 
                 educationalQualification:
                 document
-                .getElementById("regEducation")
+                .getElementById(
+                    "regEducation"
+                )
                 .value,
 
                 nin:
                 document
-                .getElementById("regNin")
+                .getElementById(
+                    "regNin"
+                )
                 .value
-                .trim() || null,
+                .trim() ||
+                null,
 
-                passportPhoto:"",
+                passportPhoto:
+                "",
 
-                status:"pending",
+                status:
+                "pending",
 
-                role:"member",
+                role:
+                "member",
 
                 createdAt:
                 serverTimestamp()
 
             }
+
         );
 
 
@@ -2906,23 +5843,22 @@ async function(e){
 
 
         document
-        .getElementById("registerForm")
+        .getElementById(
+            "registerForm"
+        )
         .reset();
 
 
-        /*
-         * IMPORTANT:
-         * Auth state will also call loadDashboard.
-         * We call it directly here too so that
-         * Dashboard opens immediately.
-         */
+        await loadDashboard(
+            user
+        );
 
-        await loadDashboard(user);
+    }
+    catch(error){
 
-
-    }catch(error){
-
-        console.error(error);
+        console.error(
+            error
+        );
 
 
         let message =
@@ -2973,10 +5909,12 @@ async function(e){
             "error"
         );
 
+    }
+    finally{
 
-    }finally{
+        btn.disabled =
+        false;
 
-        btn.disabled = false;
 
         btn.textContent =
         "📝 Create Membership Account";
@@ -3001,20 +5939,25 @@ async function(e){
 
     const email =
     document
-    .getElementById("loginEmail")
+    .getElementById(
+        "loginEmail"
+    )
     .value
     .trim();
 
 
     const password =
     document
-    .getElementById("loginPassword")
+    .getElementById(
+        "loginPassword"
+    )
     .value;
 
 
     const btn =
-    document
-    .getElementById("loginBtn");
+    document.getElementById(
+        "loginBtn"
+    );
 
 
     if(!email || !password){
@@ -3030,19 +5973,15 @@ async function(e){
     }
 
 
-    btn.disabled = true;
+    btn.disabled =
+    true;
+
 
     btn.textContent =
     "Ana shiga...";
 
 
     try{
-
-        /*
-         * FIX:
-         * We now save the signed-in user and
-         * immediately load the dashboard.
-         */
 
         const userCredential =
         await signInWithEmailAndPassword(
@@ -3056,23 +5995,47 @@ async function(e){
         userCredential.user;
 
 
-        showAlert(
-            "loginAlert",
-            "An shiga successfully. Ana buɗe Dashboard...",
-            "success"
+        const admin =
+        await isAdminUser(
+            user
         );
 
 
-        /*
-         * THIS IS THE IMPORTANT FIX
-         */
+        if(admin){
 
-        await loadDashboard(user);
+            showAlert(
+                "loginAlert",
+                "An shiga a matsayin Administrator. Ana buɗe Admin Dashboard...",
+                "success"
+            );
 
 
-    }catch(error){
+            await loadAdminDashboard(
+                user
+            );
 
-        console.error(error);
+        }
+        else{
+
+            showAlert(
+                "loginAlert",
+                "An shiga successfully. Ana buɗe Dashboard...",
+                "success"
+            );
+
+
+            await loadDashboard(
+                user
+            );
+
+        }
+
+    }
+    catch(error){
+
+        console.error(
+            error
+        );
 
 
         let message =
@@ -3114,10 +6077,12 @@ async function(e){
             "error"
         );
 
+    }
+    finally{
 
-    }finally{
+        btn.disabled =
+        false;
 
-        btn.disabled = false;
 
         btn.textContent =
         "🔐 Sign In with Email";
@@ -3137,7 +6102,9 @@ async function(){
     const phone =
     normalizePhone(
         document
-        .getElementById("phoneLoginNumber")
+        .getElementById(
+            "phoneLoginNumber"
+        )
         .value
     );
 
@@ -3156,11 +6123,14 @@ async function(){
 
 
     const btn =
-    document
-    .getElementById("sendOtpBtn");
+    document.getElementById(
+        "sendOtpBtn"
+    );
 
 
-    btn.disabled = true;
+    btn.disabled =
+    true;
+
 
     btn.textContent =
     "Ana tura OTP...";
@@ -3191,7 +6161,9 @@ async function(){
 
 
         document
-        .getElementById("otpArea")
+        .getElementById(
+            "otpArea"
+        )
         .style.display =
         "block";
 
@@ -3202,10 +6174,12 @@ async function(){
             "success"
         );
 
+    }
+    catch(error){
 
-    }catch(error){
-
-        console.error(error);
+        console.error(
+            error
+        );
 
 
         showAlert(
@@ -3215,10 +6189,6 @@ async function(){
         );
 
 
-        /*
-         * Reset reCAPTCHA so user can try again.
-         */
-
         try{
 
             if(recaptchaVerifier){
@@ -3227,15 +6197,19 @@ async function(){
 
             }
 
-        }catch(e){}
+        }
+        catch(e){}
 
 
-        recaptchaVerifier = null;
+        recaptchaVerifier =
+        null;
 
+    }
+    finally{
 
-    }finally{
+        btn.disabled =
+        false;
 
-        btn.disabled = false;
 
         btn.textContent =
         "📱 Send SMS OTP";
@@ -3254,7 +6228,9 @@ async function(){
 
     const code =
     document
-    .getElementById("phoneOtp")
+    .getElementById(
+        "phoneOtp"
+    )
     .value
     .trim();
 
@@ -3286,11 +6262,14 @@ async function(){
 
 
     const btn =
-    document
-    .getElementById("verifyOtpBtn");
+    document.getElementById(
+        "verifyOtpBtn"
+    );
 
 
-    btn.disabled = true;
+    btn.disabled =
+    true;
+
 
     btn.textContent =
     "Ana tabbatarwa...";
@@ -3299,31 +6278,56 @@ async function(){
     try{
 
         const result =
-        await confirmationResult.confirm(code);
+        await confirmationResult.confirm(
+            code
+        );
 
 
         const user =
         result.user;
 
 
-        showAlert(
-            "loginAlert",
-            "An tabbatar da Phone Number. Ana buɗe Dashboard...",
-            "success"
+        const admin =
+        await isAdminUser(
+            user
         );
 
 
-        /*
-         * FIX:
-         * Phone login now also opens Dashboard.
-         */
+        if(admin){
 
-        await loadDashboard(user);
+            showAlert(
+                "loginAlert",
+                "An shiga a matsayin Administrator. Ana buɗe Admin Dashboard...",
+                "success"
+            );
 
 
-    }catch(error){
+            await loadAdminDashboard(
+                user
+            );
 
-        console.error(error);
+        }
+        else{
+
+            showAlert(
+                "loginAlert",
+                "An tabbatar da Phone Number. Ana buɗe Dashboard...",
+                "success"
+            );
+
+
+            await loadDashboard(
+                user
+            );
+
+        }
+
+    }
+    catch(error){
+
+        console.error(
+            error
+        );
 
 
         showAlert(
@@ -3332,10 +6336,12 @@ async function(){
             "error"
         );
 
+    }
+    finally{
 
-    }finally{
+        btn.disabled =
+        false;
 
-        btn.disabled = false;
 
         btn.textContent =
         "Verify OTP";
@@ -3354,7 +6360,9 @@ async function(){
 
     const email =
     document
-    .getElementById("loginEmail")
+    .getElementById(
+        "loginEmail"
+    )
     .value
     .trim();
 
@@ -3386,10 +6394,12 @@ async function(){
             "success"
         );
 
+    }
+    catch(error){
 
-    }catch(error){
-
-        console.error(error);
+        console.error(
+            error
+        );
 
 
         showAlert(
@@ -3411,23 +6421,43 @@ onAuthStateChanged(
     auth,
     async function(user){
 
-        if(user){
+        if(!user){
 
-            /*
-             * If the user is already logged in,
-             * automatically load dashboard.
-             */
+            currentUserIsAdmin =
+            false;
 
-            await loadDashboard(user);
+            return;
 
         }
+
+
+        const admin =
+        await isAdminUser(
+            user
+        );
+
+
+        if(admin){
+
+            await loadAdminDashboard(
+                user
+            );
+
+            return;
+
+        }
+
+
+        await loadDashboard(
+            user
+        );
 
     }
 );
 
 
 /* =========================================================
-   LOAD DASHBOARD
+   LOAD MEMBER DASHBOARD
 ========================================================= */
 
 async function loadDashboard(user){
@@ -3443,24 +6473,15 @@ async function loadDashboard(user){
 
 
         const memberSnap =
-        await getDoc(memberRef);
+        await getDoc(
+            memberRef
+        );
 
 
         if(!memberSnap.exists()){
 
-            /*
-             * This can happen for an account
-             * that exists in Authentication but
-             * has no member document.
-             */
-
-            showView("home");
-
-
-            showAlert(
-                "dashboardAlert",
-                "An samu account ɗinka amma ba a samu bayanan member a Firestore ba.",
-                "error"
+            showView(
+                "home"
             );
 
 
@@ -3473,27 +6494,29 @@ async function loadDashboard(user){
         memberSnap.data();
 
 
-        /* ================= BASIC PROFILE ================= */
-
         document
-        .getElementById("dashName")
+        .getElementById(
+            "dashName"
+        )
         .textContent =
         data.fullName ||
         "Member";
 
 
         document
-        .getElementById("dashMemberId")
+        .getElementById(
+            "dashMemberId"
+        )
         .textContent =
         data.memberId ||
         "Not Assigned";
 
 
-        /* ================= STATUS ================= */
-
         const status =
         document
-        .getElementById("dashStatus");
+        .getElementById(
+            "dashStatus"
+        );
 
 
         status.textContent =
@@ -3512,17 +6535,19 @@ async function loadDashboard(user){
         );
 
 
-        /* ================= INFORMATION ================= */
-
         document
-        .getElementById("infoName")
+        .getElementById(
+            "infoName"
+        )
         .textContent =
         data.fullName ||
         "-";
 
 
         document
-        .getElementById("infoPhone")
+        .getElementById(
+            "infoPhone"
+        )
         .textContent =
         data.phone ||
         user.phoneNumber ||
@@ -3530,7 +6555,9 @@ async function loadDashboard(user){
 
 
         document
-        .getElementById("infoEmail")
+        .getElementById(
+            "infoEmail"
+        )
         .textContent =
         data.email ||
         user.email ||
@@ -3538,105 +6565,131 @@ async function loadDashboard(user){
 
 
         document
-        .getElementById("infoDob")
+        .getElementById(
+            "infoDob"
+        )
         .textContent =
         data.dateOfBirth ||
         "-";
 
 
         document
-        .getElementById("infoGender")
+        .getElementById(
+            "infoGender"
+        )
         .textContent =
         data.gender ||
         "-";
 
 
         document
-        .getElementById("infoMarital")
+        .getElementById(
+            "infoMarital"
+        )
         .textContent =
         data.maritalStatus ||
         "-";
 
 
         document
-        .getElementById("infoState")
+        .getElementById(
+            "infoState"
+        )
         .textContent =
         data.state ||
         "-";
 
 
         document
-        .getElementById("infoLga")
+        .getElementById(
+            "infoLga"
+        )
         .textContent =
         data.lga ||
         "-";
 
 
         document
-        .getElementById("infoVillage")
+        .getElementById(
+            "infoVillage"
+        )
         .textContent =
         data.village ||
         "-";
 
 
         document
-        .getElementById("infoOccupation")
+        .getElementById(
+            "infoOccupation"
+        )
         .textContent =
         data.occupation ||
         "-";
 
 
         document
-        .getElementById("infoEducation")
+        .getElementById(
+            "infoEducation"
+        )
         .textContent =
         data.educationalQualification ||
         "-";
 
 
         document
-        .getElementById("infoNin")
+        .getElementById(
+            "infoNin"
+        )
         .textContent =
         data.nin ||
         "Not provided";
 
 
-        /* ================= PHOTO ================= */
-
         if(data.passportPhoto){
 
             document
-            .getElementById("dashPhoto")
+            .getElementById(
+                "dashPhoto"
+            )
             .src =
             data.passportPhoto;
 
-        }else{
+        }
+        else{
 
             document
-            .getElementById("dashPhoto")
+            .getElementById(
+                "dashPhoto"
+            )
             .src =
             "logo.png";
 
         }
 
 
-        /* =================================================
-           IMPORTANT FIX:
-           OPEN DASHBOARD
-        ================================================= */
-
-        showView("dashboard");
+        currentUserIsAdmin =
+        false;
 
 
-    }catch(error){
+        showView(
+            "dashboard"
+        );
 
-        console.error(error);
+    }
+    catch(error){
+
+        console.error(
+            error
+        );
 
 
-        showView("home");
+        showView(
+            "home"
+        );
 
 
-        alert(
-            "An kasa loda Member Dashboard. Duba Firebase Firestore Rules."
+        console.error(
+            "Dashboard loading failed."
         );
 
     }
@@ -3653,15 +6706,29 @@ async function(){
 
     try{
 
-        await signOut(auth);
+        await signOut(
+            auth
+        );
 
 
-        showView("home");
+        currentUserIsAdmin =
+        false;
 
 
-    }catch(error){
+        adminMembers =
+        [];
 
-        console.error(error);
+
+        showView(
+            "home"
+        );
+
+    }
+    catch(error){
+
+        console.error(
+            error
+        );
 
 
         alert(
@@ -3689,27 +6756,35 @@ async function(e){
     try{
 
         await addDoc(
+
             collection(
                 db,
                 "contactMessages"
             ),
+
             {
 
                 name:
                 document
-                .getElementById("contactName")
+                .getElementById(
+                    "contactName"
+                )
                 .value
                 .trim(),
 
                 contact:
                 document
-                .getElementById("contactContact")
+                .getElementById(
+                    "contactContact"
+                )
                 .value
                 .trim(),
 
                 message:
                 document
-                .getElementById("contactMessage")
+                .getElementById(
+                    "contactMessage"
+                )
                 .value
                 .trim(),
 
@@ -3717,6 +6792,7 @@ async function(e){
                 serverTimestamp()
 
             }
+
         );
 
 
@@ -3728,13 +6804,17 @@ async function(e){
 
 
         document
-        .getElementById("contactForm")
+        .getElementById(
+            "contactForm"
+        )
         .reset();
 
+    }
+    catch(error){
 
-    }catch(error){
-
-        console.error(error);
+        console.error(
+            error
+        );
 
 
         showAlert(
@@ -3756,17 +6836,21 @@ async function loadEvents(){
 
     const container =
     document
-    .getElementById("eventsContainer");
+    .getElementById(
+        "eventsContainer"
+    );
 
 
     try{
 
         const snapshot =
         await getDocs(
+
             collection(
                 db,
                 "events"
             )
+
         );
 
 
@@ -3847,10 +6931,12 @@ async function loadEvents(){
 
         });
 
+    }
+    catch(error){
 
-    }catch(error){
-
-        console.error(error);
+        console.error(
+            error
+        );
 
 
         container.innerHTML = `
@@ -3910,9 +6996,67 @@ function escapeHtml(value){
 }
 
 
-/* ================= LOAD EVENTS ================= */
+/* =========================================================
+   SAFE ATTRIBUTE
+========================================================= */
+
+function escapeAttribute(value){
+
+    return String(value)
+
+    .replaceAll(
+        "&",
+        "&amp;"
+    )
+
+    .replaceAll(
+        '"',
+        "&quot;"
+    )
+
+    .replaceAll(
+        "<",
+        "&lt;"
+    )
+
+    .replaceAll(
+        ">",
+        "&gt;"
+    );
+
+}
+
+
+/* =========================================================
+   LOAD EVENTS ON START
+========================================================= */
 
 loadEvents();
+
+
+/* =========================================================
+   CLOSE MODAL WHEN CLICKING OUTSIDE
+========================================================= */
+
+document
+.getElementById(
+    "memberModal"
+)
+.addEventListener(
+"click",
+function(e){
+
+    if(
+        e.target ===
+        this
+    ){
+
+        closeMemberModal();
+
+    }
+
+});
+
 
 </script>
 
